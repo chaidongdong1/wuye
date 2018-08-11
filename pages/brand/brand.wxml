@@ -1,0 +1,55 @@
+<!--pages/brand/brand.wxml-->
+<view class="brand">
+  <!-- 品牌分类 -->
+  <view class="brand-fl">
+    <view>
+      <image src="../../images/brand-01.png"></image>
+    </view>
+    <view>品牌分类</view>
+    <view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">{{array[index]}}</view>
+      </picker>
+    </view>
+    <view>
+      <image src="../../images/index-05.png"></image>
+    </view>
+  </view>
+  <!-- 品牌列表 -->
+  <view class="brand-list">
+    <!-- 第一条 -->
+    <view class="list-one">
+      <view>
+        <image src="../../images/brand-02.png"></image>
+      </view>
+      <view>蓝月亮</view>
+    </view>
+    <!-- 第一条 -->
+    <view class="list-one">
+      <view>
+        <image src="../../images/brand-03.png"></image>
+      </view>
+      <view>蓝月亮</view>
+    </view>
+    <!-- 第一条 -->
+    <view class="list-one">
+      <view>
+        <image src="../../images/brand-04.png"></image>
+      </view>
+      <view>蓝月亮栏</view>
+    </view>
+    <!-- 第一条 -->
+    <view class="list-one">
+      <view>
+        <image src="../../images/brand-05.png"></image>
+      </view>
+      <view>蓝月亮蓝月亮</view>
+    </view>
+  </view>
+</view>
+<!-- 空页面-->
+<view class="cart-kong" wx:if="{{band}}">
+  <image src="../../images/apingjia.png"></image>
+  <view>暂无记录</view>
+  <view>~ 报修记录为空呦! ~</view>
+</view>

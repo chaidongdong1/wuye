@@ -1,0 +1,47 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+page{
+	background: #F0F0F0;
+	color: #666;
+	font-size: 28rpx;
+}
+.pad24{padding:0 24rpx;}
+.marb28{margin-bottom: 28rpx;}
+.marb20{margin-bottom: 20rpx;}
+.marb10{margin-bottom: 10rpx;}
+.arrow{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.arrow::after{
+  content: "";
+  width: 15rpx;
+  height: 15rpx;
+  border-top: 4rpx solid #ccc;
+  border-right: 4rpx solid #ccc;
+  transform: rotate(45deg);
+  display: block;
+}
+.arrow1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.arrow1::after{
+  content: "";
+  width: 15rpx;
+  height: 15rpx;
+  border-top: 4rpx solid #666;
+  border-right: 4rpx solid #666;
+  transform: rotate(45deg);
+  display: block;
+}

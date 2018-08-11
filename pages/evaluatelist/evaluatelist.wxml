@@ -1,0 +1,50 @@
+<view class="evaluatelist">
+  <!-- 评价列表 -->
+  <view class="eva-list marb20">
+    <view class="eva-img">
+      <image src="../../images/a_pjtp1.jpg"></image>
+    </view>
+    <view class="eva-text">
+      <view>吖商家孤岛惊魂申达股份会计师按时对方环见客户各的吖商家孤岛惊魂申达股份会计师按时对方环见客户各的</view>
+      <view class="pjsd">
+        <image src="../../images/a_pjico1.png"></image>评价晒单
+      </view>
+    </view>
+  </view>
+  <!-- 评价列表 -->
+  <view class="eva-list marb20">
+    <view class="eva-img">
+      <image src="../../images/a_pjtp1.jpg"></image>
+    </view>
+    <view class="eva-text">
+      <view>吖商家孤岛惊魂申达股份会计师按时对方环见客户各的</view>
+      <view class="pjsd">
+        <image src="../../images/a_pjico1.png"></image>评价晒单
+      </view>
+    </view>
+  </view>
+  <!-- 评价列表 -->
+  <view class="eva-list marb20">
+    <view class="eva-img">
+      <image src="../../images/a_pjtp1.jpg"></image>
+    </view>
+    <view class="eva-text">
+      <view>吖商家孤岛惊魂申达股份会计师按时对方环见客户各的</view>
+      <view class="pjsd">
+        <image src="../../images/a_pjico1.png"></image>评价晒单
+      </view>
+    </view>
+  </view>
+  <!-- 评价列表 -->
+  <view class="eva-list marb20">
+    <view class="eva-img">
+      <image src="../../images/a_pjtp1.jpg"></image>
+    </view>
+    <view class="eva-text">
+      <view>吖商家孤岛惊魂申达股份会计师按时对方环见客户各的</view>
+      <view class="ckpj">
+        <image src="../../images/a_pjico2.png"></image>查看评价
+      </view>
+    </view>
+  </view>
+</view>

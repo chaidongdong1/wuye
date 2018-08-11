@@ -1,0 +1,112 @@
+<!--pages/orderList/orderList.wxml-->
+<view class="order">
+  <!-- top -->
+  <view class="order-top">
+    <view class="order-t-active">全部</view>
+    <view>待付款</view>
+    <view>配送中</view>
+    <view>已完成</view>
+    <view>退款中</view>
+  </view>
+  <!-- 订单 -->
+  <view class="order-list" wx:if="{{order}}">
+    <!-- 第一个订单 -->
+    <view class="order-l-one">
+      <!-- top -->
+      <view class="order-one-top">
+        <image src="../../images/cart-03.png"></image>
+        <view>某某店铺
+          <text class="arrow1"></text>
+        </view>
+        <view>待付款</view>
+      </view>
+      <!-- 商品 -->
+      <view class="order-shop">
+        <!-- 第一件商品 -->
+        <view class="order-s-one">
+          <view>
+            <image src="../../images/mall-08.jpg"></image>
+          </view>
+          <view class="order-shop-nr">
+            <view>新西兰进口皇后红玫瑰苹果新西兰进口皇后红玫瑰苹果新西兰进口皇后红玫瑰苹果新西兰进口皇后红玫瑰苹果 12个装 一级果</view>
+            <view>规格：500ml 口味：原味 数量：x2</view>
+            <view>￥800.00</view>
+          </view>
+        </view>
+        <!-- 第一件商品 -->
+        <view class="order-s-one">
+          <view>
+            <image src="../../images/mall-08.jpg"></image>
+          </view>
+          <view class="order-shop-nr">
+            <view>新西兰进口皇后红玫瑰苹果 12个装 一级果</view>
+            <view>规格：500ml 口味：原味 数量：x2</view>
+            <view>￥800.00</view>
+          </view>
+        </view>
+        <!-- 第一件商品 -->
+        <view class="order-s-one">
+          <view>
+            <image src="../../images/mall-08.jpg"></image>
+          </view>
+          <view class="order-shop-nr">
+            <view>新西兰进口皇后红玫瑰苹果 12个装 一级果</view>
+            <view>规格：500ml 口味：原味 数量：x2</view>
+            <view>￥800.00</view>
+          </view>
+        </view>
+      </view>
+      <!-- 合计 -->
+      <view class="order-hj">
+        <view>合计：
+          <text>￥1600.00</text>
+        </view>
+        <view class="order-hj-anniu">
+          <view class="order-hj-hui">取消订单</view>
+          <view class="order-hj-red">继续付款</view>
+        </view>
+      </view>
+    </view>
+    <!-- 第一个订单 -->
+    <view class="order-l-one">
+      <!-- top -->
+      <view class="order-one-top">
+        <image src="../../images/cart-03.png"></image>
+        <view>某某店铺
+          <text class="arrow1"></text>
+        </view>
+        <view>待付款</view>
+      </view>
+      <!-- 商品 -->
+      <view class="order-shop">
+        <!-- 第一件商品 -->
+        <view class="order-s-one">
+          <view>
+            <image src="../../images/mall-08.jpg"></image>
+          </view>
+          <view class="order-shop-nr">
+            <view>新西兰进口皇后红玫瑰苹果 12个装 一级果</view>
+            <view>规格：500ml 口味：原味 数量：x2</view>
+            <view>￥800.00</view>
+          </view>
+        </view>
+      </view>
+      <!-- 合计 -->
+      <view class="order-hj">
+        <view>合计：
+          <text>￥1600.00</text>
+        </view>
+        <view class="order-hj-anniu">
+          <view class="order-hj-hui">取消订单</view>
+          <view class="order-hj-red">继续付款</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 空页面-->
+<view class="cart-kong">
+  <image src="../../images/adingdan.png"></image>
+  <view>暂无订单</view>
+  <view>~ 订单记录为空呦，快去下单吧! ~</view>
+</view>

@@ -1,0 +1,17 @@
+<view class="noticedetails">
+	<view class="details-xq pad24">
+		<view class="biaoti">
+			合乎你天性的生活就是最好的
+		</view>
+		<view class="riqi">
+			<text>2104-12-15  18:36</text>
+			<text>公告信息</text>
+		</view> 
+		ss
+		<view class="content">
+			<image src="../../images/a_gg1.jpg" style="width: 100%;margin: 28rpx 0;" ></image>
+			<text>【大白，卖的一手好萌】一波三折，妙趣横生。悬疑和温情，搞笑与动作，即使拍成真人版也绝对是一部好题材和好故事。大白呆萌可爱一逗比，细节刻画真实有趣，放气如放屁，警察局撕扯胶带还有低电量时如同宿醉一样。最后，“I will always with you ！”绝对催泪。开年最佳动画！</text>
+      <text>它是只充气机器人,也是个医疗伴侣，能够快速扫描，检测出人体的不正常情绪或受伤，并对其治疗。大白呆萌可爱，作为机器人医生它很称职，也是小宏最好的朋友。小宏之"</text>
+		</view>
+	</view>
+</view>

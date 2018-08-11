@@ -1,0 +1,284 @@
+/* pages/mall/mall.wxss */
+
+.mall {
+  width: 100%;
+  height: auto;
+}
+
+.mall-banner {
+  width: 100%;
+  height: 360rpx;
+}
+
+.mall-b-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.mall-sou {
+  width: 702rpx;
+  height: 56rpx;
+  margin: 20rpx 24rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  border: 1px solid #e1e1e5;
+  display: flex;
+  justify-content: center;
+}
+
+.mall-sou>view:first-child {
+  width: 25rpx;
+  height: 25rpx;
+  margin: 10rpx 15rpx 0 0;
+}
+
+.mall-sou>view:first-child>image {
+  width: 100%;
+  height: 100%;
+}
+
+.mall-sou>view:last-child {
+  font-size: 22rpx;
+  color: #999;
+  line-height: 56rpx;
+}
+
+.mall-fen {
+  width: 702rpx;
+  height: 130rpx;
+  padding: 40rpx 24rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mall-f-one {
+  flex: 1;
+  height: 100%;
+  text-align: center;
+}
+
+.mall-f-one>image {
+  width: 88rpx;
+  height: 88rpx;
+}
+
+.mall-f-one>view {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.mall-xbanner {
+  width: 702rpx;
+  height: 200rpx;
+  margin: 0 24rpx;
+}
+
+
+/*新品推荐*/
+
+.you-top {
+  width: 100%;
+  height: 30rpx;
+  line-height: 30rpx;
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #ccc;
+}
+
+.you-top>view:first-child {
+  font-size: 28rpx;
+  color: #333;
+  border-left: 5rpx solid #fe6306;
+  padding-left: 15rpx;
+}
+
+.you-top>view:last-child {
+  display: flex;
+  padding-right: 20rpx;
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.you-top>view:last-child>image {
+  width: 15rpx;
+  height: 20rpx;
+  margin: 5rpx;
+}
+
+.xin {
+  width: 702rpx;
+  height: auto;
+  margin: 20rpx 24rpx;
+  background: #fff;
+}
+
+.xin-nei {
+  width: 662rpx;
+  height: auto;
+  margin: 30rpx 20rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 10rpx;
+}
+
+.xin-n-one {
+  width: 300rpx;
+  height: auto;
+  border: 1px solid #cccccc;
+  padding: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.xin-n-one>image {
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.xin-n-one>view:nth-child(2) {
+  width: 100%;
+  height: 68rpx;
+  line-height: 34rpx;
+  margin: 10rpx 0;
+  font-size: 28rpx;
+  color: #333;
+  overflow: hidden;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.xin-n-one>view:nth-child(3) {
+  font-size: 24rpx;
+  color: #656565;
+  margin-top: 10rpx;
+}
+
+.xin-n-one>view:last-child {
+  width: 100%;
+  height: 46rpx;
+  line-height: 46rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.xin-n-one>view:last-child>view:first-child {
+  width: 120rpx;
+  height: 46rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 24rpx;
+  color: #656565;
+  margin-right: 10rpx;
+}
+
+.xin-n-one>view:last-child>view:last-child {
+  font-size: 32rpx;
+  color: #f00;
+}
+
+
+/*优惠秒杀*/
+
+.mall-yh {
+  width: 702rpx;
+  height: auto;
+  margin: 20rpx 24rpx 0 24rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+
+.youhui {
+  width: 662rpx;
+  height: auto;
+  padding: 0 20rpx 30rpx 20rpx;
+}
+
+.yh-one {
+  width: 100%;
+  height: 200rpx;
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.yh-one>view:first-child {
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 30rpx;
+}
+
+.yh-one>view:first-child>image {
+  width: 100%;
+  height: 100%;
+}
+
+.yh-one-right {
+  flex: 1;
+}
+
+.yh-one-right>view:first-child {
+  width: 100%;
+  height: 64rpx;
+  line-height: 32rpx;
+  font-size: 28rpx;
+  color: #333;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.yh-one-right>view:nth-child(2) {
+  margin-top: 30rpx;
+  font-size: 22rpx;
+  color: #333;
+}
+
+.yh-one-right>view:nth-child(2)>text {
+  color: #df273f;
+  padding-left: 30rpx;
+}
+
+.yh-one-jia {
+  width: 100%;
+  height: 42rpx;
+  line-height: 42rpx;
+  margin-top: 35rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.yh-one-jia>view:first-child {
+  font-size: 36rpx;
+  color: #df273f;
+}
+
+.yh-one-jia>view:first-child>text {
+  padding-left: 15rpx;
+  font-size: 24rpx;
+  color: #999;
+  text-decoration: line-through;
+}
+.yh-one-jia>view:last-child{
+	width: 135rpx;
+	height: 42rpx;
+	line-height: 42rpx;
+	text-align: center;
+	background: #df273f;
+	border-radius: 8rpx;
+	font-size: 24rpx;
+	color: #fff;
+	margin-left: 20rpx;
+}

@@ -1,0 +1,33 @@
+page{
+	background: #fff;
+}
+.noticedetails{
+	width: 100%;
+	height: auto;
+}
+.biaoti{
+	padding: 39rpx 0 29rpx 0;
+	font-size: 36rpx;
+	color: #000;
+}
+
+.riqi text:first-child{
+	font-size: 24rpx;
+	color: #888;
+	margin-right: 23rpx;
+}
+.riqi text:last-child{
+	font-size: 30rpx;
+	color: #f00;
+}
+/*.content image{
+	width: 100%;
+	margin: 28rpx 0;
+}*/
+.content text{
+	font-size: 28rpx;
+	display: block;
+	line-height: 50rpx;
+	text-indent: 2em;
+	color: #111;
+}

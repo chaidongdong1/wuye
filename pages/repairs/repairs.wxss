@@ -1,0 +1,289 @@
+/* pages/repairs/repairs.wxss */
+
+.rep {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.rep-bei {
+  width: 100%;
+  height: 400rpx;
+}
+
+.rep-bei>image {
+  width: 100%;
+  height: 100%;
+}
+
+.rep-ding {
+  width: 702rpx;
+  height: auto;
+  margin: 0 24rpx 60rpx 24rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.rep-top {
+  width: 100%;
+  height: auto;
+  margin-top: 45rpx;
+  text-align: center;
+}
+
+.rep-top>image {
+  width: 70rpx;
+  height: 50rpx;
+}
+
+.rep-t-wz {
+  width: 100%;
+  height: 35rpx;
+  line-height: 35rpx;
+  display: flex;
+  justify-content: center;
+  margin-top: 25rpx;
+}
+
+.rep-t-wz>image {
+  width: 65rpx;
+  height: 20rpx;
+  margin-top: 8rpx;
+}
+
+.rep-t-wz>view {
+  font-size: 36rpx;
+  color: #fff;
+  padding: 0 10rpx;
+}
+
+.rep-xiu {
+  width: 662rpx;
+  height: auto;
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 0 20rpx;
+  margin-top: 40rpx;
+  box-shadow: 0 0 10rpx #999;
+}
+
+.rep-x-type {
+  width: 100%;
+  height: auto;
+  padding-top: 45rpx;
+}
+
+.type-top {
+  width: 100%;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 28rpx;
+  color: #353535;
+  border-left: 5rpx solid #fe6306;
+  padding-left: 15rpx;
+}
+
+.type-top>text {
+  font-size: 24rpx;
+  color: #999;
+  padding-left: 5rpx;
+}
+
+.type-xuan {
+  width: 622rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  margin: 30rpx 20rpx;
+  border: 1px solid #f34a51;
+  position: relative;
+}
+
+.type-dibu {
+  width: 100%;
+  height: 76rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.type-dibu>view {
+  width: 15rpx;
+  height: 15rpx;
+  border-radius: 50%;
+  background: #32eebe;
+  margin: 32rpx 0 30rpx 20rpx;
+}
+
+.type-dibu>image {
+  width: 20rpx;
+  height: 30rpx;
+  margin: 23rpx 20rpx 23rpx 0;
+}
+
+.type-mz {
+  width: 100%;
+  height: 76rpx;
+  line-height: 76rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.picker {
+  padding: 0 50rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.rep-text {
+  width: 100%;
+  height: auto;
+  padding-top: 20rpx;
+}
+
+.rep-text-nr {
+  width: 582rpx;
+  height: 138rpx;
+  border: 1px solid #f34a51;
+  margin: 30rpx 20rpx 0 20rpx;
+  font-size: 24rpx;
+  color: #333;
+  padding: 10rpx 20rpx;
+  line-height: 36rpx;
+}
+
+.rep-tu {
+  width: 100%;
+  height: auto;
+  padding-top: 30rpx;
+}
+
+.rep-pai {
+  width: 622rpx;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+
+.rep-pai>image {
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 41rpx;
+  border: 1px solid #cdcdcd;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.rep-pai>image:nth-child(3n) {
+  margin-right: 0;
+}
+
+.rep-address {
+  width: 100%;
+  height: auto;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.rep-add-wei {
+  width: 582rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 20rpx;
+  margin: 30rpx 20rpx 0 20rpx;
+  border: 1px solid #cdcdcd;
+  border-radius: 10rpx;
+  display: flex;
+}
+
+.rep-add-wei>image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.rep-add-wei>view {
+  font-size: 24rpx;
+  color: #999;
+  padding-left: 20rpx;
+}
+
+.rep-add-yx {
+  width: 582rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 20rpx;
+  margin: 30rpx 20rpx 0 20rpx;
+  border: 1px solid #ff9a44;
+  border-radius: 10rpx;
+  display: flex;
+}
+
+.rep-add-image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.rep-add-image>image {
+  width: 100%;
+  height: 100%;
+}
+
+.yixie-nr {
+  flex: 1;
+  height: 100rpx;
+  line-height: 50rpx;
+  padding-left: 20rpx;
+}
+
+.yixie-name {
+  width: 100%;
+  line-height: 50rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.yixie-name>view {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.yixie-nr>view:last-child {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.rep-anniu {
+  width: 100%;
+  height: 76rpx;
+  line-height: 76rpx;
+  margin-top: 20rpx;
+  padding-bottom: 30rpx;
+}
+
+.rep-anniu>button {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #ff9a44 0%, #f34a51 100%),
+                linear-gradient(#06b5fe, #06b5fe);
+  border-radius: 15rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.rep-wuye {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+}

@@ -1,0 +1,83 @@
+<!--pages/repList/repList.wxml-->
+<view class="repList">
+  <!-- 正在报修 -->
+  <view class="list-xiu">
+    <!-- 第一条报修 -->
+    <view class="xiu">
+      <view class="xiu-top">
+        <view>正在报修</view>
+        <view>
+          <text></text>安排上门维修师傅</view>
+      </view>
+      <view class="xiu-bottom">
+        <view class="xiu-b-left">
+          <view>天然气</view>
+          <image src="../../images/index-bx.jpg"></image>
+        </view>
+        <view class="xiu-right">
+          <view>天然气管道有点跑味，想让物业换一个新的天然气管天然气管道有点跑味，想让物业换一个新的天然气管</view>
+          <view>报修时间：2018-06-20 12:36:20</view>
+          <view>联系电话：13298343196</view>
+        </view>
+      </view>
+    </view>
+    <view class="xiu">
+      <view class="xiu-top">
+        <view>正在报修</view>
+        <view>
+          <text></text>安排上门维修师傅</view>
+      </view>
+      <view class="xiu-bottom">
+        <view class="xiu-b-left">
+          <view>天然气</view>
+          <image src="../../images/index-bx.jpg"></image>
+        </view>
+        <view class="xiu-right">
+          <view>天然气管道有点跑味，想让物业换一个新的天然气管天然气管道有点跑味，想让物业换一个新的天然气管</view>
+          <view>报修时间：2018-06-20 12:36:20</view>
+          <view>联系电话：13298343196</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 维修完成 -->
+  <view class="list-wan">
+    <view class="xiu">
+      <view class="xiu-top">
+        <view>我的报修</view>
+        <view>
+          <text></text>维修已完成</view>
+      </view>
+      <!-- 第一条 -->
+      <view class="xiu-bottom">
+        <view class="xiu-b-left">
+          <view>天然气</view>
+          <image src="../../images/index-bx.jpg"></image>
+        </view>
+        <view class="xiu-right">
+          <view>天然气管道有点跑味，想让物业换一个新的天然气管天然气管道有点跑味，想让物业换一个新的天然气管</view>
+          <view>报修时间：2018-06-20 12:36:20</view>
+          <view>联系电话：13298343196</view>
+        </view>
+      </view>
+      <!-- 第一条 -->
+      <view class="xiu-bottom">
+        <view class="xiu-b-left">
+          <view>天然气</view>
+          <image src="../../images/index-bx.jpg"></image>
+        </view>
+        <view class="xiu-right">
+          <view>天然气管道有点跑味，想让物业换一个新的天然气管天然气管道有点跑味，想让物业换一个新的天然气管</view>
+          <view>报修时间：2018-06-20 12:36:20</view>
+          <view>联系电话：13298343196</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 空页面-->
+<view class="cart-kong">
+  <image src="../../images/apingjia.png"></image>
+  <view>暂无记录</view>
+  <view>~ 报修记录为空呦! ~</view>
+</view>

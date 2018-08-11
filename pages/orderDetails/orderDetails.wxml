@@ -1,0 +1,81 @@
+<!--pages/orderDetails/orderDetails.wxml-->
+<view class="detail">
+  <view class="detail-top">当前订单状态：
+    <text>待付款</text>
+  </view>
+  <!-- 地址管理 -->
+  <view class="detail-address">
+    <view>
+      <image src="../../images/a_dingwei.png"></image>
+    </view>
+    <view class="de-address-nr">
+      <view>
+        <view>姓名：柴冬冬</view>
+        <view>手机号：13298343196</view>
+      </view>
+      <view>地址：金水区豫博大厦西塔0511室</view>
+    </view>
+  </view>
+  <view class="detail-image">
+    <image src="../../images/address-bottom.png"></image>
+  </view>
+  <!-- 商品 -->
+  <view class="order-l-one">
+    <!-- top -->
+    <view class="order-one-top">
+      <image src="../../images/cart-03.png"></image>
+      <view>某某店铺
+        <text class="arrow1"></text>
+      </view>
+    </view>
+    <!-- 商品 -->
+    <view class="order-shop">
+      <!-- 第一件商品 -->
+      <view class="order-s-one">
+        <view>
+          <image src="../../images/mall-08.jpg"></image>
+        </view>
+        <view class="order-shop-nr">
+          <view>新西兰进口皇后红玫瑰苹果新西兰进口皇后红玫瑰苹果新西兰进口皇后红玫瑰苹果新西兰进口皇后红玫瑰苹果 12个装 一级果</view>
+          <view>规格：500ml 口味：原味 数量：x2</view>
+          <view>￥800.00</view>
+        </view>
+      </view>
+      <!-- 第一件商品 -->
+      <view class="order-s-one">
+        <view>
+          <image src="../../images/mall-08.jpg"></image>
+        </view>
+        <view class="order-shop-nr">
+          <view>新西兰进口皇后红玫瑰苹果 12个装 一级果</view>
+          <view>规格：500ml 口味：原味 数量：x2</view>
+          <view>￥800.00</view>
+        </view>
+      </view>
+      <!-- 第一件商品 -->
+      <view class="order-s-one">
+        <view>
+          <image src="../../images/mall-08.jpg"></image>
+        </view>
+        <view class="order-shop-nr">
+          <view>新西兰进口皇后红玫瑰苹果 12个装 一级果</view>
+          <view>规格：500ml 口味：原味 数量：x2</view>
+          <view>￥800.00</view>
+        </view>
+      </view>
+    </view>
+    <!-- 合计 -->
+    <view class="order-hj">共计4件商品 合计：<text>￥1602.00</text>(含运费2元)</view>
+  </view>
+  <!-- 订单编号 -->
+  <view class="order-xinxi">
+  	<view class="order-x-bh">订单编号：<text>12345343456413213456465</text></view>
+  	<view class="order-x-bh">下单时间：<text>2018-06-18 12:36:45</text></view>
+  	<view class="order-x-xq">我的备注：<text>健康和史蒂夫加工费吉拉哈萨克上的发看咯isad会计法健康和史蒂夫加工费吉拉哈萨克上的发看咯isad会计法</text></view>
+  </view>
+  <!-- 按钮 -->
+  <view class="order-anniu">
+  	<view class="order-an-hui">取消订单</view>
+  	<view class="order-an-red">继续付款</view>
+  </view>
+</view>

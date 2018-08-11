@@ -1,0 +1,51 @@
+/* pages/about/about.wxss */
+.about{
+	width: 100%;
+	height: auto;
+}
+.about-title{
+	height: 100rpx;
+	line-height: 100rpx;
+	padding-left: 24rpx;
+	font-size: 36rpx;
+	color:#F34A51;
+}
+.about-nr{
+	width: 702rpx;
+	height: auto;
+	background: #fff;
+	padding: 0 24rpx;
+}
+.about-n-item{
+	width: 100%;
+	height: 80rpx;
+	line-height: 80rpx;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #f0f0f0;
+}
+.about-n-item>view:first-child{
+	font-size: 28rpx;
+	color: #333;
+}
+.about-n-item>view:last-child{
+	font-size: 26rpx;
+	color: #666;
+}
+.arrow1::after{
+	margin-left: 10rpx;
+}
+.about-jian{
+	width: 100%;
+	height: auto;
+	padding: 20rpx 0;
+	line-height: 42rpx;
+}
+.about-jian>view{
+	font-size: 24rpx;
+	color: #666;
+}
+.about-jian>view>text{
+	font-size: 28rpx;
+	color: #333;
+}

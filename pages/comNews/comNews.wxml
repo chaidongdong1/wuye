@@ -1,0 +1,52 @@
+<!--pages/comNews/comNews.wxml-->
+<view class="news-item">
+  <!-- 第一条 -->
+  <view class="news-i-one">
+    <view>
+      <image src="../../images/news.jpg"></image>
+    </view>
+    <view class="news-one-right">
+      <view>争当“社区规划师”为老旧小区添活力争当“社区规划师”为老旧小区添活力争当“社区规划师”为老旧小区添活力</view>
+      <view>社区新闻</view>
+      <view>
+        <view>2018-07-5</view>
+        <text>查看详情>></text>
+      </view>
+    </view>
+  </view>
+  <!-- 第一条 -->
+  <view class="news-i-one">
+    <view>
+      <image src="../../images/news.jpg"></image>
+    </view>
+    <view class="news-one-right">
+      <view>争当“社区规划师”为老旧小区添活力</view>
+      <view>社区新闻</view>
+      <view>
+        <view>2018-07-5</view>
+        <text>查看详情>></text>
+      </view>
+    </view>
+  </view>
+  <!-- 第一条 -->
+  <view class="news-i-one">
+    <view>
+      <image src="../../images/news.jpg"></image>
+    </view>
+    <view class="news-one-right">
+      <view>争当“社区规划师”为老旧小区添活力</view>
+      <view>社区新闻</view>
+      <view>
+        <view>2018-07-5</view>
+        <text>查看详情>></text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 空页面-->
+<view class="cart-kong" wx:if="{{news}}">
+  <image src="../../images/abeiyong.png"></image>
+  <view>暂无新闻</view>
+  <view>~ 新闻列表为空呦! ~</view>
+</view>
+

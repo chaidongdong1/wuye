@@ -1,0 +1,119 @@
+.evaluate{
+	width: 100%;
+}
+.fenlei{
+	display: flex;
+	justify-content: space-between;
+	background: #fff;
+}
+.quanbu,.youtu,.haoping,.zhongping,.chaping{
+	width: 150rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.quanbu view:first-child,.youtu view:first-child,.haoping view:first-child,.zhongping view:first-child,.chaping view:first-child{
+	padding: 15rpx 0;
+	font-size: 28rpx;
+}
+.quanbu view:last-child,.youtu view:last-child,.haoping view:last-child,.zhongping view:last-child,.chaping view:last-child{
+	padding-bottom: 20rpx;
+	font-size: 28rpx;
+}
+.active_pj{
+	color: red;
+	border-bottom: 2px solid #ff0000;
+}
+.user-pj{
+	background: #fff;
+}
+.user-top{
+	display: flex;
+	padding-top: 20rpx;
+	justify-content: space-between;
+/*	padding-bottom: 64rpx;*/
+}
+.user-tou image{
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 50%;
+	vertical-align: middle;
+	margin: 0 20rpx 12rpx 0;
+}
+.user-tou text{
+	font-size: 28rpx;
+	font-weight: 700;
+}
+.user-riqi{
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 24rpx;
+	color: #b3b3b3;
+}
+.pjxx{
+	width: 180rpx;
+}
+.pjxx image{
+	width: 25rpx;
+	height: 26rpx;
+	margin-right: 10rpx;
+}
+/*.xx1,.xx2{
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+.xx1 image,.xx2 image{
+	width: 166rpx;
+	height: 26rpx;
+}*/
+.user-nr{
+	font-size: 24rpx;
+	line-height: 42rpx;
+	color: #333;
+	padding-top: 26rpx;
+}
+.user-img{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-bottom: 20rpx;
+}
+.user-img view{
+	width: 210rpx;
+	height: 210rpx;
+	margin-top: 20rpx;
+}
+.user-img view image{
+	width: 100%;
+	height: 100%;
+}
+.gmriqi{
+	font-size: 26rpx;
+	color: #999;
+	padding-bottom: 30rpx;
+}
+/*空页面*/
+.cart-kong{
+  width: 100%;
+  height: 100vh;
+}
+.cart-kong>image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 300rpx 225rpx 30rpx 225rpx;
+}
+.cart-kong>view:nth-child(2){
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+.cart-kong>view:last-child{
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 15rpx;
+  text-align: center;
+}

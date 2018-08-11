@@ -1,0 +1,116 @@
+<!--pages/integral/integral.wxml-->
+<view class="inte">
+	<!-- top -->
+	<view class="inte-top">
+		<!-- top背景图 -->
+		<view class="inte-t-bj">
+			<image src="../../images/jf-top.png"></image>
+		</view>
+		<view class="inte-number">
+			<!-- <view class="inte-border"></view> -->
+			<canvas class="inte-border" canvas-id="canvasArcCir"></canvas>
+			<view class="inte-t-zjs">总计</view>
+			<view class="inte-t-numbs">{{number}}</view>
+			<view class="inte-t-jfs">积分</view>
+		</view>
+	</view>
+	<!-- 列表 -->
+	<view class="inte-list">
+		<!-- 第一个 -->
+		<view class="list-one">
+			<view class="list-one-left">
+				<view class="list-left-bh">
+					<text></text>
+					<view>订单编号：4564512100121</view>
+				</view>
+				<view>2018-08-08 10:00:00</view>
+				<view>合计:<text>￥166.00</text>共计5件商品</view>
+			</view>
+			<view class="list-one-right">
+				<view>+166</view>
+				<view>获得积分</view>
+			</view>
+		</view>
+		<!-- 第一个 -->
+		<view class="list-one">
+			<view class="list-one-left">
+				<view class="list-left-bh">
+					<text></text>
+					<view>订单编号：4564512100121</view>
+				</view>
+				<view>2018-08-08 10:00:00</view>
+				<view>合计:<text>￥166.00</text>共计5件商品</view>
+			</view>
+			<view class="list-one-right">
+				<view>+166</view>
+				<view>获得积分</view>
+			</view>
+		</view>
+		<!-- 第一个 -->
+		<view class="list-one">
+			<view class="list-one-left">
+				<view class="list-left-bh">
+					<text></text>
+					<view>订单编号：4564512100121</view>
+				</view>
+				<view>2018-08-08 10:00:00</view>
+				<view>合计:<text>￥166.00</text>共计5件商品</view>
+			</view>
+			<view class="list-one-right">
+				<view>+166</view>
+				<view>获得积分</view>
+			</view>
+		</view>
+		<!-- 第一个 -->
+		<view class="list-one">
+			<view class="list-one-left">
+				<view class="list-left-bh">
+					<text></text>
+					<view>订单编号：4564512100121</view>
+				</view>
+				<view>2018-08-08 10:00:00</view>
+				<view>合计:<text>￥166.00</text>共计5件商品</view>
+			</view>
+			<view class="list-one-right">
+				<view>+166</view>
+				<view>获得积分</view>
+			</view>
+		</view>
+		<!-- 第一个 -->
+		<view class="list-one">
+			<view class="list-one-left">
+				<view class="list-left-bh">
+					<text></text>
+					<view>订单编号：4564512100121</view>
+				</view>
+				<view>2018-08-08 10:00:00</view>
+				<view>合计:<text>￥166.00</text>共计5件商品</view>
+			</view>
+			<view class="list-one-right">
+				<view>+166</view>
+				<view>获得积分</view>
+			</view>
+		</view>
+		<!-- 第一个 -->
+		<view class="list-one">
+			<view class="list-one-left">
+				<view class="list-left-bh">
+					<text></text>
+					<view>订单编号：4564512100121</view>
+				</view>
+				<view>2018-08-08 10:00:00</view>
+				<view>合计:<text>￥166.00</text>共计5件商品</view>
+			</view>
+			<view class="list-one-right">
+				<view>+166</view>
+				<view>获得积分</view>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 空页面-->
+<view class="cart-kong">
+  <image src="../../images/adingdan.png"></image>
+  <view>暂无积分</view>
+  <view>~ 积分明细为空呦! ~</view>
+</view>

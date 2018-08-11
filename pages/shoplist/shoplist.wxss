@@ -1,0 +1,102 @@
+.shops{
+	width: 100%;
+	height: auto;
+}
+.shoplist{
+	width: 100%;
+	background: #fff;
+	margin-bottom: 30rpx;
+}
+
+.shop-top{
+	display: flex;
+	justify-content: space-between;
+	padding: 30rpx 0;
+	border-bottom: 1px dashed #cccccc;
+}
+.top-l{
+	display: flex;
+}
+.top-l>view>image{
+	width: 80rpx;
+	height: 80rpx;
+	margin-right: 25rpx;
+}
+.top-l view:last-child{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.top-l view:last-child text:first-child{
+	color: #333;
+	font-size: 28rpx;
+}
+.top-l view:last-child text:last-child{
+	color: #999;
+	font-size: 24rpx;
+}
+.top-r{
+	width: 132rpx;
+	height: 45rpx;
+	line-height: 45rpx;
+	text-align: center;
+	border-radius: 6rpx;
+	font-size: 24rpx;
+	background: #999;
+	color: white;
+	margin-top: 25rpx;
+}
+.shop-btm{
+	padding: 30rpx 20rpx;
+}
+.shop-img{
+	display: flex;
+	justify-content: space-between;
+}
+.shop-img view{
+	width: 200rpx;
+	height: 200rpx;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+.shop-img view image{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.shop-img>view>view{
+	width: 100%;
+	height: 36rpx;
+	line-height: 36rpx;
+	background: rgba(0,0,0,.3);
+	text-align:center;
+	color: #f00;
+	font-size: 24rpx;
+	position: absolute;
+	top: 165rpx;
+	left: 0;
+}
+/*空页面*/
+.cart-kong{
+  width: 100%;
+  height: 100vh;
+}
+.cart-kong>image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 300rpx 225rpx 30rpx 225rpx;
+}
+.cart-kong>view:nth-child(2){
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+.cart-kong>view:last-child{
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 15rpx;
+  text-align: center;
+}

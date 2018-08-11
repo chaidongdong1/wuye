@@ -1,0 +1,68 @@
+<view class="shops">
+  <!-- 超市 -->
+  <view class="shoplist">
+    <view class="pad24">
+      <view class="shop-top">
+        <view class="top-l">
+          <view>
+            <image src="../../images/a_super.jpg"></image>
+          </view>
+          <view>
+            <text>某某超市名称</text>
+            <text>共 135 件商品</text>
+          </view>
+        </view>
+        <view class="top-r">
+          <image src="../../images/a_sc_01.png"></image>
+          <view>取消收藏</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 超市 -->
+  <view class="shoplist">
+    <view class="pad24">
+      <view class="shop-top">
+        <view class="top-l">
+          <view>
+            <image src="../../images/a_super.jpg"></image>
+          </view>
+          <view>
+            <text>某某超市名称</text>
+            <text>共 135 件商品</text>
+          </view>
+        </view>
+        <view class="top-r">
+          <image src="../../images/a_sc_01.png"></image>
+          <view>取消收藏</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 超市 -->
+  <view class="shoplist">
+    <view class="pad24">
+      <view class="shop-top">
+        <view class="top-l">
+          <view>
+            <image src="../../images/a_super.jpg"></image>
+          </view>
+          <view>
+            <text>某某超市名称</text>
+            <text>共 135 件商品</text>
+          </view>
+        </view>
+        <view class="top-r">
+          <image src="../../images/a_sc_01.png"></image>
+          <view>取消收藏</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 空页面-->
+<view class="cart-kong"  wx:if="{{shops}}">
+  <image src="../../images/apingjia.png"></image>
+  <view>暂无收藏</view>
+  <view>~ 收藏列表为空呦，快去收藏店铺吧! ~</view>
+</view>

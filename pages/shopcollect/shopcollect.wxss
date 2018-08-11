@@ -1,0 +1,84 @@
+.shops{
+	width: 100%;
+	height: auto;
+}
+.shoplist{
+	width: 100%;
+	background: #fff;
+	margin-bottom: 30rpx;
+}
+
+.shop-top{
+	display: flex;
+	justify-content: space-between;
+	padding: 30rpx 0;
+	/*border-bottom: 1px dashed #cccccc;*/
+}
+.top-l{
+	display: flex;
+}
+.top-l>view>image{
+	width: 80rpx;
+	height: 80rpx;
+	margin-right: 25rpx;
+}
+.top-l view:last-child{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.top-l view:last-child text:first-child{
+	color: #333;
+	font-size: 28rpx;
+}
+.top-l view:last-child text:last-child{
+	color: #999;
+	font-size: 24rpx;
+}
+.top-r{
+	width: 172rpx;
+	height: 50rpx;
+	line-height: 50rpx;
+	text-align: center;
+	border-radius: 6rpx;
+	font-size: 24rpx;
+	background: #999;
+	color: white;
+	margin-top: 20rpx;
+	display:flex;
+	text-align: center;
+	justify-content: center;
+}
+.top-r>image{
+	width: 25rpx;
+	height: 25rpx;
+	margin: 12rpx 10rpx 0 0;
+}
+.top-r>view{
+	font-size: 24rpx;
+	color: #fff;
+}
+.top-r text{
+	font-size: 26rpx;
+}
+/*空页面*/
+.cart-kong{
+  width: 100%;
+  height: 100vh;
+}
+.cart-kong>image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 300rpx 225rpx 30rpx 225rpx;
+}
+.cart-kong>view:nth-child(2){
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+.cart-kong>view:last-child{
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 15rpx;
+  text-align: center;
+}

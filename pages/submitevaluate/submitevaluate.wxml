@@ -1,0 +1,34 @@
+<view class="submitevaluate">
+	<view class="sub-top marb10">
+		<view>
+			<image src="../../images/a_pjtp1.jpg"></image>
+		</view>
+		<view>
+			吖商家孤岛惊魂申达股份会计师对方环能科技新城V你师父打卡机老
+		</view>
+	</view>
+	<!-- 商品打分 -->
+	<view class="spdf pad24 marb10">
+		<text>商品打分</text>
+		<view class="dfxx">
+			<image  wx:for="{{dflist}}" wx:key="id" src="{{item}}" data-index="{{index}}" bindtap="xxdj"></image>
+		</view>
+	</view>
+	<!-- 商品评价 -->
+	<view class="sppj marb10 pad24">
+		<view>商品评价（选填）</view>
+		<view>
+			<textarea placeholder="请输入你的评价，谢谢合作" ></textarea>
+		</view>
+	</view>
+	<!-- 添加图片 -->
+	<view class="tian">
+		<view class="tian-add">
+			<image src="../../images/a_pjtp1.jpg"></image>
+			<image src="../../images/a_pjtp1.jpg"></image>
+			<image src="../../images/a_photo.png"></image>
+		</view>
+	</view>
+	<!-- 提交按钮 -->
+	<view class="tijiao">提交</view>
+</view>

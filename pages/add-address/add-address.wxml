@@ -1,0 +1,33 @@
+<view class="add-address">
+  <view class="add-list pad24">
+    <view class="name">
+      <text>我的姓名</text>
+      <input type="text" name="" placeholder="请输入你的姓名" />
+    </view>
+    <view class="phone">
+      <text>我的电话</text>
+      <input type="number" name="" placeholder="请输入你的电话" />
+    </view>
+    <view class="village">
+      <text>我的小区</text>
+      <picker class="addres-xz" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">{{array[index]}}</view>
+      </picker>
+      <view class="arrow"></view>
+    </view>
+    <view class="message">
+      <text>详细地址</text>
+      <input type="text" name="" placeholder="请输入详细地址" />
+    </view>
+    <view class="default">
+    <!--  class="default-wei" -->
+      <view>
+      	<icon type="success" size="16" color="#f00"/>
+      </view>
+      设为默认地址
+    </view>
+  </view>
+</view>
+<view class="addnew">
+  <view class="addanniu pad24">确认添加</view>
+</view>

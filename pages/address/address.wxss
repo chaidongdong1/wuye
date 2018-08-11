@@ -1,0 +1,156 @@
+page {
+  background: #f0f0f0;
+  font-size: 24rpx;
+}
+.add{
+  width: 100%;
+  height: auto;
+}
+.address {
+  height: auto;
+  background: #fff;
+}
+
+.address-top {
+  padding-top: 31rpx;
+  padding-bottom: 20rpx;
+  border-bottom: solid 1px #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-l {
+  width: 50rpx;
+  height: 60rpx;
+}
+
+.top-l image {
+  width: 100%;
+  height: 100%;
+}
+
+.top-r {
+  width: 619rpx;
+  margin-top: -9rpx;
+}
+
+.pad24 {
+  padding: 0 24rpx;
+}
+
+.marb20 {
+  margin-bottom: 20rpx;
+}
+
+.top-r .self-xx text {
+  line-height: 42rpx;
+  color: #323233;
+}
+
+.top-r text {
+  color: #646466;
+}
+
+.self-xx {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.address-btm {
+  display: flex;
+  justify-content: space-between;
+}
+
+.address-btm .btm-l {
+  width: 150rpx;
+  display: flex;
+  padding: 20rpx 0;
+}
+
+.btm-l view:first-child {
+  width: 30rpx;
+  height: 30rpx;
+  border: 1px solid #c9c9c9;
+  border-radius: 50%;
+  margin-right: 13rpx;
+}
+
+.btm-l icon {
+  margin-right: 13rpx;
+}
+
+.btm-r {
+  width: 260rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bianji, .shanchu {
+  display: flex;
+  padding: 20rpx;
+}
+
+.bianji image, .shanchu image {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 13rpx;
+  vertical-align: middle;
+  margin-top: 5rpx;
+}
+
+/*添加新地址*/
+
+.addnew {
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.addanniu {
+  height: 60rpx;
+  background: linear-gradient(0deg, #f34a51 0%, #ff9a44 100%),
+                linear-gradient(#06b5fe, #06b5fe);
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  margin: 20rpx 24rpx;
+  font-size: 28rpx;
+  color: white;
+}
+
+.addanniu text {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: white;
+  margin-right: 15rpx;
+}
+
+.padb100 {
+  margin-bottom: 120rpx;
+}
+/*空页面*/
+.cart-kong{
+  width: 100%;
+  height: 100vh;
+}
+.cart-kong>image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 300rpx 225rpx 30rpx 225rpx;
+}
+.cart-kong>view:nth-child(2){
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+.cart-kong>view:last-child{
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 15rpx;
+  text-align: center;
+}

@@ -1,0 +1,119 @@
+/*.submitevaluate{
+	width: 100%;
+}*/
+.sub-top{
+	display: flex;
+	padding: 20rpx 24rpx;
+	justify-content: space-between;
+	background: #fff;
+}
+.sub-top view:first-child image{
+	width: 121rpx;
+	height: 121rpx;
+	margin-right: 25rpx;
+}
+.sub-top view:last-child{
+	font-size: 28rpx;
+	color: #333;
+}
+.spdf{
+	display: flex;
+	height: 88rpx;
+	background: #fff;
+	line-height: 88rpx;
+}
+.spdf text{
+	font-size: 30rpx;
+	margin-right: 20rpx;
+}
+.spdf image{
+	width: 25rpx;
+	height: 26rpx;
+	margin-right: 10rpx;
+}
+.sppj{
+	background: #fff;
+	padding-bottom: 35rpx;
+}
+.sppj view:first-child{
+	font-size: 28rpx;
+	padding: 30rpx 0;
+	color: #666;
+}
+.sppj view:last-child{
+	width: 100%;
+}
+.sppj view:last-child textarea{
+	width: 672rpx;
+	height: 162rpx;
+	padding: 15rpx;
+  border: 1px solid #cdcdcd;
+  background: #f2f2f5;
+}
+.tjtp{
+	background: #fff;
+	padding: 20rpx 24rpx;
+	margin-bottom:55rpx;
+	display:flex;
+	flex-wrap: wrap;
+}
+.tjtp view{
+	width: 210rpx;
+	height: 120rpx;
+	border: 1px solid #cdcdcd;
+	margin-right: 20rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 45rpx 0;
+}
+.tjtp view image{
+	width: 88rpx;
+	height: 68rpx;
+}
+.tjtp view text{
+	font-size: 24rpx;
+	color: #999;
+}
+.tj{
+	width: 100%;
+	height: 88rpx;
+	line-height: 88rpx;
+	text-align: center;
+	color: white;
+	font-size: 32rpx;
+	background: #06b5fe;
+}
+.tian{
+	width: 100%;
+	height: auto;
+	background: #fff;
+	padding: 20px 0;
+}
+.tian-add{
+	width: 702rpx;
+	height: auto;
+	padding: 0 24rpx;
+	display:flex;
+	flex-wrap: wrap;
+}
+.tian-add>image{
+	width: 210rpx;
+	height: 210rpx;
+	margin-right: 30rpx;
+}
+.tian-add>image:nth-child(3n){
+	margin-right: 0;
+}
+.tijiao{
+	width: 96%;
+	height: 88rpx;
+	margin: 50rpx 2% 0 2%;
+	background: #f34a51;
+	border-radius: 15rpx;
+	font-size: 32rpx;
+	color: #fff;
+	line-height: 88rpx;
+	text-align: center;
+}

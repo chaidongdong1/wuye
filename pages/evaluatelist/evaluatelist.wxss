@@ -1,0 +1,101 @@
+page {
+  background: #F0F0F0;
+}
+
+.evaluatelist {
+  width: 100%;
+}
+
+.eva-list {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 20rpx 24rpx;
+}
+
+.eva-img {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.eva-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.eva-text {
+  width: 491rpx;
+}
+
+.eva-text view:first-child {
+  width: 100%;
+  height: 70rpx;
+  line-height: 35rpx;
+  font-size: 28rpx;
+  color: #333;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.eva-text .pjsd {
+  width: 200rpx;
+  height: 42rpx;
+  border-radius: 21rpx;
+  line-height: 42rpx;
+  text-align: center;
+  border: 1px solid #fb3939;
+  font-size: 26rpx;
+  color: red;
+  margin: 57rpx 0 0 292rpx;
+}
+
+.eva-text .pjsd image {
+  width: 28rpx;
+  height: 24rpx;
+  vertical-align: middle;
+  margin-right: 15rpx;
+  margin-top: -2rpx;
+}
+
+.eva-text .ckpj {
+  width: 200rpx;
+  height: 42rpx;
+  border-radius: 21rpx;
+  line-height: 42rpx;
+  text-align: center;
+  border: 1px solid #999999;
+  font-size: 26rpx;
+  color: #999999;
+  margin: 57rpx 0 0 292rpx;
+}
+
+.eva-text .ckpj image {
+  width: 28rpx;
+  height: 24rpx;
+  vertical-align: middle;
+  margin-right: 15rpx;
+  margin-top: -2rpx;
+}
+/*空页面*/
+.cart-kong{
+  width: 100%;
+  height: 100vh;
+}
+.cart-kong>image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 300rpx 225rpx 30rpx 225rpx;
+}
+.cart-kong>view:nth-child(2){
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+.cart-kong>view:last-child{
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 15rpx;
+  text-align: center;
+}

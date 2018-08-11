@@ -1,0 +1,25 @@
+<!--pages/about/about.wxml-->
+<view class="about">
+	<view class="about-title">油盐酱醋茶</view>
+	<view class="about-nr">
+		<view class="about-n-item">
+			<view>客服电话：</view>
+			<view class="arrow1">0371-0982356</view>
+		</view>
+		<view class="about-n-item">
+			<view>在线客服：</view>
+			<view class="arrow1">155455222</view>
+		</view>
+		<view class="about-n-item">
+			<view>邮箱：</view>
+			<view>1202452005@qq.com</view>
+		</view>
+		<view class="about-n-item">
+			<view>版权信息：</view>
+			<view>Copyright © 2018 ramicalschool1</view>
+		</view>
+		<view class="about-jian">
+			<view><text>小程序简介：</text>小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介</view>
+		</view>
+	</view>
+</view>

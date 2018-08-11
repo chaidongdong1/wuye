@@ -1,0 +1,305 @@
+<!--index.wxml-->
+<view class="index">
+  <!-- top -->
+  <view class="index-top">
+    <!-- 定位底部的图片 -->
+    <view class="index-top-image">
+      <image src="../../images/index-top.jpg"></image>
+    </view>
+    <!-- 定位图片上面的内容 -->
+    <view class="index-top-wz">
+      <view>某某小区物业</view>
+      <view>贴心改变生活，用心创造价值。</view>
+      <!-- 搜索 -->
+      <view class="index-sou">
+        <input type="text" name="" placeholder="请输入您想要的商品名称" placeholder-style="font-size:28rpx;color:#ccc;" />
+        <view>
+          <image src="../../images/index-sou.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 公告快讯 -->
+  <view class="gong">
+    <!-- 公告左侧 -->
+    <view class="gong-left">
+      <image src="../../images/index-gonggao.png"></image>
+    </view>
+    <!-- 公告右侧 -->
+    <view class="gong-right">
+      <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000" duration="500" display-multiple-items="2">
+        <block wx:for="{{notice}}" wx:key="{{index}}">
+          <swiper-item class="swiper_item">
+            <view class="swiper_item1">{{item}}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <!-- 精品商城 -->
+  <view class="shang">
+    <view class="shang-item">
+      <image src="../../images/index-01.png"></image>
+      <view>精品商城</view>
+    </view>
+    <view class="shang-item">
+      <image src="../../images/index-02.png"></image>
+      <view>在线报修</view>
+    </view>
+  </view>
+  <!-- 我的报修 -->
+  <view class="xiu">
+    <view class="xiu-top">
+      <view>我的报修</view>
+      <view>
+        <text></text>安排上门维修师傅</view>
+    </view>
+    <view class="xiu-bottom">
+      <view class="xiu-b-left">
+        <view>天然气</view>
+        <image src="../../images/index-bx.jpg"></image>
+      </view>
+      <view class="xiu-right">
+        <view>天然气管道有点跑味，想让物业换一个新的天然气管天然气管道有点跑味，想让物业换一个新的天然气管</view>
+        <view>报修时间：2018-06-20 12:36:20</view>
+        <view>联系电话：13298343196</view>
+      </view>
+    </view>
+  </view>
+  <!-- 社区活动 -->
+  <view class="you">
+    <view class="you-top">
+      <view>社区活动</view>
+      <view>更多
+        <image src="../../images/index-05.png"></image>
+      </view>
+    </view>
+    <!-- 优惠内容 -->
+    <view class="you-bottom">
+      <scroll-view scroll-x style="height: 100%;" scroll-left="scrollleft">
+        <view class="you-b-item">
+          <!-- 第一个优惠商品 -->
+          <view class="shequ">
+            <image src="../../images/sqhd.jpg"></image>
+            <view class="shequ-item">
+              <view>【社区活动】 传递爱心传递温暖大型活动心传递温暖大型活动</view>
+              <view>发布时间：2018.06.18 </view>
+              <view>去看看</view>
+            </view>
+          </view>
+          <!-- 第一个优惠商品 -->
+          <view class="shequ">
+            <image src="../../images/sqhd.jpg"></image>
+            <view class="shequ-item">
+              <view>【社区活动】 传递爱心传递温暖大型活动心传递温暖大型活动</view>
+              <view>发布时间：2018.06.18 </view>
+              <view>去看看</view>
+            </view>
+          </view>
+          <!-- 第一个优惠商品 -->
+          <view class="shequ">
+            <image src="../../images/sqhd.jpg"></image>
+            <view class="shequ-item">
+              <view>【社区活动】 传递爱心传递温暖大型活动心传递温暖大型活动</view>
+              <view>发布时间：2018.06.18 </view>
+              <view>去看看</view>
+            </view>
+          </view>
+          <!-- 第一个优惠商品 -->
+          <view class="shequ">
+            <image src="../../images/sqhd.jpg"></image>
+            <view class="shequ-item">
+              <view>【社区活动】 传递爱心传递温暖大型活动心传递温暖大型活动</view>
+              <view>发布时间：2018.06.18 </view>
+              <view>去看看</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 社区新闻 -->
+  <view class="index-news">
+    <view class="you-top">
+      <view>社区新闻</view>
+      <view>更多
+        <image src="../../images/index-05.png"></image>
+      </view>
+    </view>
+    <view class="news-item">
+      <!-- 第一条 -->
+      <view class="news-i-one">
+        <view>
+          <image src="../../images/news.jpg"></image>
+        </view>
+        <view class="news-one-right">
+          <view>争当“社区规划师”为老旧小区添活力争当“社区规划师”为老旧小区添活力争当“社区规划师”为老旧小区添活力</view>
+          <view>社区新闻</view>
+          <view>
+            <view>2018-07-5</view>
+            <text>查看详情>></text>
+          </view>
+        </view>
+      </view>
+      <!-- 第一条 -->
+      <view class="news-i-one">
+        <view>
+          <image src="../../images/news.jpg"></image>
+        </view>
+        <view class="news-one-right">
+          <view>争当“社区规划师”为老旧小区添活力</view>
+          <view>社区新闻</view>
+          <view>
+            <view>2018-07-5</view>
+            <text>查看详情>></text>
+          </view>
+        </view>
+      </view>
+      <!-- 第一条 -->
+      <view class="news-i-one">
+        <view>
+          <image src="../../images/news.jpg"></image>
+        </view>
+        <view class="news-one-right">
+          <view>争当“社区规划师”为老旧小区添活力</view>
+          <view>社区新闻</view>
+          <view>
+            <view>2018-07-5</view>
+            <text>查看详情>></text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 商城活动 -->
+  <view class="you">
+    <view class="you-top">
+      <view>商城活动</view>
+      <view>更多
+        <image src="../../images/index-05.png"></image>
+      </view>
+    </view>
+    <!-- 优惠内容 -->
+    <view class="you-bottom">
+      <scroll-view scroll-x style="height: 100%;" scroll-left="scrollleft">
+        <view class="you-b-item">
+          <!-- 第一个优惠商品 -->
+          <view class="you-nei">
+            <image src="../../images/index-03.jpg"></image>
+            <view class="you-n-title">
+              <image src="../../images/index-04.png"></image>
+              <view>华联超市全场水果蔬菜一律八折，更有好礼相送华联超市全场水果蔬菜一律八折，更有好礼相送</view>
+            </view>
+            <view class="you-n-huo">活动时间：2018-06-18—2018-06-24</view>
+          </view>
+          <!-- 第一个优惠商品 -->
+          <view class="you-nei">
+            <image src="../../images/index-03.jpg"></image>
+            <view class="you-n-title">
+              <image src="../../images/index-04.png"></image>
+              <view>华联超市全场水果蔬菜一律八折，更有好礼相送华联超市全场水果蔬菜一律八折，更有好礼相送</view>
+            </view>
+            <view class="you-n-huo">活动时间：2018-06-18—2018-06-24</view>
+          </view>
+          <!-- 第一个优惠商品 -->
+          <view class="you-nei">
+            <image src="../../images/index-03.jpg"></image>
+            <view class="you-n-title">
+              <image src="../../images/index-04.png"></image>
+              <view>华联超市全场水果蔬菜一律八折，更有好礼相送华联超市全场水果蔬菜一律八折，更有好礼相送</view>
+            </view>
+            <view class="you-n-huo">活动时间：2018-06-18—2018-06-24</view>
+          </view>
+          <!-- 第一个优惠商品 -->
+          <view class="you-nei">
+            <image src="../../images/index-03.jpg"></image>
+            <view class="you-n-title">
+              <image src="../../images/index-04.png"></image>
+              <view>华联超市全场水果蔬菜一律八折，更有好礼相送华联超市全场水果蔬菜一律八折，更有好礼相送</view>
+            </view>
+            <view class="you-n-huo">活动时间：2018-06-18—2018-06-24</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 热销商品 -->
+  <view class="rexiao">
+    <view class="you-top">
+      <view>热销商品</view>
+      <view>更多
+        <image src="../../images/index-05.png"></image>
+      </view>
+    </view>
+    <!-- 内容 -->
+    <view class="re-chan">
+      <!-- 第一个商品 -->
+      <view class="re-c-one">
+        <image src="../../images/index-06.jpg"></image>
+        <view>￥12.99</view>
+      </view>
+      <!-- 第一个商品 -->
+      <view class="re-c-one">
+        <image src="../../images/index-06.jpg"></image>
+        <view>￥12.99</view>
+      </view>
+      <!-- 第一个商品 -->
+      <view class="re-c-one">
+        <image src="../../images/index-06.jpg"></image>
+        <view>￥12.99</view>
+      </view>
+    </view>
+  </view>
+  <!-- 新品推荐 -->
+  <view class="xin">
+    <view class="you-top">
+      <view>新品推荐</view>
+      <view>更多
+        <image src="../../images/index-05.png"></image>
+      </view>
+    </view>
+    <!-- 内容 -->
+    <view class="xin-nei">
+      <!-- 第一件商品 -->
+      <view class="xin-n-one">
+        <image src="../../images/mall-08.jpg"></image>
+        <view>超市精品方便面超市精品方便面超品方便</view>
+        <view>销量：800件</view>
+        <view>
+          <view>特步</view>
+          <view>￥800.00</view>
+        </view>
+      </view>
+      <!-- 第一件商品 -->
+      <view class="xin-n-one">
+        <image src="../../images/mall-08.jpg"></image>
+        <view>超市精品方便面超市精品方便面超品方便</view>
+        <view>销量：800件</view>
+        <view>
+          <view>耐克</view>
+          <view>￥800.00</view>
+        </view>
+      </view>
+      <!-- 第一件商品 -->
+      <view class="xin-n-one">
+        <image src="../../images/mall-08.jpg"></image>
+        <view>超市精品方便面超市精品方便面超品方便</view>
+        <view>销量：800件</view>
+        <view>
+          <view>特步特步特步</view>
+          <view>￥800.00</view>
+        </view>
+      </view>
+      <!-- 第一件商品 -->
+      <view class="xin-n-one">
+        <image src="../../images/mall-08.jpg"></image>
+        <view>超市精品方便面超市精品方便面超品方便</view>
+        <view>销量：800件</view>
+        <view>
+          <view>特步特步特步</view>
+          <view>￥80000.00</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

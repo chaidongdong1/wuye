@@ -1,0 +1,84 @@
+<!--pages/repairs/repairs.wxml-->
+<view class="rep">
+  <!-- 定位背景 -->
+  <view class="rep-bei">
+    <image src="../../images/rep-01.jpg"></image>
+  </view>
+  <!-- 定位内容 -->
+  <view class="rep-ding">
+    <!-- 报修标题 -->
+    <view class="rep-top">
+      <image src="../../images/rep-02.png"></image>
+      <view class="rep-t-wz">
+        <image src="../../images/rep-03.png"></image>
+        <view>在线报修</view>
+        <image src="../../images/rep-06.png"></image>
+      </view>
+    </view>
+    <!-- 报修内容 -->
+    <view class="rep-xiu">
+      <!-- 问题类型 -->
+      <view class="rep-x-type">
+        <view class="type-top">问题类型
+          <text>(你想报修的问题类型)</text>
+        </view>
+        <view class="type-xuan">
+          <view class="type-dibu">
+            <view></view>
+            <image src="../../images/my-04.png"></image>
+          </view>
+          <!-- 请选择类型 -->
+          <view class="type-mz">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <view class="picker">{{array[index]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <!-- 描述问题 -->
+      <view class="rep-text">
+      	<view class="type-top">描述问题
+          <text>(你想报修的问题详情)</text>
+        </view>
+        <textarea class="rep-text-nr" placeholder="请补充详细问题"></textarea>
+      </view>
+      <!-- 添加图片 -->
+      <view class="rep-tu">
+      	<view class="type-top">请提供相关照片<text>(添加图片)</text></view>
+      	<view class="rep-pai">
+      		<image src="../../images/rep-03.jpg"></image>
+      		<image src="../../images/rep-03.jpg"></image>
+      		<image src="../../images/rep-03.jpg"></image>
+      	</view>
+      </view>
+      <!-- 我的地址 -->
+      <view class="rep-address">
+      	<view class="type-top">我的地址</view>
+				<!-- 未填写 -->
+				<view class="rep-add-wei">
+					<image src="../../images/rep-04.png"></image>
+					<view>请点击填写你的地址,谢谢合作！</view>
+				</view>
+				<!-- 已填写 -->
+				<view class="rep-add-yx">
+					<view class="rep-add-image">
+						<image src="../../images/rep-05.png"></image>
+					</view>
+					<view class="yixie-nr">
+						<view class="yixie-name">
+							<view>姓名：成东东</view>
+							<view>手机号：11533338888</view>
+						</view>
+						<view>地址：小区16号楼5楼511室</view>
+					</view>
+				</view>
+      </view>
+      <!-- 提交按钮 -->
+      <view class="rep-anniu">
+      	<button>提交</button>
+      </view>
+    </view>
+  </view>
+  <!-- 某某物业 -->
+  <view class="rep-wuye">—— 某某物业提供服务 ——</view>
+</view>

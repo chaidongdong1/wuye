@@ -1,0 +1,78 @@
+<!--pages/orderSubmit/orderSubmit.wxml-->
+<view class="submit">
+  <!-- 未添加地址 -->
+  <!-- <view class="sub-top">
+		<view><image src="../../images/submit-01.png"></image></view>
+		<view>添加收货地址</view>
+		<view><image src="../../images/index-05.png"></image></view>
+	</view> -->
+  <!-- 添加过地址 -->
+  <view class="sub-address">
+    <view>
+      <image src="../../images/a_dingwei.png"></image>
+    </view>
+    <view class="sub-a-nr">
+      <view>
+        <view>姓名：柴冬冬</view>
+        <view>手机号：13298343196</view>
+      </view>
+      <view>地址：金水区豫博大厦西塔0511室</view>
+    </view>
+    <view>
+      <image src="../../images/my-04.png"></image>
+    </view>
+  </view>
+  <view class="sub-address-image">
+    <image src="../../images/address-bottom.png"></image>
+  </view>
+  <!-- 商品 -->
+  <view class="order-l-one">
+    <!-- top -->
+    <view class="order-one-top">
+      <image src="../../images/cart-03.png"></image>
+      <view>某某店铺
+        <text class="arrow1"></text>
+      </view>
+    </view>
+    <!-- 商品 -->
+    <view class="order-shop">
+      <!-- 第一件商品 -->
+      <view class="order-s-one">
+        <view>
+          <image src="../../images/mall-08.jpg"></image>
+        </view>
+        <view class="order-shop-nr">
+          <view>新西兰进口皇后红玫瑰苹果新西兰进口皇后红玫瑰苹果新西兰进口皇后红玫瑰苹果新西兰进口皇后红玫瑰苹果 12个装 一级果</view>
+          <view>规格：500ml 口味：原味 数量：x2</view>
+          <view>￥800.00</view>
+        </view>
+      </view>
+      <!-- 第一件商品 -->
+      <view class="order-s-one">
+        <view>
+          <image src="../../images/mall-08.jpg"></image>
+        </view>
+        <view class="order-shop-nr">
+          <view>新西兰进口皇后红玫瑰苹果新西兰进口皇后红玫瑰苹果新西兰进口皇后红玫瑰苹果新西兰进口皇后红玫瑰苹果 12个装 一级果</view>
+          <view>规格：500ml 口味：原味 数量：x2</view>
+          <view>￥800.00</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 快递费用 -->
+  <view class="sub-kd">
+  	<view>快递费用</view>
+  	<view>￥2.00</view>
+  </view>
+  <!-- 备注 -->
+  <view class="sub-bz">
+  	<view>商品备注<text>(选填)</text></view>
+  	<textarea placeholder="请输入您的备注信息，谢谢合作"></textarea>
+  </view>
+  <!-- 提交 -->
+  <view class="sub-tj">
+  	<view>合计：<text>￥1602.00</text></view>
+  	<view>提交订单</view>
+  </view>
+</view>

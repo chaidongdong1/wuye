@@ -1,0 +1,82 @@
+.add-address {
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+
+.add-list {
+  padding-bottom: 20rpx;
+}
+
+.name, .phone, .village, .message {
+  display: flex;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.name text, .phone text, .village text, .message text {
+  font-size: 28rpx;
+  color: #333;
+  margin-right: 20rpx;
+}
+
+.name input, .phone input, .village input, .message input {
+  font-size: 24rpx;
+  color: #333;
+  flex: 1;
+  height: 92rpx;
+  line-height: 92rpx;
+}
+
+.default {
+  width: 200rpx;
+  display: flex;
+  font-size: 24rpx;
+  justify-content: space-between;
+  padding: 30rpx 0 10rpx 0;
+}
+
+.default-wei {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 1px solid #c9c9c9;
+}
+
+/*添加新地址*/
+
+.addnew {
+  width: 100%;
+  height: 80rpx;
+  margin-top: 50rpx;
+}
+
+.addanniu {
+  height: 75rpx;
+  background: linear-gradient(0deg, #f34a51 0%, #ff9a44 100%),
+                linear-gradient(#06b5fe, #06b5fe);
+  /* 标准的语法 */
+  line-height: 75rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  margin: 20rpx 24rpx;
+  font-size: 28rpx;
+  color: white;
+}
+
+.addanniu span {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: white;
+  margin-right: 1rpx;
+}
+
+.addres-xz {
+  flex: 1;
+}
+
+.picker {
+  font-size: 24rpx;
+  color: #333;
+}

@@ -1,0 +1,64 @@
+<view class="shops">
+  <view class="activelist">
+    <view class="active-nr">
+      <view class="active-img">
+        <image src="../../images/a_huodong.jpg"></image>
+      </view>
+      <view class="active-wz">
+        <view>
+          <image src="../../images/a_cuxiao.jpg"></image>华联超市全场水果蔬菜一律八折，更有好礼相送菜一律八折，更有好礼相
+        </view>
+        <view>活动时间 : 2018.06.18-2018.06.24</view>
+        <view>去看看 ></view>
+      </view>
+    </view>
+  </view>
+  <view class="activelist">
+    <view class="active-nr">
+      <view class="active-img">
+        <image src="../../images/a_huodong.jpg"></image>
+      </view>
+      <view class="active-wz">
+        <view>
+          <image src="../../images/a_cuxiao.jpg"></image>华联超市全场水果蔬菜一律八折，更有好礼相送
+        </view>
+        <view>活动时间 : 2018.06.18-2018.06.24</view>
+        <view>去看看 ></view>
+      </view>
+    </view>
+  </view>
+  <view class="activelist">
+    <view class="active-nr">
+      <view class="active-img">
+        <image src="../../images/a_huodong.jpg"></image>
+      </view>
+      <view class="active-wz">
+        <view>
+          <image src="../../images/a_cuxiao.jpg"></image>华联超市全场水果蔬菜一律八折，更有好礼相送
+        </view>
+        <view>活动时间 : 2018.06.18-2018.06.24</view>
+        <view>去看看 ></view>
+      </view>
+    </view>
+  </view>
+  <view class="activelist">
+    <view class="active-nr">
+      <view class="active-img">
+        <image src="../../images/a_huodong.jpg"></image>
+      </view>
+      <view class="active-wz">
+        <view>
+          <image src="../../images/a_cuxiao.jpg"></image>华联超市全场水果蔬菜一律八折，更有好礼相送
+        </view>
+        <view>活动时间 : 2018.06.18-2018.06.24</view>
+        <view>去看看 ></view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 空页面-->
+<view class="cart-kong" wx:if="{{shops}}">
+  <image src="../../images/adingdan.png"></image>
+  <view>暂无活动</view>
+  <view>~ 活动列表为空呦! ~</view>
+</view>

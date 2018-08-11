@@ -1,0 +1,112 @@
+/* pages/brand/brand.wxss */
+
+.brand {
+  width: 100%;
+  height: auto;
+}
+
+.brand-fl {
+  width: 702rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  background: #fff;
+  padding: 30rpx 24rpx;
+  display: flex;
+}
+
+.brand-fl>view:first-child {
+  width: 35rpx;
+  height: 35rpx;
+  margin: 3rpx 15rpx 0 0;
+}
+
+.brand-fl>view:first-child>image {
+  width: 100%;
+  height: 100%;
+}
+
+.brand-fl>view:nth-child(2) {
+  font-size: 28rpx;
+  color: #333;
+  margin-right: 20rpx;
+}
+
+.brand-fl>view:nth-child(3) {
+  flex: 1;
+  font-size: 24rpx;
+  color: #999;
+  text-align: right;
+}
+
+.brand-fl>view:last-child {
+  width: 15rpx;
+  height: 20rpx;
+  margin-left: 10rpx;
+}
+
+.brand-fl>view:last-child>image {
+  width: 100%;
+  height: 100%;
+}
+
+.brand-list {
+  width: 702rpx;
+  height: auto;
+  margin: 20rpx 24rpx 0 24rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.list-one {
+  width: 280rpx;
+  height: 100rpx;
+  background: #fff;
+  display: flex;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.list-one>view:first-child {
+  width: 140rpx;
+  height: 100rpx;
+  border-right: 1px solid #e6e6e6;
+}
+
+.list-one>view:first-child>image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.list-one>view:last-child {
+  width: 120rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 20rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*空页面*/
+.cart-kong{
+  width: 100%;
+}
+.cart-kong>image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 300rpx 225rpx 30rpx 225rpx;
+}
+.cart-kong>view:nth-child(2){
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+.cart-kong>view:last-child{
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 15rpx;
+  text-align: center;
+}

@@ -1,0 +1,53 @@
+page{
+	background: #F0F0F0;
+}
+.notice{
+	width: 100%;
+	height: auto;
+}
+.noticelist{
+	width: 100%;
+	height: auto;
+	background: #fff;
+	margin-bottom: 30rpx;
+}
+.list-xq{
+	padding-bottom: 35rpx;
+}
+.list-xq view:first-child{
+	font-size: 32rpx;
+	padding: 30rpx 0 27rpx 0;
+	color: #000;
+}
+.list-xq view:nth-child(2){
+	font-size: 26rpx;
+	line-height: 37rpx;
+	color: #999;
+	margin-bottom: 21rpx;
+}
+.list-xq view:last-child text{
+	font-size: 24rpx;
+	color: #ccc;
+	margin-right: 46rpx;
+}
+/*空页面*/
+.cart-kong{
+  width: 100%;
+  height: 100vh;
+}
+.cart-kong>image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 300rpx 225rpx 30rpx 225rpx;
+}
+.cart-kong>view:nth-child(2){
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+.cart-kong>view:last-child{
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 15rpx;
+  text-align: center;
+}

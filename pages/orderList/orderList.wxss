@@ -1,0 +1,197 @@
+/* pages/orderList/orderList.wxss */
+
+.order {
+  width: 100%;
+  height: auto;
+}
+
+.order-top {
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: #fff;
+  margin-bottom: 40rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-top>view {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+  text-align: center;
+  margin: 0 20rpx;
+}
+
+.order-t-active {
+  font-size: 28rpx;
+  color: #f00;
+  border-bottom: 4rpx solid #f00;
+}
+
+.order-list {
+  width: 100%;
+  height: auto;
+}
+
+.order-l-one {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  margin-bottom: 30rpx;
+}
+
+.order-one-top {
+  width: 100%;
+  height: 94rpx;
+  line-height: 94rpx;
+  border-bottom: 1px solid #eee;
+  display: flex;
+}
+
+.order-one-top>image {
+  width: 30rpx;
+  height: 30rpx;
+  margin: 32rpx 20rpx 32rpx 24rpx;
+}
+
+.order-one-top>view:nth-child(2) {
+  flex: 1;
+  font-size: 30rpx;
+  color: #333;
+  display: flex;
+}
+
+.order-one-top>view:nth-child(2)>text {
+  padding-left: 20rpx;
+}
+
+.order-one-top>view:last-child {
+  font-size: 30rpx;
+  color: #e4393c;
+  margin-right: 24rpx;
+}
+
+.order-shop {
+  width: 702rpx;
+  height: auto;
+  margin: 20rpx 24rpx;
+  background: #f5f2f2;
+}
+
+.order-s-one {
+  width: 664rpx;
+  height: 180rpx;
+  padding: 20rpx 20rpx 0 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.order-s-one:last-child{
+	padding-bottom: 20rpx;
+}
+
+.order-s-one>view:first-child {
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 25rpx;
+}
+
+.order-s-one>view:first-child>image {
+  width: 100%;
+  height: 100%;
+}
+
+.order-shop-nr {
+  flex: 1;
+}
+
+.order-shop-nr>view:first-child {
+  width: 100%;
+  height: 64rpx;
+  line-height: 32rpx;
+  font-size: 28rpx;
+  color: #333;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.order-shop-nr>view:nth-child(2) {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 20rpx;
+}
+
+.order-shop-nr>view:last-child {
+  font-size: 30rpx;
+  color: #df273f;
+  margin-top: 25rpx;
+}
+.order-hj{
+	width: 100%;
+	height: 88rpx;
+	line-height: 88rpx;
+	display: flex;
+	justify-content: space-between;
+	border-top: 1px solid #eee;
+}
+.order-hj>view:first-child{
+	flex: 1;
+	padding:0 24rpx;
+	font-size: 24rpx;
+	color: #999;
+}
+.order-hj>view:first-child>text{
+	font-size: 28rpx;
+	color: #df273f;
+}
+.order-hj-anniu{
+	width: 370rpx;
+	height: 100%;
+	display: flex;
+}
+.order-hj-hui{
+	width: 160rpx;
+	height: 48rpx;
+	line-height: 48rpx;
+	border:1px solid #999;
+	font-size: 24rpx;
+	color: #999;
+	text-align: center;
+	border-radius: 25rpx;
+	margin-right: 20rpx;
+	margin-top: 20rpx;
+}
+.order-hj-red{
+	width: 160rpx;
+	height: 48rpx;
+	line-height: 48rpx;
+	border:1px solid #ff0000;
+	font-size: 24rpx;
+	color: #ff0000;
+	text-align: center;
+	border-radius: 25rpx;
+	margin-right: 24rpx;
+	margin-top: 20rpx;
+}
+/*空页面*/
+.cart-kong{
+  width: 100%;
+}
+.cart-kong>image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 300rpx 225rpx 30rpx 225rpx;
+}
+.cart-kong>view:nth-child(2){
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+.cart-kong>view:last-child{
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 15rpx;
+  text-align: center;
+}

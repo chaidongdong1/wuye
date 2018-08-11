@@ -1,0 +1,102 @@
+<!--pages/my/my.wxml-->
+<view class="my">
+	<!-- 头部 -->
+	<view class="my-top">
+		<!-- 底部背景 -->
+		<view class="my-t-back">
+			<image src="../../images/my-01.jpg"></image>
+		</view>
+		<!-- 个人信息 -->
+		<view class="my-t-nr">
+			<view><image src="../../images/my-02.jpg"></image></view>
+			<view>别离开</view>
+			<view class="my-t-jf">
+				<image src="../../images/my-03.png"></image>
+				<view>我的积分：59666 </view>
+			</view>
+		</view>
+		<!-- 订单 -->
+		<view class="my-order">
+			<!-- 订单头部 -->
+			<view class="order-top">
+				<view>全部订单</view>
+				<view>
+					<view>查看所有订单</view>
+					<image src="../../images/my-04.png"></image>
+				</view>
+			</view>
+			<!-- 订单分类 -->
+			<view class="order-bottom">
+				<!-- 第一个 -->
+				<view class="order-b-one">
+					<image src="../../images/my-05.png"></image>
+					<view>待付款</view>
+				</view>
+				<!-- 第一个 -->
+				<view class="order-b-one">
+					<image src="../../images/my-06.png"></image>
+					<view>待发货</view>
+				</view>
+				<!-- 第一个 -->
+				<view class="order-b-one">
+					<image src="../../images/my-07.png"></image>
+					<view>配送中</view>
+				</view>
+				<!-- 第一个 -->
+				<view class="order-b-one">
+					<image src="../../images/my-08.png"></image>
+					<view>已完成</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 分类 -->
+	<view class="my-fen">
+		<!-- 第一个 -->
+		<view class="my-f-one">
+			<image src="../../images/my-b-01.png"></image>
+			<view>地址管理</view>
+		</view>
+		<!-- 第一个 -->
+		<view class="my-f-one">
+			<image src="../../images/my-b-02.png"></image>
+			<view>我的报修</view>
+		</view>
+		<!-- 第一个 -->
+		<view class="my-f-one">
+			<image src="../../images/my-b-03.png"></image>
+			<view>积分明细</view>
+		</view>
+		<!-- 第一个 -->
+		<view class="my-f-one">
+			<image src="../../images/my-b-04.png"></image>
+			<view>店铺收藏</view>
+		</view>
+		<!-- 第一个 -->
+		<view class="my-f-one">
+			<image src="../../images/my-b-11.png"></image>
+			<view>商城活动</view>
+		</view>
+		<!-- 第一个 -->
+		<view class="my-f-one">
+			<image src="../../images/my-b-05.png"></image>
+			<view>公告快讯</view>
+		</view>
+		<!-- 第一个 -->
+		<view class="my-f-one my-f-border">
+			<image src="../../images/my-b-09.png"></image>
+			<view>社区活动</view>
+		</view>
+		<!-- 第一个 -->
+		<view class="my-f-one my-f-border">
+			<image src="../../images/my-b-10.png"></image>
+			<view>社区新闻</view>
+		</view>
+		<!-- 第一个 -->
+		<view class="my-f-one my-f-border">
+			<image src="../../images/my-b-08.png"></image>
+			<view>关于我们</view>
+		</view>
+	</view>
+</view>
+<view class="zhichi">—— 技术支持：宏略科技 ——</view>

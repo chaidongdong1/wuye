@@ -1,0 +1,36 @@
+<view class="shops">
+  <view class="activelist">
+    <view class="active-nr">
+      <view class="active-img">
+        <image src="../../images/sqhd.jpg"></image>
+      </view>
+      <view class="active-wz">
+        <view>
+          【社区活动】传递爱心传递温暖大型活动传递爱心传递温暖大型活动传递爱心传递温暖大型活动
+        </view>
+        <view>发布时间 : 2018.06.18-2018.06.24</view>
+        <view>去看看 ></view>
+      </view>
+    </view>
+  </view>
+  <view class="activelist">
+    <view class="active-nr">
+      <view class="active-img">
+        <image src="../../images/sqhd.jpg"></image>
+      </view>
+      <view class="active-wz">
+        <view>
+          【社区活动】传递爱心传递温暖大型活动传递爱心传递温暖大型活动传递爱心传递温暖大型活动
+        </view>
+        <view>发布时间 : 2018.06.18-2018.06.24</view>
+        <view>去看看 ></view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 空页面-->
+<view class="cart-kong" wx:if="{{shops}}">
+  <image src="../../images/adingdan.png"></image>
+  <view>暂无活动</view>
+  <view>~ 活动列表为空呦! ~</view>
+</view>

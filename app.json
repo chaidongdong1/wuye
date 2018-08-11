@@ -1,0 +1,69 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/integral/integral",
+    "pages/about/about",
+    "pages/comNews/comNews",
+    "pages/community/community",
+    "pages/my/my",
+    "pages/activelist/activelist",
+    "pages/shopcollect/shopcollect",
+    "pages/shoplist/shoplist",
+    "pages/evaluatelist/evaluatelist",
+    "pages/evaluate/evaluate",
+    "pages/noticelist/noticelist",
+    "pages/address/address",
+    "pages/brand/brand",
+    "pages/orderList/orderList",
+    "pages/seek/seek",
+    "pages/repList/repList",
+    "pages/mall/mall",
+    "pages/orderDetails/orderDetails",
+    "pages/orderRefund/orderRefund",
+    "pages/orderSubmit/orderSubmit",
+    "pages/shopDetails/shopDetails",
+    "pages/malldetails/malldetails",
+    "pages/repevaluate/repevaluate",
+    "pages/noticedetails/noticedetails",
+    "pages/add-address/add-address",
+    "pages/submitevaluate/submitevaluate",
+    "pages/repDetails/repDetails",
+    "pages/cart/cart",
+    "pages/repairs/repairs",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#F34A51",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F34A51",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath":"images/index.png",
+      "selectedIconPath":"images/index-hover.png"
+    }, {
+      "pagePath": "pages/cart/cart",
+      "text": "购物车",
+      "iconPath":"images/cart.png",
+      "selectedIconPath":"images/cart-hover.png"
+    },{
+      "pagePath": "pages/repairs/repairs",
+      "text": "报修",
+      "iconPath":"images/wuye.png",
+      "selectedIconPath":"images/wuye-hover.png"
+    },{
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath":"images/my.png",
+      "selectedIconPath":"images/my-hover.png"
+    }],
+    "color":"#666",
+    "selectedColor":"#f34a51",
+    "borderStyle":"black",
+    "backgroundColor":"#fff",
+    "position":"bottom"
+  }
+}

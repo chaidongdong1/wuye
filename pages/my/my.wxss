@@ -1,0 +1,190 @@
+/* pages/my/my.wxss */
+
+.my {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20rpx;
+}
+
+.my-top {
+  width: 100%;
+  height: 500rpx;
+  position: relative;
+}
+
+.my-t-back {
+  width: 100%;
+  height: 100%;
+}
+
+.my-t-back>image {
+  width: 100%;
+  height: 100%;
+}
+
+.my-t-nr {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 60rpx;
+  left: 0;
+  z-index: 9999;
+}
+
+.my-t-nr>view:first-child {
+  width: 160rpx;
+  height: 160rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 5rpx solid #fff;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.my-t-nr>view:first-child>image {
+  width: 100%;
+  height: 100%;
+}
+
+.my-t-nr>view:nth-child(2) {
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  margin: 20rpx 0;
+}
+
+.my-t-jf {
+  width: 300rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  margin: 10rpx auto 0 auto;
+  background: #ff9a44;
+  box-shadow: 0px 2rpx 5rpx 0px rgba(171, 163, 158, 0.55);
+  border-radius: 25rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.my-t-jf>image {
+  width: 25rpx;
+  height: 25rpx;
+  margin: 10rpx 0;
+}
+
+.my-t-jf>view {
+  font-size: 24rpx;
+  color: #fff;
+  padding-left: 15rpx;
+}
+
+.my-order {
+  width: 702rpx;
+  height: 200rpx;
+  background: #fff;
+  border-radius: 10rpx 10rpx 0px 0px;
+  box-shadow: 0px 5rpx 5rpx 0px rgba(6, 0, 1, 0.24);
+  position: absolute;
+  top: 400rpx;
+  left: 24rpx;
+  z-index: 99999;
+}
+
+.order-top {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-top>view:first-child {
+  width: 200rpx;
+  height: 100%;
+  padding-left: 20rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.order-top>view:last-child {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.order-top>view:last-child>view {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.order-top>view:last-child>image {
+  width: 20rpx;
+  height: 30rpx;
+  margin: 20rpx 20rpx 20rpx 15rpx;
+}
+
+.order-bottom {
+  width: 100%;
+  height: 130rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-b-one {
+  flex: 1;
+  height: 100%;
+  text-align: center;
+}
+
+.order-b-one>image {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 25rpx auto 5rpx auto;
+}
+
+.order-b-one>view {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.my-fen {
+  width: 662rpx;
+  height: auto;
+  margin: 130rpx 24rpx 0 24rpx;
+  padding: 20rpx;
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+}
+.my-f-one{
+	width: 220rpx;
+	height: 220rpx;
+	border-top: 1px solid #f0f0f0;
+	border-left: 1px solid #f0f0f0;
+	box-sizing: border-box;
+}
+.my-f-one:nth-child(3n){
+	border-right: 1px solid #f0f0f0;
+}
+.my-f-border{
+	border-bottom: 1px solid #f0f0f0;
+	box-sizing: border-box;
+}
+.my-f-one>image{
+	width: 82rpx;
+	height: 82rpx;
+	margin: 48rpx 69rpx 20rpx 69rpx;
+}
+.my-f-one>view{
+	font-size: 24rpx;
+	color: #333;
+	text-align: center;
+}
+.zhichi{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 26rpx;
+  color: #ccc;
+  margin: 20rpx 0;
+}
