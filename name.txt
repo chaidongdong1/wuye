@@ -1,4 +1,5 @@
 首页                 pages/index/index
+引导页              pages/start/start
 购物车              pages/cart/cart
 在线报修          pages/repairs/repairs
 我的                 pages/my/my
@@ -10,6 +11,8 @@
 商城首页          pages/mall/mall
 店铺详情          pages/malldetails/malldetails
 商品详情          pages/shopDetails/shopDetails
+秒杀商品详情   pages/shopDetails1/shopDetails1
+秒杀确认订单   pages/orderSubmit1/orderSubmit1
 订单列表          pages/orderList/orderList
 订单详情          pages/orderDetails/orderDetails
 订单退款          pages/orderRefund/orderRefund
@@ -17,6 +20,11 @@
 社区活动          pages/community/community
 社区新闻          pages/comNews/comNews
 关于我们          pages/about/about
+搜索                 pages/seek/seek
+热销商品          pages/hotShop/hotShop
+新品推荐          pages/newShop/newShop
+品牌街商品       pages/brandShop/brandShop
+优惠秒杀          pages/seckill/seckill
 
 地址管理	pages/address/address
 添加地址  pages/add-address/add-address
@@ -27,4 +35,4 @@
 提交评价	pages/submitevaluate/submitevaluate
 店铺列表	pages/shoplist/shoplist
 店铺收藏	pages/shopcollect/shopcollect
-商城活动  pages/activelist/activelist
+店铺活动  pages/activelist/activelist

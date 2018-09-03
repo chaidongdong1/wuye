@@ -1,0 +1,128 @@
+<!--pages/shopDetais/shopDetails.wxml-->
+<loading wx:if="{{showLoading}}">加载中</loading>
+<view class="shop">
+  <!-- 商品轮播 -->
+  <view class="index-banner">
+    <swiper class="index-swiper" indicator-dots="true" indicator-active-color="#309EFD" autoplay="true" interval="5000" duration="1000" circular="true">
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{baseUrl}}{{item.goodsImg}}" class="index-banner-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 秒杀 -->
+    <view class="shop-miao">
+      <view>￥{{datas.panicMoney}}
+        <text>￥{{datas.shopPrice}}</text>
+      </view>
+      <view>仅剩余{{datas.goodsStock}}件</view>
+    </view>
+  </view>
+  <!-- 产品内容 -->
+  <view class="shop-title">
+    <view>{{datas.goodsName}}</view>
+    <view class="shop-t-jiage">
+      <!-- 秒杀产品 -->
+      <view class="shop-t-ms">
+        <view>
+          <text>限时秒杀</text>剩余时间 {{tiems}}</view>
+        <view>累计已秒杀{{datas.saleCnt}}件商品</view>
+      </view>
+      <!-- 分享 -->
+      <button class="shop-t-fenxiang" open-type="share">
+        <image src="../../images/shopdetails-01.png"></image>
+        <view>分享</view>
+      </button>
+    </view>
+    <view bindtap="bindtapMall" data-shopid="{{datas.shopId}}">
+      <view>店铺：进店逛逛</view>
+      <image src="../../images/index-05.png"></image>
+    </view>
+  </view>
+  <view class="shop-canshu">
+    <view style="display: flex;justify-content: space-between;">店铺运费：
+      <text style="color: #f00;">￥{{datas.deliveryMoney}}</text>
+    </view>
+  </view>
+  <view class="shop-canshu">
+    <view style="display: flex;justify-content: space-between;">赠送积分：
+      <text style="color: #f00;">{{!datas.setIntegral ? '0' : datas.setIntegral}} 积分</text></view>
+  </view>
+  <!-- 选择参数 -->
+  <view class="shop-canshu" bindtap="bindtapMasks">
+    <view>选择商品参数、数量</view>
+    <image src="../../images/index-05.png"></image>
+  </view>
+  <navigator class="shop-canshu" url="../evaluate/evaluate?goodsid={{datas.goodsId}}">
+    <view>评价
+      <text>({{datas.appraisesCnt}})</text>
+    </view>
+    <image src="../../images/index-05.png"></image>
+  </navigator>
+  <!-- 图文详情 -->
+  <view class="shop-xiang">
+    <view>图文详情</view>
+    <view>
+      <view class="{{swiperIndexs == 0 ? 'shop-x-active' : ''}}" bindtap="shopDetail">商品详情</view>
+      <view class="{{swiperIndexs == 1 ? 'shop-x-active' : ''}}" bindtap="shopSize">规格参数</view>
+    </view>
+    <!-- 详情内容 -->
+    <view class="shops-detail">
+      <view wx:if="{{swiperIndexs == 0}}">
+        <rich-text nodes="{{datas.goodsDesc}}"></rich-text>
+      </view>
+      <view wx:if="{{swiperIndexs == 1}}">
+        <view class="shop-guige" wx:for="{{specifications}}" wx:key="index">{{item.attrName}}：
+          <text>{{item.attrContent}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部栏 -->
+  <view class="shop-bottom">
+    <view class="shop-b-kefu" bindtap="bindtapMall" data-shopid="{{datas.shopId}}">
+      <image src="../../images/shopdetails-04.png"></image>
+      <view>店铺</view>
+    </view>
+    <view class="shop-b-kefu" bindtap="bindCats">
+      <image src="../../images/shopdetails-03.png"></image>
+      <view>购物车</view>
+    </view>
+    <view class="shop-b-goumai" bindtap="bindtapMasks">立即购买</view>
+  </view>
+</view>
+<!-- 弹窗 -->
+<view class="mask" style="opacity: {{mask.opacity}}; display: {{mask.display}};">
+  <view class="masks" bindtap="bindtapClose"></view>
+  <view class="mask-shop" style="transform: {{returnDeposit.translateY}}; opacity: {{returnDeposit.opacity}};">
+    <view class="mask-tp">
+      <image src="{{baseUrl}}{{datas.goodsThums}}"></image>
+      <view>￥{{datas.panicMoney}}</view>
+      <view>存货量：{{datas.goodsStock}}件</view>
+      <image bindtap="bindtapClose" src="../../images/shopdetails-05.png"></image>
+    </view>
+    <!-- 规格和口味 -->
+    <view class="mask-guige">
+      <!-- 口味 -->
+      <view class="mask-guige1" wx:for="{{attrs}}" wx:for-item="i" wx:key="i" wx:for-index="k">
+        <view>{{i.attrName}}</view>
+        <view class="mask-g-xuan">
+          <view class="{{curChoosedAttr[k] == index ? 'mask-active' : ''}}" wx:for="{{i.opts}}" wx:key="index" bindtap="bindGui" data-index="{{index}}" data-indexs="{{k}}">{{item}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 数量 -->
+    <view class="mask-number">
+      <view>数量</view>
+      <view>
+        <view bindtap="bindtapJian">-</view>
+        <veiw>{{numbers}}</veiw>
+        <view bindtap="bindtapJia">+</view>
+      </view>
+    </view>
+    <!-- 按钮 -->
+    <view class="mask-anniu">
+      <view bindtap='buy_now'>立即购买</view>
+    </view>
+  </view>
+</view>

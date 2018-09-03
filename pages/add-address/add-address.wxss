@@ -30,10 +30,11 @@
 }
 
 .default {
-  width: 200rpx;
+  width: auto;
+  height: 60rpx;
+  line-height: 60rpx;
   display: flex;
   font-size: 24rpx;
-  justify-content: space-between;
   padding: 30rpx 0 10rpx 0;
 }
 

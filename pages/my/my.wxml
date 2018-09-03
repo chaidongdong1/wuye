@@ -1,4 +1,5 @@
 <!--pages/my/my.wxml-->
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="my">
 	<!-- 头部 -->
 	<view class="my-top">
@@ -8,11 +9,11 @@
 		</view>
 		<!-- 个人信息 -->
 		<view class="my-t-nr">
-			<view><image src="../../images/my-02.jpg"></image></view>
-			<view>别离开</view>
-			<view class="my-t-jf">
+			<view><open-data type="userAvatarUrl"></open-data></view>
+			<view><open-data type="userNickName"></open-data></view>
+			<view class="my-t-jf" bindtap="bindIntegral">
 				<image src="../../images/my-03.png"></image>
-				<view>我的积分：59666 </view>
+				<view>我的积分：{{userScore}} </view>
 			</view>
 		</view>
 		<!-- 订单 -->
@@ -20,7 +21,7 @@
 			<!-- 订单头部 -->
 			<view class="order-top">
 				<view>全部订单</view>
-				<view>
+				<view bindtap="bintapOrder">
 					<view>查看所有订单</view>
 					<image src="../../images/my-04.png"></image>
 				</view>
@@ -28,75 +29,75 @@
 			<!-- 订单分类 -->
 			<view class="order-bottom">
 				<!-- 第一个 -->
-				<view class="order-b-one">
+				<navigator class="order-b-one" url="../orderList/orderList?nav=1">
 					<image src="../../images/my-05.png"></image>
-					<view>待付款</view>
-				</view>
+					<view>待付款({{datasNumber[0].cnt}})</view>
+				</navigator>
 				<!-- 第一个 -->
-				<view class="order-b-one">
-					<image src="../../images/my-06.png"></image>
-					<view>待发货</view>
-				</view>
-				<!-- 第一个 -->
-				<view class="order-b-one">
+				<navigator class="order-b-one" url="../orderList/orderList?nav=2">
 					<image src="../../images/my-07.png"></image>
-					<view>配送中</view>
-				</view>
+					<view>待收货({{datasNumber[1].cnt}})</view>
+				</navigator>
 				<!-- 第一个 -->
-				<view class="order-b-one">
+				<navigator class="order-b-one" url="../orderList/orderList?nav=3">
 					<image src="../../images/my-08.png"></image>
 					<view>已完成</view>
-				</view>
+				</navigator>
+				<!-- 第一个 -->
+				<navigator class="order-b-one" url="../orderList/orderList?nav=4">
+					<image src="../../images/my-06.png"></image>
+					<view>退款中({{datasNumber[2].cnt}})</view>
+				</navigator>
 			</view>
 		</view>
 	</view>
 	<!-- 分类 -->
 	<view class="my-fen">
 		<!-- 第一个 -->
-		<view class="my-f-one">
+		<navigator class="my-f-one" url="../address/address">
 			<image src="../../images/my-b-01.png"></image>
 			<view>地址管理</view>
-		</view>
+		</navigator>
 		<!-- 第一个 -->
-		<view class="my-f-one">
+		<navigator class="my-f-one" url="../repList/repList">
 			<image src="../../images/my-b-02.png"></image>
 			<view>我的报修</view>
-		</view>
+		</navigator>
 		<!-- 第一个 -->
-		<view class="my-f-one">
+		<navigator class="my-f-one" url="../integral/integral">
 			<image src="../../images/my-b-03.png"></image>
 			<view>积分明细</view>
-		</view>
+		</navigator>
 		<!-- 第一个 -->
-		<view class="my-f-one">
+		<navigator class="my-f-one" url="../shopcollect/shopcollect">
 			<image src="../../images/my-b-04.png"></image>
 			<view>店铺收藏</view>
-		</view>
+		</navigator>
 		<!-- 第一个 -->
-		<view class="my-f-one">
+		<navigator class="my-f-one" url="../activelist/activelist">
 			<image src="../../images/my-b-11.png"></image>
-			<view>商城活动</view>
-		</view>
+			<view>店铺活动</view>
+		</navigator>
 		<!-- 第一个 -->
-		<view class="my-f-one">
+		<navigator class="my-f-one" url="../noticelist/noticelist">
 			<image src="../../images/my-b-05.png"></image>
 			<view>公告快讯</view>
-		</view>
+		</navigator>
 		<!-- 第一个 -->
-		<view class="my-f-one my-f-border">
+		<navigator class="my-f-one my-f-border" url="../community/community">
 			<image src="../../images/my-b-09.png"></image>
 			<view>社区活动</view>
-		</view>
+		</navigator>
 		<!-- 第一个 -->
-		<view class="my-f-one my-f-border">
+		<navigator class="my-f-one my-f-border" url="../comNews/comNews">
 			<image src="../../images/my-b-10.png"></image>
 			<view>社区新闻</view>
-		</view>
+		</navigator>
 		<!-- 第一个 -->
-		<view class="my-f-one my-f-border">
+		<navigator class="my-f-one my-f-border" url="../about/about">
 			<image src="../../images/my-b-08.png"></image>
 			<view>关于我们</view>
-		</view>
+		</navigator>
 	</view>
 </view>
 <view class="zhichi">—— 技术支持：宏略科技 ——</view>

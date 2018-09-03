@@ -1,147 +1,100 @@
 <!--pages/mall/mall.wxml-->
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="mall">
   <!-- 头部轮播 -->
   <view class="mall-banner">
     <swiper class="mall-b-swiper" indicator-dots="true" autoplay="true" interval="4000" duration="1000" indicator-active-color="#F34A51" circular="true">
-      <block wx:for="{{imgUrls}}">
-        <swiper-item>
-          <image src="{{item}}" class="slide-image"/>
-        </swiper-item>
-      </block>
+      <swiper-item wx:for="{{imgUrls}}" wx:key="index">
+        <image src="{{baseUrl}}{{item.adFile}}" class="slide-image" />
+      </swiper-item>
     </swiper>
   </view>
   <!-- 搜索 -->
-  <view class="mall-sou">
-  	<view><image src="../../images/mall-02.png"></image></view>
-  	<view>搜索你喜欢的商品</view>
+  <view class="mall-sou" bindtap="bindtapSeek">
+    <view>
+      <image src="../../images/mall-02.png"></image>
+    </view>
+    <view>搜索你喜欢的商品</view>
   </view>
   <!-- 分类 -->
   <view class="mall-fen">
-  	<view class="mall-f-one">
-  		<image src="../../images/mall-03.png"></image>
-  		<view>自营超市</view>
-  	</view>
-  	<view class="mall-f-one">
-  		<image src="../../images/mall-04.png"></image>
-  		<view>优质店铺</view>
-  	</view>
-  	<view class="mall-f-one">
-  		<image src="../../images/mall-05.png"></image>
-  		<view>优惠秒杀</view>
-  	</view>
-  	<view class="mall-f-one">
-  		<image src="../../images/mall-06.png"></image>
-  		<view>品牌街</view>
-  	</view>
+    <view class="mall-f-one" bindtap="bindtapZiying">
+      <image src="../../images/mall-03.png"></image>
+      <view>自营超市</view>
+    </view>
+    <view class="mall-f-one" bindtap="bindtapShops">
+      <image src="../../images/mall-04.png"></image>
+      <view>优质店铺</view>
+    </view>
+    <view class="mall-f-one" bindtap="bindtapSeckill">
+      <image src="../../images/mall-05.png"></image>
+      <view>优惠秒杀</view>
+    </view>
+    <view class="mall-f-one" bindtap="bindtapBrand">
+      <image src="../../images/mall-06.png"></image>
+      <view>品牌街</view>
+    </view>
   </view>
   <!-- 小轮播图 -->
   <view class="mall-xbanner">
-  	<swiper class="mall-b-swiper" autoplay="true" interval="5000" duration="1000" circular="true">
-      <block wx:for="{{images}}">
-        <swiper-item>
-          <image src="{{item}}" class="slide-image"/>
-        </swiper-item>
-      </block>
+    <swiper class="mall-b-swiper" autoplay="true" interval="5000" duration="1000" circular="true">
+      <swiper-item wx:for="{{images}}" wx:key="index">
+        <image src="{{baseUrl}}{{item.adFile}}" class="slide-image" />
+      </swiper-item>
     </swiper>
   </view>
-	<!-- 优惠秒杀 -->
-	<view class="mall-yh">
-		<view class="you-top">
+  <!-- 优惠秒杀 -->
+  <view class="mall-yh" wx:if="{{!seckill || seckill.length != 0}}">
+    <view class="you-top">
       <view>优惠秒杀</view>
-      <view>更多
+      <view bindtap="bindtapSeckill">更多
         <image src="../../images/index-05.png"></image>
       </view>
     </view>
     <!-- 秒杀商品 -->
     <view class="youhui">
-    	<!-- 第一件 -->
-    	<view class="yh-one">
-    		<view><image src="../../images/mall-08.jpg"></image></view>
-    		<view class="yh-one-right">
-    			<view>新西兰进口皇后红玫瑰苹果12个装一级果新西兰进口皇后红玫瑰苹果12个装一级果</view>
-    			<view>剩余时间 1天23:56:52:15<text>已抢 235 件</text></view>
-    			<view class="yh-one-jia">
-    				<view>￥12.98<text>￥19.99</text></view>
-    				<view>马上抢></view>
-    			</view>
-    		</view>
-    	</view>
-    	<!-- 第一件 -->
-    	<view class="yh-one">
-    		<view><image src="../../images/mall-08.jpg"></image></view>
-    		<view class="yh-one-right">
-    			<view>新西兰进口皇后红玫瑰苹果12个装一级果新西兰进口皇后红玫瑰苹果12个装一级果</view>
-    			<view>剩余时间 23:56:52:15<text>已抢 235 件</text></view>
-    			<view class="yh-one-jia">
-    				<view>￥12.98<text>￥19.99</text></view>
-    				<view>马上抢></view>
-    			</view>
-    		</view>
-    	</view>
-    	<!-- 第一件 -->
-    	<view class="yh-one">
-    		<view><image src="../../images/mall-08.jpg"></image></view>
-    		<view class="yh-one-right">
-    			<view>新西兰进口皇后红玫瑰苹果12个装一级果新西兰进口皇后红玫瑰苹果12个装一级果</view>
-    			<view>剩余时间 23:56:52:15<text>已抢 235 件</text></view>
-    			<view class="yh-one-jia">
-    				<view>￥12.98<text>￥19.99</text></view>
-    				<view>马上抢></view>
-    			</view>
-    		</view>
-    	</view>
+      <!-- 第一件 -->
+      <view class="yh-one" wx:for="{{seckill}}" wx:key="index" bindtap="bindMiaosha" data-id="{{item.id}}">
+        <view>
+          <image src="{{baseUrl}}{{item.goodsThums}}"></image>
+        </view>
+        <view class="yh-one-right">
+          <view>{{item.goodsName}}</view>
+          <view>剩余时间 {{times[index]}}
+            <text>已抢 {{item.saleCnt}} 件</text>
+          </view>
+          <view class="yh-one-jia">
+            <view>￥{{item.panicMoney}}
+              <text>￥{{item.shopPrice}}</text>
+            </view>
+            <view>马上抢></view>
+          </view>
+        </view>
+      </view>
     </view>
-	</view>
+  </view>
   <!-- 新品推荐 -->
   <view class="xin">
     <view class="you-top">
       <view>新品推荐</view>
-      <view>更多
+      <view bindtap="bindtapNewMore">更多
         <image src="../../images/index-05.png"></image>
       </view>
     </view>
     <!-- 内容 -->
     <view class="xin-nei">
       <!-- 第一件商品 -->
-      <view class="xin-n-one">
-        <image src="../../images/mall-08.jpg"></image>
-        <view>超市精品方便面超市精品方便面超品方便</view>
-        <view>销量：800件</view>
+      <view class="xin-n-one" wx:for="{{newShop}}" wx:key="index" bindtap="bindtapNew" data-goodsid="{{item.goodsId}}">
+        <image src="{{baseUrl}}{{item.goodsImg}}"></image>
+        <view>{{item.goodsName}}</view>
+        <view>销量：{{item.saleCount}}件</view>
         <view>
-          <view>特步</view>
-          <view>￥800.00</view>
-        </view>
-      </view>
-      <!-- 第一件商品 -->
-      <view class="xin-n-one">
-        <image src="../../images/mall-08.jpg"></image>
-        <view>超市精品方便面超市精品方便面超品方便</view>
-        <view>销量：800件</view>
-        <view>
-          <view>耐克</view>
-          <view>￥800.00</view>
-        </view>
-      </view>
-      <!-- 第一件商品 -->
-      <view class="xin-n-one">
-        <image src="../../images/mall-08.jpg"></image>
-        <view>超市精品方便面超市精品方便面超品方便</view>
-        <view>销量：800件</view>
-        <view>
-          <view>特步特步特步</view>
-          <view>￥800.00</view>
-        </view>
-      </view>
-      <!-- 第一件商品 -->
-      <view class="xin-n-one">
-        <image src="../../images/mall-08.jpg"></image>
-        <view>超市精品方便面超市精品方便面超品方便</view>
-        <view>销量：800件</view>
-        <view>
-          <view>特步特步特步</view>
-          <view>￥80000.00</view>
+          <view>{{item.brandName}}</view>
+          <view>￥{{item.shopPrice}}</view>
         </view>
       </view>
     </view>
   </view>
+  <!-- 已加载全部 -->
+  <view class="index-qb" wx:if="{{currPage == totalPage && newShop.length != 0}}"> —— 别扯了，到底了 ——</view>
 </view>

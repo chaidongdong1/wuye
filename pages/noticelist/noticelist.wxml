@@ -1,27 +1,20 @@
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="notice">
-  <view class="noticelist">
+  <view class="noticelist" wx:for="{{datas}}" wx:key="index" data-articleid="{{item.articleId}}" bindtap="bindtapNews">
     <view class="list-xq pad24">
-      <view>标题</view>
-      <view>由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
+      <view>{{item.articleTitle}}</view>
+      <view>{{item.articleKey}}</view>
       <view>
-        <text>2018.06.18 12.36</text>
+        <text>{{item.createTime}}</text>
         <text>| 新闻公告</text>
       </view>
     </view>
   </view>
-  <view class="noticelist">
-    <view class="list-xq pad24">
-      <view>标题</view>
-      <view>由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
-      <view>
-        <text>2018.06.18 12.36</text>
-        <text>| 新闻公告</text>
-      </view>
-    </view>
-  </view>
+  <!-- 已加载全部 -->
+  <view class="index-qb" wx:if="{{currPage == totalPage && datas.length != 0}}"> —— 别扯了，到底了 ——</view>
 </view>
 <!-- 空页面-->
-<view class="cart-kong" wx:if="{{note}}">
+<view class="cart-kong" wx:if="{{!datas || datas.length == 0}}">
   <image src="../../images/axinxi.png"></image>
   <view>暂无公告</view>
   <view>~ 公告列表为空呦! ~</view>

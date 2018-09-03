@@ -64,7 +64,7 @@ page {
 }
 
 .address-btm .btm-l {
-  width: 150rpx;
+  width: 200rpx;
   display: flex;
   padding: 20rpx 0;
 }
@@ -136,7 +136,7 @@ page {
 /*空页面*/
 .cart-kong{
   width: 100%;
-  height: 100vh;
+  height: auto;
 }
 .cart-kong>image{
   width: 300rpx;

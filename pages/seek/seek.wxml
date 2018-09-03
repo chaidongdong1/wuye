@@ -1,153 +1,69 @@
 <!--pages/seek/seek.wxml-->
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="seek">
   <!-- 输入框 -->
   <view class="seek-top">
-    <input type="text" name="" placeholder="请输入您想要搜索的商品、店铺、品牌" placeholder-style="color:#999;" />
-    <view class="seek-t-right">
+    <input type="text" name="" bindinput="bindInput" value="{{inputValue}}" focus="true" placeholder="请输入您想要搜索的内容" placeholder-style="color:#999;" />
+    <view class="seek-t-right" bindtap="bindtapSeek">
       <image src="../../images/seek-01.png"></image>
       <view>搜索</view>
     </view>
   </view>
   <!-- 热搜 -->
-  <view class="seek-re"  wx:if="{{seek}}">
+  <view class="seek-re" wx:if="{{shopNone || !inputValue}}">
     <view>热搜</view>
     <view class="seek-re-list">
-      <view>瓜子</view>
-      <view>西瓜</view>
-      <view>牛肉</view>
-      <view>糖果</view>
-      <view>瓜子</view>
-      <view>西瓜</view>
-      <view>牛肉</view>
-      <view>糖果</view>
+      <view wx:for="{{hotSeek}}" wx:key="index" bindtap="bindtapHot" data-index="{{index}}">{{item}}</view>
     </view>
   </view>
   <!-- 历史搜索 -->
-  <view class="seek-history"  wx:if="{{seek}}">
+  <view class="seek-history" wx:if="{{(shopNone || !inputValue) && pastSeek.length != 0}}">
     <view class="seek-hi-title">
       <view>历史搜索</view>
-      <image src="../../images/cart-01.png"></image>
+      <image bindtap="bindtapDelete" src="../../images/cart-01.png"></image>
     </view>
     <view class="seek-hi-list">
-      <view>麦芽糖</view>
-      <view>麦芽糖</view>
-      <view>麦芽糖</view>
-      <view>麦芽糖</view>
-      <view>麦芽糖</view>
+      <view wx:for="{{pastSeek}}" wx:key="index" bindtap="bindtapPast" data-item="{{item}}">{{item}}</view>
     </view>
   </view>
   <!-- 搜索结果分类 -->
-  <view class="seek-sort" >
-    <view class="seek-s-active">商品</view>
-    <view>店铺</view>
-    <view>品牌</view>
+  <view class="seek-sort" wx:if="{{!shopNone && inputValue}}">
+    <view class="{{shopTitleIndex == index ? 'seek-s-active' : ''}}" wx:for="{{shopTitle}}" wx:key="index" bindtap="bindtapShopTitle" data-index="{{index}}">{{item}}</view>
   </view>
   <!-- 商品结果 -->
-  <view class="xin-nei" wx:if="{{seek}}">
+  <view class="xin-nei" wx:if="{{shopTitleIndex==0}}">
     <!-- 第一件商品 -->
-    <view class="xin-n-one">
-      <image src="../../images/mall-08.jpg"></image>
-      <view>超市精品方便面超市精品方便面超品方便</view>
-      <view>销量：800件</view>
+    <view class="xin-n-one" wx:for="{{shops}}" wx:key="index" bindtap="bindtapShopDetails" data-goodsid="{{item.goodsId}}">
+      <image src="{{baseUrl}}{{item.goodsImg}}"></image>
+      <view>{{item.goodsName}}</view>
       <view>
-        <view>特步</view>
-        <view>￥800.00</view>
-      </view>
-    </view>
-    <!-- 第一件商品 -->
-    <view class="xin-n-one">
-      <image src="../../images/mall-08.jpg"></image>
-      <view>超市精品方便面超市精品方便面超品方便</view>
-      <view>销量：800件</view>
-      <view>
-        <view>耐克</view>
-        <view>￥800.00</view>
-      </view>
-    </view>
-    <!-- 第一件商品 -->
-    <view class="xin-n-one">
-      <image src="../../images/mall-08.jpg"></image>
-      <view>超市精品方便面超市精品方便面超品方便</view>
-      <view>销量：800件</view>
-      <view>
-        <view>特步特步特步</view>
-        <view>￥800.00</view>
-      </view>
-    </view>
-    <!-- 第一件商品 -->
-    <view class="xin-n-one">
-      <image src="../../images/mall-08.jpg"></image>
-      <view>超市精品方便面超市精品方便面超品方便</view>
-      <view>销量：800件</view>
-      <view>
-        <view>特步特步特步</view>
-        <view>￥80000.00</view>
+        <view>销量：{{item.saleCount}}件</view>
+        <view>￥{{item.shopPrice}}</view>
       </view>
     </view>
   </view>
   <!-- 店铺搜索结果 -->
-  <view class="seek-store" wx:if="{{seek}}">
-  	<!-- 第一个 -->
-    <view class="shoplist">
-      <view class="pad24">
-        <view class="shop-top">
-          <view class="top-l">
-            <view>
-              <image src="../../images/a_super.jpg"></image>
-            </view>
-            <view>
-              <text>某某超市名称</text>
-              <text>共 135 件商品</text>
-            </view>
-          </view>
-          <view class="top-r">去逛逛></view>
-        </view>
-        <view class="shop-btm">
-          <view class="shop-img">
-            <view>
-              <image src="../../images/a_lanyueliang.jpg"></image>
-              <view>$12.98</view>
-            </view>
-            <view>
-              <image src="../../images/a_lanyueliang.jpg"></image>
-              <view>$12.98</view>
-            </view>
-            <view>
-              <image src="../../images/a_lanyueliang.jpg"></image>
-              <view>$12.98</view>
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
+  <view class="seek-store" wx:if="{{shopTitleIndex==1}}">
     <!-- 第一个 -->
-    <view class="shoplist">
+    <view class="shoplist" wx:for="{{shops}}" wx:for-item="i" wx:key="i">
       <view class="pad24">
-        <view class="shop-top">
+        <view class="shop-top" bindtap="bindtapMall" data-shopid="{{i.shopId}}">
           <view class="top-l">
             <view>
-              <image src="../../images/a_super.jpg"></image>
+              <image src="{{baseUrl}}{{i.shopImg}}"></image>
             </view>
             <view>
-              <text>某某超市名称</text>
-              <text>共 135 件商品</text>
+              <text>{{i.shopName}}</text>
+              <text>共 {{i.goodsList.total}} 件商品</text>
             </view>
           </view>
           <view class="top-r">去逛逛></view>
         </view>
         <view class="shop-btm">
           <view class="shop-img">
-            <view>
-              <image src="../../images/a_lanyueliang.jpg"></image>
-              <view>$12.98</view>
-            </view>
-            <view>
-              <image src="../../images/a_lanyueliang.jpg"></image>
-              <view>$12.98</view>
-            </view>
-            <view>
-              <image src="../../images/a_lanyueliang.jpg"></image>
-              <view>$12.98</view>
+            <view wx:for="{{i.goodsList.root}}" wx:key="index" bindtap="bindtapShopDetails" data-goodsid="{{item.goodsId}}">
+              <image src="{{baseUrl}}{{item.goodsImg}}"></image>
+              <view>￥{{item.shopPrice}}</view>
             </view>
           </view>
         </view>
@@ -155,38 +71,19 @@
     </view>
   </view>
   <!-- 品牌搜索结果 -->
-  <view class="brand-list"  wx:if="{{seek}}">
+  <view class="brand-list" wx:if="{{shopTitleIndex==2}}">
     <!-- 第一条 -->
-    <view class="list-one">
+    <view class="list-one" wx:for="{{shops}}" wx:key="index" bindtap="bindtapBrand" data-brandid="{{item.brandId}}">
       <view>
-        <image src="../../images/brand-02.png"></image>
+        <image src="{{baseUrl}}{{item.brandIco}}"></image>
       </view>
-      <view>蓝月亮</view>
-    </view>
-    <!-- 第一条 -->
-    <view class="list-one">
-      <view>
-        <image src="../../images/brand-03.png"></image>
-      </view>
-      <view>蓝月亮</view>
-    </view>
-    <!-- 第一条 -->
-    <view class="list-one">
-      <view>
-        <image src="../../images/brand-04.png"></image>
-      </view>
-      <view>蓝月亮栏</view>
-    </view>
-    <!-- 第一条 -->
-    <view class="list-one">
-      <view>
-        <image src="../../images/brand-05.png"></image>
-      </view>
-      <view>蓝月亮蓝月亮</view>
+      <view>{{item.brandName}}</view>
     </view>
   </view>
+  <!-- 已加载全部 -->
+  <view class="index-qb" wx:if="{{currPage == totalPage && shops.length != 0}}"> —— 别扯了，到底了 ——</view>
   <!-- 空页面 -->
-  <view class="cart-kong">
+  <view class="cart-kong" wx:if="{{(!shops || shops.length == 0) && !shopNone && inputValue}}">
     <image src="../../images/asuosou.png"></image>
     <view>暂无内容</view>
     <view>~ 抱歉，未找到搜索内容！ ~</view>

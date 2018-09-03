@@ -1,58 +1,74 @@
 <!--pages/orderRefund/orderRefund.wxml-->
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="refund">
   <!-- 商品 -->
   <view class="order-l-one">
     <!-- top -->
-    <view class="order-one-top">
+    <view class="order-one-top" bindtap="bindMall" data-shopid="{{datas.shopId}}">
       <image src="../../images/cart-03.png"></image>
-      <view>某某店铺
+      <view>{{datas.shopName}}
         <text class="arrow1"></text>
       </view>
     </view>
     <!-- 商品 -->
     <view class="order-shop">
       <!-- 第一件商品 -->
-      <view class="order-s-one">
+      <view class="order-s-one" wx:for="{{goods}}" wx:key="index" bindtap="bindShops" data-goodsid="{{item.goodsId}}">
         <view>
-          <image src="../../images/mall-08.jpg"></image>
+          <image src="{{baseUrl}}{{item.goodsThums}}"></image>
         </view>
         <view class="order-shop-nr">
-          <view>新西兰进口皇后红玫瑰苹果新西兰进口皇后红玫瑰苹果新西兰进口皇后红玫瑰苹果新西兰进口皇后红玫瑰苹果 12个装 一级果</view>
-          <view>规格：500ml 口味：原味 数量：x2</view>
-          <view>￥800.00</view>
+          <view>{{item.goodsName}}</view>
+          <view>{{item.goodsAttrName}}</view>
+          <view>￥{{item.shopPrice}}
+            <text> 数量：x{{item.goodsNums}}</text>
+          </view>
         </view>
       </view>
     </view>
     <!-- 合计 -->
-    <view class="order-hj">共计4件商品 合计：
-      <text>￥1602.00</text>(含运费2元)</view>
+    <view class="order-hj">共计{{goods.length+1}}件商品 合计：
+      <text>￥{{datas.realTotalMoney}}</text>(含运费{{datas.deliverMoney}}元)</view>
   </view>
   <!-- 订单编号 -->
   <view class="order-xinxi">
-    <view class="order-x-bh">订单编号：
-      <text>12345343456413213456465</text>
+    <view class="order-x-bh">订单编号
+      <text>{{datas.orderNo}}</text>
     </view>
-    <view class="order-x-bh">下单时间：
-      <text>2018-06-18 12:36:45</text>
+    <view class="order-x-bh">下单时间
+      <text>{{datas.createTime}}</text>
+    </view>
+    <view class="order-x-bh">确认收货后增加
+      <text class="order-text" style="color: #f00;">{{datas.orderScore}} 积分</text>
     </view>
     <view class="order-x-xq">我的备注：
-      <text>健康和史蒂夫加工费吉拉哈萨克上的发看咯isad会计法健康和史蒂夫加工费吉拉哈萨克上的发看咯isad会计法</text>
+      <text>{{datas.orderRemarks ? datas.orderRemarks : '暂无备注'}}</text>
+    </view>
+  </view>
+  <!-- 订单状态 -->
+  <view class="order-xinxi">
+    <view class="order-x-bh" wx:for="{{logs}}" wx:key="index">{{item.logContent}}
+      <text class="order-text">{{item.logTime}}</text>
     </view>
   </view>
   <!-- 退款原因 -->
   <view class="refund-yuan">
-  	<view>退款原因<text>(必填)</text></view>
-  	<textarea placeholder="请输入您的退款原因，谢谢合作"></textarea>
+    <view>退款原因
+      <text>(必填)</text>
+    </view>
+    <textarea bindinput="bindText" placeholder="请输入您的退款原因，谢谢合作"></textarea>
   </view>
   <!-- 照片 -->
-  <view class="refund-phonto">
-  	<view>添加图片<text>(选填)</text></view>
-  	<view>
-  		<image src="../../images/rep-03.jpg"></image>
-  		<image src="../../images/rep-03.jpg"></image>
-  		<image src="../../images/rep-03.jpg"></image>
-  	</view>
-  </view>
+  <!-- <view class="refund-phonto">
+    <view>添加图片
+      <text>(选填)</text>
+    </view>
+    <view>
+      <image src="../../images/rep-03.jpg"></image>
+      <image src="../../images/rep-03.jpg"></image>
+      <image src="../../images/rep-03.jpg"></image>
+    </view>
+  </view> -->
   <!-- 按钮 -->
-  <view class="refund-an">立即申请</view>
+  <view class="refund-an" bindtap="bindButton">立即申请</view>
 </view>

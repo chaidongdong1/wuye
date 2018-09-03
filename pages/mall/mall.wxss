@@ -242,12 +242,12 @@
 
 .yh-one-right>view:nth-child(2) {
   margin-top: 30rpx;
-  font-size: 22rpx;
-  color: #333;
+  font-size: 26rpx;
+  color: #f00;
 }
 
 .yh-one-right>view:nth-child(2)>text {
-  color: #df273f;
+  color: #666;
   padding-left: 30rpx;
 }
 
@@ -281,4 +281,12 @@
 	font-size: 24rpx;
 	color: #fff;
 	margin-left: 20rpx;
+}
+.index-qb{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  margin: 20rpx 0;
 }

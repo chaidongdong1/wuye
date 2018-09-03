@@ -1,35 +1,22 @@
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="shops">
-  <view class="activelist">
+  <view class="activelist" wx:for="{{datas}}" wx:key="index" bindtap="bindtapCom" data-articleid="{{item.articleId}}">
     <view class="active-nr">
       <view class="active-img">
-        <image src="../../images/sqhd.jpg"></image>
+        <image src="{{baseUrl}}{{item.articleImg}}"></image>
       </view>
       <view class="active-wz">
-        <view>
-          【社区活动】传递爱心传递温暖大型活动传递爱心传递温暖大型活动传递爱心传递温暖大型活动
-        </view>
-        <view>发布时间 : 2018.06.18-2018.06.24</view>
+        <view>{{item.articleTitle}}</view>
+        <view>发布时间 : {{item.createTime}}</view>
         <view>去看看 ></view>
       </view>
     </view>
   </view>
-  <view class="activelist">
-    <view class="active-nr">
-      <view class="active-img">
-        <image src="../../images/sqhd.jpg"></image>
-      </view>
-      <view class="active-wz">
-        <view>
-          【社区活动】传递爱心传递温暖大型活动传递爱心传递温暖大型活动传递爱心传递温暖大型活动
-        </view>
-        <view>发布时间 : 2018.06.18-2018.06.24</view>
-        <view>去看看 ></view>
-      </view>
-    </view>
-  </view>
+  <!-- 已加载全部 -->
+  <view class="index-qb" wx:if="{{currPage == totalPage && datas.length != 0}}"> —— 别扯了，到底了 ——</view>
 </view>
 <!-- 空页面-->
-<view class="cart-kong" wx:if="{{shops}}">
+<view class="cart-kong" wx:if="{{!datas || datas.length == 0}}">
   <image src="../../images/adingdan.png"></image>
   <view>暂无活动</view>
   <view>~ 活动列表为空呦! ~</view>

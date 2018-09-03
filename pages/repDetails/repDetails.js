@@ -1,66 +1,126 @@
 // pages/repDetails/repDetails.js
+const app = getApp();
+let userId;
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    datas: '', //详情信息
+    wuyePhoto: '', //物业电话
+    showLoading: true,
+    baseUrl:app.globalData.baseUrl+'Data',
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  onLoad: function(options) {
+    console.log(options);
+    //获取userId和userInfo
+    userId = wx.getStorageSync('userId');
+    wx.request({
+      method: 'POST',
+      url: `${app.globalData.api}Repair/getRepairList`,
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        userId: userId,
+        orderId: options.orderid
+      },
+      success: res => {
+        console.log(res);
+        this.setData({
+          datas: res.data.data[0],
+          showLoading: false
+        });
+      },
+      fail: res => {
+        console.log(res);
+      }
+    });
+    //配置信息
+    wx.request({
+      method: 'GET',
+      url: `${app.globalData.api}index/loadConfigs`,
+      success: res => {
+        console.log(res);
+        this.setData({
+          wuyePhoto: res.data.data.phoneNo
+        });
+      },
+      fail: res => {
+        console.log(res);
+      }
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  //分享
+  onShareAppMessage: function (res) {
+    return {
+      title: app.globalData.applet,
+      path: 'pages/start/start'
+    };
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  //确认维修已完成
+  bindStocks(e) {
+    let orderid = e.currentTarget.dataset.orderid;
+    wx.showModal({
+      title: '温馨提示',
+      content: '你的报修是否已经完成',
+      success: res => {
+        if (res.confirm) {
+          this.setData({
+            showLoading: true
+          });
+          console.log('用户点击确定');
+          wx.request({
+            method: 'POST',
+            url: `${app.globalData.api}Repair/finishOrder`,
+            header: { 'content-type': 'application/x-www-form-urlencoded' },
+            data: {
+              userId: userId,
+              orderId: orderid
+            },
+            success: res => {
+              console.log({
+                userId: userId,
+                orderId: orderid
+              });
+              this.setData({
+                showLoading: false
+              });
+              console.log(res);
+              if (res.data.stauts == 1) {
+                wx.showToast({
+                  title: '操作成功',
+                  icon: 'success',
+                  duration: 1500
+                });
+                setTimeout(res => {
+                  wx.navigateBack({
+                    delta: 1
+                  });
+                }, 500);
+              } else {
+                wx.showToast({
+                  title: res.data.msg,
+                  icon: 'none',
+                  duration: 1500
+                });
+              }
+            },
+            fail: res => {
+              this.setData({
+                showLoading: false
+              });
+              console.log(res);
+            }
+          });
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  //点击给师傅拨打电话
+  bindMaster(e) {
+    let usertel = e.currentTarget.dataset.usertel;
+    wx.makePhoneCall({
+      phoneNumber: usertel
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
-})
+});

@@ -1,66 +1,47 @@
 // pages/about/about.js
+const app = getApp();
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    mallName: '', //小程序名称
+    phoneNo: '', //客服电话
+    qqNo: '', //客服QQ
+    mailAddress: '', //邮箱
+    mallDesc: '', //小程序描述
+    showLoading:true,
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  onLoad: function(options) {
+    wx.request({
+      method: 'GET',
+      url: `${app.globalData.api}index/loadConfigs`,
+      success: res => {
+        console.log(res);
+        this.setData({
+          mallName: res.data.data.mallName,
+          phoneNo: res.data.data.phoneNo,
+          qqNo: res.data.data.qqNo,
+          mailAddress: res.data.data.mailAddress,
+          mallDesc: res.data.data.mallDesc,
+          showLoading:false
+        });
+      },
+      fail: res => {
+        console.log(res);
+      }
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  //分享
+  onShareAppMessage: function (res) {
+    return {
+      title: app.globalData.applet,
+      path: 'pages/start/start'
+    };
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  //点击拨打电话
+  bindPhoto() {
+    wx.makePhoneCall({
+      phoneNumber: this.data.phoneNo
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
-})
+});

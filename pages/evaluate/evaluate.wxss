@@ -78,13 +78,13 @@
 }
 .user-img{
 	display: flex;
-	justify-content: space-between;
 	flex-wrap: wrap;
 	padding-bottom: 20rpx;
 }
 .user-img view{
 	width: 210rpx;
 	height: 210rpx;
+  margin-right: 20rpx;
 	margin-top: 20rpx;
 }
 .user-img view image{
@@ -116,4 +116,12 @@
   color: #666;
   margin-top: 15rpx;
   text-align: center;
+}
+.index-qb{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  margin: 20rpx 0;
 }

@@ -1,3 +1,5 @@
 {
-	"navigationBarTitleText": "积分明细"
+	"navigationBarTitleText": "积分明细",
+	"onReachBottomDistance":true,
+	"enablePullDownRefresh":true
 }

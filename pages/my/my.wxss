@@ -55,11 +55,10 @@
 
 .my-t-jf {
   width: 300rpx;
-  height: 46rpx;
-  line-height: 46rpx;
+  height: 54rpx;
+  line-height: 54rpx;
   margin: 10rpx auto 0 auto;
   background: #ff9a44;
-  box-shadow: 0px 2rpx 5rpx 0px rgba(171, 163, 158, 0.55);
   border-radius: 25rpx;
   display: flex;
   justify-content: center;
@@ -68,7 +67,7 @@
 .my-t-jf>image {
   width: 25rpx;
   height: 25rpx;
-  margin: 10rpx 0;
+  margin: 16rpx 0;
 }
 
 .my-t-jf>view {

@@ -1,115 +1,58 @@
 <!--pages/integral/integral.wxml-->
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="inte">
-	<!-- top -->
-	<view class="inte-top">
-		<!-- top背景图 -->
-		<view class="inte-t-bj">
-			<image src="../../images/jf-top.png"></image>
-		</view>
-		<view class="inte-number">
-			<!-- <view class="inte-border"></view> -->
-			<canvas class="inte-border" canvas-id="canvasArcCir"></canvas>
-			<view class="inte-t-zjs">总计</view>
-			<view class="inte-t-numbs">{{number}}</view>
-			<view class="inte-t-jfs">积分</view>
-		</view>
-	</view>
-	<!-- 列表 -->
-	<view class="inte-list">
-		<!-- 第一个 -->
-		<view class="list-one">
-			<view class="list-one-left">
-				<view class="list-left-bh">
-					<text></text>
-					<view>订单编号：4564512100121</view>
-				</view>
-				<view>2018-08-08 10:00:00</view>
-				<view>合计:<text>￥166.00</text>共计5件商品</view>
-			</view>
-			<view class="list-one-right">
-				<view>+166</view>
-				<view>获得积分</view>
-			</view>
-		</view>
-		<!-- 第一个 -->
-		<view class="list-one">
-			<view class="list-one-left">
-				<view class="list-left-bh">
-					<text></text>
-					<view>订单编号：4564512100121</view>
-				</view>
-				<view>2018-08-08 10:00:00</view>
-				<view>合计:<text>￥166.00</text>共计5件商品</view>
-			</view>
-			<view class="list-one-right">
-				<view>+166</view>
-				<view>获得积分</view>
-			</view>
-		</view>
-		<!-- 第一个 -->
-		<view class="list-one">
-			<view class="list-one-left">
-				<view class="list-left-bh">
-					<text></text>
-					<view>订单编号：4564512100121</view>
-				</view>
-				<view>2018-08-08 10:00:00</view>
-				<view>合计:<text>￥166.00</text>共计5件商品</view>
-			</view>
-			<view class="list-one-right">
-				<view>+166</view>
-				<view>获得积分</view>
-			</view>
-		</view>
-		<!-- 第一个 -->
-		<view class="list-one">
-			<view class="list-one-left">
-				<view class="list-left-bh">
-					<text></text>
-					<view>订单编号：4564512100121</view>
-				</view>
-				<view>2018-08-08 10:00:00</view>
-				<view>合计:<text>￥166.00</text>共计5件商品</view>
-			</view>
-			<view class="list-one-right">
-				<view>+166</view>
-				<view>获得积分</view>
-			</view>
-		</view>
-		<!-- 第一个 -->
-		<view class="list-one">
-			<view class="list-one-left">
-				<view class="list-left-bh">
-					<text></text>
-					<view>订单编号：4564512100121</view>
-				</view>
-				<view>2018-08-08 10:00:00</view>
-				<view>合计:<text>￥166.00</text>共计5件商品</view>
-			</view>
-			<view class="list-one-right">
-				<view>+166</view>
-				<view>获得积分</view>
-			</view>
-		</view>
-		<!-- 第一个 -->
-		<view class="list-one">
-			<view class="list-one-left">
-				<view class="list-left-bh">
-					<text></text>
-					<view>订单编号：4564512100121</view>
-				</view>
-				<view>2018-08-08 10:00:00</view>
-				<view>合计:<text>￥166.00</text>共计5件商品</view>
-			</view>
-			<view class="list-one-right">
-				<view>+166</view>
-				<view>获得积分</view>
-			</view>
-		</view>
-	</view>
+  <!-- top -->
+  <view class="inte-top">
+    <!-- top背景图 -->
+    <view class="inte-t-bj">
+      <image src="../../images/jf-top.png"></image>
+    </view>
+    <view class="inte-number">
+      <!-- <view class="inte-border"></view> -->
+      <canvas class="inte-border" canvas-id="canvasArcCir"></canvas>
+      <view class="inte-t-zjs">总计</view>
+      <view class="inte-t-numbs">{{number}}</view>
+      <view class="inte-t-jfs">积分</view>
+    </view>
+  </view>
+  <!-- 列表 -->
+  <view wx:for="{{datas}}" wx:key="index">
+    <view class="inte-list">
+      <view class="list-one" style="height: 80rpx;" wx:if="{{item.scoreType == 2}}">
+        <view class="list-one-left">
+          <view class="list-left-bh">
+            <text style="background: #32EEBE;"></text>
+            <view>积分兑换(减积分)</view>
+          </view>
+          <view style="margin-top: 10rpx;">{{item.createTime}}</view>
+        </view>
+        <view class="list-one-right" style="width: 200rpx;">
+          <view class="intert-jian">{{item.score}}积分</view>
+        </view>
+      </view>
+      <!-- 第一个 -->
+      <view class="list-one" bindtap="bindOrder" data-orderid="{{item.orderId}}" wx:if="{{item.scoreType == 1}}">
+        <view class="list-one-left">
+          <view class="list-left-bh">
+            <text></text>
+            <view>订单编号：{{item.orderNo}}</view>
+          </view>
+          <view>{{item.createTime}}</view>
+          <view>合计:
+            <text>￥{{item.realTotalMoney}}</text>共计{{item.count}}件商品</view>
+        </view>
+        <view class="list-one-right">
+          <view>{{item.score}}</view>
+          <view>获得积分</view>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>
+<!-- 已加载全部 -->
+<view class="index-qb" wx:if="{{currPage == totalPage && datas.length != 0}}"> —— 别扯了，到底了 ——</view>
 <!-- 空页面-->
-<view class="cart-kong">
+<view class="cart-kong" wx:if="{{!datas || datas.length == 0}}">
   <image src="../../images/adingdan.png"></image>
   <view>暂无积分</view>
   <view>~ 积分明细为空呦! ~</view>

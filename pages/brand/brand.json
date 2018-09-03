@@ -1,3 +1,4 @@
 {
-	"navigationBarTitleText": "品牌街"
+	"navigationBarTitleText": "品牌街",
+	"onReachBottomDistance":true
 }

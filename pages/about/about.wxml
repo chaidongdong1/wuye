@@ -1,25 +1,26 @@
 <!--pages/about/about.wxml-->
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="about">
-	<view class="about-title">油盐酱醋茶</view>
+	<view class="about-title">{{mallName}}</view>
 	<view class="about-nr">
-		<view class="about-n-item">
+		<view class="about-n-item" bindtap="bindPhoto">
 			<view>客服电话：</view>
-			<view class="arrow1">0371-0982356</view>
+			<view class="arrow1">{{phoneNo}}</view>
 		</view>
-		<view class="about-n-item">
+		<button class="about-n-item about-button" open-type="contact">
 			<view>在线客服：</view>
-			<view class="arrow1">155455222</view>
+			<view class="arrow1">点击即可与客服聊天</view>
+		</button>
+		<view class="about-n-item">
+			<view>客服QQ：</view>
+			<view>{{qqNo}}</view>
 		</view>
 		<view class="about-n-item">
 			<view>邮箱：</view>
-			<view>1202452005@qq.com</view>
-		</view>
-		<view class="about-n-item">
-			<view>版权信息：</view>
-			<view>Copyright © 2018 ramicalschool1</view>
+			<view>{{mailAddress}}</view>
 		</view>
 		<view class="about-jian">
-			<view><text>小程序简介：</text>小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介小程序简介</view>
+			<view><text>商城描述：</text>{{mallDesc}}</view>
 		</view>
 	</view>
 </view>

@@ -1,116 +1,43 @@
-<view class="evaluate" wx:if="{{eval}}">
-	<!-- <view class="fenlei marb20">
-		<view class="quanbu {{evaindex == 0 ? 'active_pj':''}}" bindtap="qbdj">
-			<view>全部</view>
-			<view>48</view>
-		</view>
-		<view class="youtu {{evaindex == 1 ? 'active_pj':''}}" bindtap="ytdj">
-			<view>有图</view>
-			<view>36</view>
-		</view>
-		<view class="haoping {{evaindex == 2 ? 'active_pj':''}}" bindtap="hpdj">
-			<view>好评</view>
-			<view>42</view>
-		</view>
-		<view class="zhongping {{evaindex == 3 ? 'active_pj':''}}" bindtap="zpdj">
-			<view>中评</view>
-			<view>5</view>
-		</view>
-		<view class="chaping {{evaindex == 4 ? 'active_pj':''}}" bindtap="cpdj">
-			<view>差评</view>
-			<view>2</view>
-		</view>
-	</view> -->
-	<!-- 用户评价 -->
-	<view class="user-pj pad24 marb20">
-		<view class="user-top">
-			<!-- 用户头像 -->
-			<view class="user-tou">
-				<image src="../../images/a_touxiang.jpg"></image>
-				<text>用户名称名称</text>
-			</view>
-			<view class="user-riqi">
-				2018.06.18  12:01
-			</view>
-		</view>
-		<view class="pjxx">
-				<image src="../../images/hongxing.png"></image>
-				<image src="../../images/hongxing.png"></image>
-				<image src="../../images/hongxing.png"></image>
-				<image src="../../images/hongxing.png"></image>
-				<image src="../../images/huixing.png"></image>
-		</view>
-		<!-- 用户评价内容 -->
-		<view class="user-nr">
-			吖商家孤岛惊魂申达股份会计师对方环能科技大V放牛班新局面新城V你师父打卡机老虎机等方面大V会计
-		</view>
-		<!-- 用户评价图片 -->
-		<view class="user-img">
-			<view>
-				<image src="../../images/a_pjtp1.jpg"></image>
-			</view>
-			<view>
-				<image src="../../images/a_pjtp1.jpg"></image>
-			</view>
-			<view>
-				<image src="../../images/a_pjtp1.jpg"></image>
-			</view>
-			<view>
-				<image src="../../images/a_pjtp1.jpg"></image>
-			</view>
-		</view>
-		<!-- 用户购买日期 -->
-		<view class="gmriqi">
-			购买日期：2018.06.16
-		</view>
-	</view>
-
-
-	<!-- 用户评价 -->
-	<view class="user-pj pad24 marb20">
-		<view class="user-top">
-			<!-- 用户头像 -->
-			<view class="user-tou">
-				<image src="../../images/a_touxiang.jpg"></image>
-				<text>用户名称名称</text>
-			</view>
-			<view class="user-riqi">
-				2018.06.18  12:01
-			</view>
-		</view>
-		<view class="pjxx">
-			<image src="../../images/hongxing.png"></image>
-			<image src="../../images/hongxing.png"></image>
-			<image src="../../images/hongxing.png"></image>
-			<image src="../../images/hongxing.png"></image>
-			<image src="../../images/hongxing.png"></image>
-		</view>
-		<!-- 用户评价内容 -->
-		<view class="user-nr">
-			吖商家孤岛惊魂申达股份会计师对方环能科技大V放牛班新局面新城V你师父打卡机老虎机等方面大V会计
-		</view>
-		<!-- 用户评价图片 -->
-		<view class="user-img">
-			<view>
-				<image src="../../images/a_pjtp1.jpg"></image>
-			</view>
-			<view>
-				<image src="../../images/a_pjtp1.jpg"></image>
-			</view>
-			<view>
-				<image src="../../images/a_pjtp1.jpg"></image>
-			</view>
-		</view>
-		<!-- 用户购买日期 -->
-		<view class="gmriqi">
-			购买日期：2018.06.16
-		</view>
-	</view>
+<loading wx:if="{{showLoading}}">加载中</loading>
+<view class="evaluate">
+  <view class="fenlei marb20">
+    <view class="{{listIndex == index ? 'quanbu active_pj' : 'quanbu'}}" wx:for="{{list}}" wx:key="index" bindtap="bindNav" data-index="{{index}}">
+      <view>{{item.name}}</view>
+      <view>{{item.nameNumber}}</view>
+    </view>
+  </view>
+  <!-- 用户评价 -->
+  <view class="user-pj pad24 marb20" wx:for="{{datas}}" wx:key="index">
+    <view class="user-top">
+      <!-- 用户头像 -->
+      <view class="user-tou">
+        <image src="{{item.userPhoto}}"></image>
+        <text>{{item.loginName}}</text>
+      </view>
+      <view class="user-riqi">{{item.createTime}}</view>
+    </view>
+    <view class="pjxx">
+      <image src="{{item.goodsScore*1 > 0 ?'/images/hongxing.png' : '/images/huixing.png'}}"></image>
+      <image src="{{item.goodsScore*1 > 1 ?'/images/hongxing.png' : '/images/huixing.png'}}"></image>
+      <image src="{{item.goodsScore*1 > 2 ?'/images/hongxing.png' : '/images/huixing.png'}}"></image>
+      <image src="{{item.goodsScore*1 > 3 ?'/images/hongxing.png' : '/images/huixing.png'}}"></image>
+      <image src="{{item.goodsScore*1 > 4 ?'/images/hongxing.png' : '/images/huixing.png'}}"></image>
+    </view>
+    <!-- 用户评价内容 -->
+    <view class="user-nr">{{item.content}}</view>
+    <!-- 用户评价图片 -->
+    <view class="user-img" wx:if="{{item.appraisesAnnex.length != 0}}">
+      <view wx:for="{{item.appraisesAnnex}}" wx:for-item="img" wx:key="img">
+        <image src="{{baseUrl+img}}"></image>
+      </view>
+    </view>
+  </view>
 </view>
+<!-- 已加载全部 -->
+<view class="index-qb" wx:if="{{currPage == totalPage && datas.length != 0}}"> —— 别扯了，到底了 ——</view>
 <!-- 空页面-->
-<view class="cart-kong">
+<view class="cart-kong" wx:if="{{!datas || datas.length == 0}}">
   <image src="../../images/apingjia.png"></image>
   <view>暂无评价</view>
   <view>~ 评价记录为空呦! ~</view>
 </view>
-

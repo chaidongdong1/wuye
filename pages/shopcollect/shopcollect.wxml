@@ -1,67 +1,30 @@
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="shops">
   <!-- 超市 -->
-  <view class="shoplist">
+  <view class="shoplist" wx:for="{{datas}}" wx:key="index">
     <view class="pad24">
       <view class="shop-top">
-        <view class="top-l">
+        <view class="top-l" bindtap="bindMall" data-shopid="{{item.shopId}}">
           <view>
-            <image src="../../images/a_super.jpg"></image>
+            <image src="{{baseUrl}}{{item.shopImg}}"></image>
           </view>
           <view>
-            <text>某某超市名称</text>
-            <text>共 135 件商品</text>
+            <text>{{item.shopName}}</text>
+            <!-- <text>共 135 件商品</text> -->
           </view>
         </view>
-        <view class="top-r">
+        <view class="top-r" bindtap="bindtapCancel" data-shopid="{{item.shopId}}">
           <image src="../../images/a_sc_01.png"></image>
           <view>取消收藏</view>
         </view>
       </view>
     </view>
   </view>
-  <!-- 超市 -->
-  <view class="shoplist">
-    <view class="pad24">
-      <view class="shop-top">
-        <view class="top-l">
-          <view>
-            <image src="../../images/a_super.jpg"></image>
-          </view>
-          <view>
-            <text>某某超市名称</text>
-            <text>共 135 件商品</text>
-          </view>
-        </view>
-        <view class="top-r">
-          <image src="../../images/a_sc_01.png"></image>
-          <view>取消收藏</view>
-        </view>
-      </view>
-    </view>
-  </view>
-  <!-- 超市 -->
-  <view class="shoplist">
-    <view class="pad24">
-      <view class="shop-top">
-        <view class="top-l">
-          <view>
-            <image src="../../images/a_super.jpg"></image>
-          </view>
-          <view>
-            <text>某某超市名称</text>
-            <text>共 135 件商品</text>
-          </view>
-        </view>
-        <view class="top-r">
-          <image src="../../images/a_sc_01.png"></image>
-          <view>取消收藏</view>
-        </view>
-      </view>
-    </view>
-  </view>
+  <!-- 已加载全部 -->
+  <view class="index-qb" wx:if="{{datas.length != 0}}"> —— 别扯了，到底了 ——</view>
 </view>
 <!-- 空页面-->
-<view class="cart-kong"  wx:if="{{shops}}">
+<view class="cart-kong" wx:if="{{!datas || datas.length == 0}}">
   <image src="../../images/apingjia.png"></image>
   <view>暂无收藏</view>
   <view>~ 收藏列表为空呦，快去收藏店铺吧! ~</view>

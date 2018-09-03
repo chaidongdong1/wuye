@@ -4,7 +4,6 @@
 .sub-top{
 	display: flex;
 	padding: 20rpx 24rpx;
-	justify-content: space-between;
 	background: #fff;
 }
 .sub-top view:first-child image{
@@ -116,4 +115,11 @@
 	color: #fff;
 	line-height: 88rpx;
 	text-align: center;
+	margin-bottom: 20rpx;
+}
+.subtext{
+	font-size: 24rpx !important;
+	line-height: 80rpx;
+	color: #999;
+	padding-left: 20rpx;
 }

@@ -1,7 +1,8 @@
 <!--pages/brand/brand.wxml-->
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="brand">
   <!-- 品牌分类 -->
-  <view class="brand-fl">
+  <!-- <view class="brand-fl">
     <view>
       <image src="../../images/brand-01.png"></image>
     </view>
@@ -14,42 +15,23 @@
     <view>
       <image src="../../images/index-05.png"></image>
     </view>
-  </view>
+  </view> -->
   <!-- 品牌列表 -->
   <view class="brand-list">
     <!-- 第一条 -->
-    <view class="list-one">
+    <view class="list-one" wx:for="{{datas}}" wx:key="index" bindtap="bindtapShop" data-brandid="{{item.brandId}}" data-brandname="{{item.brandName}}">
       <view>
-        <image src="../../images/brand-02.png"></image>
+        <image src="{{baseUrl}}{{item.brandIco}}"></image>
       </view>
-      <view>蓝月亮</view>
+      <view>{{item.brandName}}</view>
     </view>
-    <!-- 第一条 -->
-    <view class="list-one">
-      <view>
-        <image src="../../images/brand-03.png"></image>
-      </view>
-      <view>蓝月亮</view>
-    </view>
-    <!-- 第一条 -->
-    <view class="list-one">
-      <view>
-        <image src="../../images/brand-04.png"></image>
-      </view>
-      <view>蓝月亮栏</view>
-    </view>
-    <!-- 第一条 -->
-    <view class="list-one">
-      <view>
-        <image src="../../images/brand-05.png"></image>
-      </view>
-      <view>蓝月亮蓝月亮</view>
-    </view>
+    <!-- 已加载全部 -->
+  <view class="index-qb" wx:if="{{currPage == totalPage && newShop.length != 0}}"> —— 别扯了，到底了 ——</view>
   </view>
 </view>
 <!-- 空页面-->
-<view class="cart-kong" wx:if="{{band}}">
+<view class="cart-kong" wx:if="{{!datas || datas.length == 0}}">
   <image src="../../images/apingjia.png"></image>
-  <view>暂无记录</view>
-  <view>~ 报修记录为空呦! ~</view>
+  <view>暂无内容</view>
+  <view>~ 品牌街暂时为空呦! ~</view>
 </view>

@@ -1,0 +1,18 @@
+<!--pages/hotShop/hotShop.wxml-->
+<!-- 内容 -->
+<loading wx:if="{{showLoading}}">加载中</loading>
+<view class="re-chan">
+  <!-- 第一个商品 -->
+  <view class="re-c-one" wx:for="{{newShop}}" wx:key="index" bindtap="bindtapNew" data-goodsid="{{item.goodsId}}">
+    <image src="{{baseUrl}}{{item.goodsImg}}"></image>
+    <view>￥{{item.shopPrice}}</view>
+  </view>
+</view>
+<!-- 已加载全部 -->
+  <view class="index-qb" wx:if="{{currPage == totalPage && newShop.length != 0}}"> —— 别扯了，到底了 ——</view>
+  <!-- 空页面-->
+<view class="cart-kong" wx:if="{{!newShop || newShop.length == 0}}">
+  <image src="../../images/adingdan.png"></image>
+  <view>暂无商品</view>
+  <view>~ 该列表为空! ~</view>
+</view>

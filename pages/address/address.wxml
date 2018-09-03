@@ -1,62 +1,32 @@
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="add">
   <!-- 第一块 -->
   <view class="padb100">
-    <view class="address pad24 marb20">
-      <view class="address-top">
+    <view class="address pad24 marb20" wx:for="{{datas}}" wx:key="index">
+      <view class="address-top" bindtap="bindSelect" data-index="{{index}}">
         <view class="top-l">
           <image src="../../images/a_dingwei.png"></image>
         </view>
         <view class="top-r">
           <view class="self-xx">
-            <text>姓名：程冬冬</text>
-            <text>手机号：11533388888</text>
+            <text>姓名：{{item.userName}}</text>
+            <text>手机号：{{item.userPhone}}</text>
           </view>
-          <text>地址：学校名称学生宿舍名称5楼511室</text>
+          <text>地址：{{item.areaId1}}{{item.address}}</text>
         </view>
       </view>
       <view class="address-btm">
-        <view class="btm-l">
-          <view></view>
-          <text>默认地址</text>
+        <view class="btm-l" bindtap="bindtapDefault" data-index="{{index}}">
+          <view wx:if="{{item.isDefault == 0}}"></view>
+          <icon wx:if="{{item.isDefault == 1}}" type="success" size="18" color="red"></icon>
+          <text>{{item.isDefault == 0 ? '设为默认地址' : '当前默认地址'}}</text>
         </view>
         <view class="btm-r">
-          <view class="bianji">
+          <view class="bianji" bindtap="bindtapRedact" data-addressid="{{item.addressId}}">
             <image src="../../images/a_bianji.png"></image>
             编辑
           </view>
-          <view class="shanchu">
-            <image src="../../images/a_shanchu.png"></image>
-            删除
-          </view>
-        </view>
-      </view>
-    </view>
-    <!-- 第二块 -->
-    <view class="address pad24 marb20">
-      <view class="address-top">
-        <view class="top-l">
-          <image src="../../images/a_dingwei.png"></image>
-        </view>
-        <view class="top-r">
-          <view class="self-xx">
-            <text>姓名：程冬冬</text>
-            <text>手机号：11533388888</text>
-          </view>
-          <text>地址：学校名称学生宿舍名称5楼511室</text>
-        </view>
-      </view>
-      <view class="address-btm">
-        <view class="btm-l">
-          <!-- <view></view> -->
-          <icon type="success" size="18" color="red"></icon>
-          <text>默认地址</text>
-        </view>
-        <view class="btm-r">
-          <view class="bianji">
-            <image src="../../images/a_bianji.png"></image>
-            编辑
-          </view>
-          <view class="shanchu">
+          <view class="shanchu" bindtap="bindtapDelete" data-addressid="{{item.addressId}}">
             <image src="../../images/a_shanchu.png"></image>
             删除
           </view>
@@ -67,11 +37,11 @@
 </view>
 <!-- 添加新地址 -->
 <view class="addnew">
-  <view class="addanniu pad24">
+  <view class="addanniu pad24" bindtap="bindtapAdd">
     <text>+</text>添加地址</view>
 </view>
 <!-- 空页面-->
-<view class="cart-kong" wx:if="{{add}}">
+<view class="cart-kong" wx:if="{{!datas || datas.length == 0}}">
   <image src="../../images/adizhi.png"></image>
   <view>暂无地址</view>
   <view>~ 地址列表为空呦，快去添加吧! ~</view>

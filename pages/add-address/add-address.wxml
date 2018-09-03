@@ -1,12 +1,13 @@
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="add-address">
   <view class="add-list pad24">
     <view class="name">
       <text>我的姓名</text>
-      <input type="text" name="" placeholder="请输入你的姓名" />
+      <input type="text" maxlength="30" bindinput="bindName" value="{{name}}" name="" placeholder="请输入你的姓名" />
     </view>
     <view class="phone">
       <text>我的电话</text>
-      <input type="number" name="" placeholder="请输入你的电话" />
+      <input type="number" bindinput="bindNumber" value="{{number}}" name=""  placeholder="请输入你的手机号" />
     </view>
     <view class="village">
       <text>我的小区</text>
@@ -17,17 +18,13 @@
     </view>
     <view class="message">
       <text>详细地址</text>
-      <input type="text" name="" placeholder="请输入详细地址" />
+      <input type="text" bindinput="bindAddress" value="{{detail}}" name="" maxlength="60" placeholder="请输入详细地址" />
     </view>
     <view class="default">
-    <!--  class="default-wei" -->
-      <view>
-      	<icon type="success" size="16" color="#f00"/>
-      </view>
-      设为默认地址
+      <switch checked="{{isDefault}}" style="transform: scale(.6,.6);" bindchange="switch1Change" /> 是否设为默认地址
     </view>
   </view>
 </view>
 <view class="addnew">
-  <view class="addanniu pad24">确认添加</view>
+  <view class="addanniu pad24" bindtap="bindtapAdd">{{alter == false ? '确认添加' : '确认修改'}}</view>
 </view>

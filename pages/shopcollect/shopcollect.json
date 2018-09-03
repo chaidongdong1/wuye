@@ -1,3 +1,4 @@
 {
-	"navigationBarTitleText": "店铺收藏"
+	"navigationBarTitleText": "店铺收藏",
+	"onReachBottomDistance":true
 }

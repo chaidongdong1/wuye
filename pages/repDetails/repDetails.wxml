@@ -1,4 +1,5 @@
 <!--pages/repairs/repairs.wxml-->
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="rep">
   <!-- 定位背景 -->
   <view class="rep-bei">
@@ -8,49 +9,48 @@
   <view class="rep-ding">
     <!-- 报修标题 -->
     <view class="rep-top">
-      <!-- <image src="../../images/rep-02.png"></image> -->
+      <image src="../../images/rep-02.png"></image>
       <view class="rep-t-wz">
         <image src="../../images/rep-03.png"></image>
         <view>报修详情</view>
         <image src="../../images/rep-06.png"></image>
       </view>
-      <view class="rep-zhuang">安排上门维修师傅</view>
+      <view class="rep-zhuang">{{datas.orderStatus}}</view>
     </view>
     <!-- 报修内容 -->
     <view class="rep-xiu">
       <!-- 我的报修 -->
       <view class="rep-my">
       	<view class="rep-my-left">我的报修</view>
-      	<view class="rep-my-sj">2018-06-20  12:36</view>
+      	<view class="rep-my-sj">{{datas.createTime}}</view>
       </view>
       <!-- 维修师傅 -->
-      <view class="rep-sf">
+      <view class="rep-sf" wx:if="{{datas.status !=0}}">
       	<view class="type-top">维修师傅</view>
       	<view class="rep-sf-nr">
       		<image src="../../images/my-02.jpg"></image>
-      		<view>王基峰<text>157370002235</text></view>
-          <!-- 已评价  rep-yi -->
-      		<view class="rep-pj">
+      		<view bindtap="bindMaster" data-usertel="{{datas.userTel}}">{{datas.repairName}}<text>{{datas.userTel}}</text></view>
+      		<!-- <view class="rep-pj">
       			<image src="../../images/repxq-01.png"></image>
       			<view>去评价</view>
-      		</view>
+      		</view> -->
       	</view>
       </view>
       <!-- 报修描述 -->
       <view class="rep-ms">
       	<view class="type-top">报修描述</view>
       	<view class="rep-ms-nr">
-      		<view>天然气</view>
-      		<view>天然气管道有点跑味，想让物业换一个新的天然气管天然气管道有点跑味，想让物业换一个新的天然气管.天然气管道有点跑味，想让物业换一个新的天然气管</view>
+      		<view>{{datas.fName}}</view>
+      		<view>{{datas.orderRemarks}}</view>
       	</view>
       </view>
       <!-- 添加图片 -->
-      <view class="rep-tu">
+      <view class="rep-tu" wx:if="{{datas.orderSrc1}}" >
       	<view class="type-top">报修描述照片</view>
       	<view class="rep-pai">
-      		<image src="../../images/index-bx.jpg"></image>
-      		<image src="../../images/index-bx.jpg"></image>
-      		<image src="../../images/index-bx.jpg"></image>
+      		<image src="{{baseUrl}}{{datas.orderSrc1}}"></image>
+      		<image src="{{baseUrl}}{{datas.orderSrc2}}"></image>
+          <image src="{{baseUrl}}{{datas.orderSrc3}}"></image>
       	</view>
       </view>
       <!-- 我的地址 -->
@@ -63,15 +63,17 @@
 					</view>
 					<view class="yixie-nr">
 						<view class="yixie-name">
-							<view>姓名：成东东</view>
-							<view>手机号：11533338888</view>
+							<view>姓名：{{datas.userName}}</view>
+							<view>手机号：{{datas.userPhone}}</view>
 						</view>
-						<view>地址：小区16号楼5楼511室</view>
+						<view>地址：{{datas.areaId1}}{{datas.userAddress}}</view>
 					</view>
 				</view>
       </view>
+      <!-- 确认是否已经维修完成 -->
+      <view class="replist-button" wx:if="{{datas.status == 10}}" bindtap="bindStocks" data-orderid="{{datas.orderId}}">确认维修已完成</view>
     </view>
   </view>
   <!-- 某某物业 -->
-  <view class="rep-wuye">/一键拨打物业电话：0371-000 0000/</view>
+  <view class="rep-wuye" bindtap="bindMaster" data-usertel="{{wuyePhoto}}">/一键拨打物业电话：{{wuyePhoto}}/</view>
 </view>

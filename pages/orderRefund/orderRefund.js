@@ -1,66 +1,130 @@
 // pages/orderRefund/orderRefund.js
+const app = getApp();
+let userId, orderId;
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    baseUrl: app.globalData.baseUrl, //图片路径
+    datas: '', //订单信息
+    goods: [], //商品列表
+    logs: [], //商品状态列表
+    text: '', //退款原因
+    showLoading: true
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  onLoad: function(options) {
+    console.log(options);
+    //获取userId和userInfo
+    userId = wx.getStorageSync('userId');
+    orderId = options.orderid;
+    wx.request({
+      method: 'POST',
+      url: `${app.globalData.api}Orders/getOrderInfo`,
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        userId: userId,
+        orderId: orderId
+      },
+      success: res => {
+        console.log(res);
+        this.setData({
+          datas: res.data.order,
+          goods: res.data.goodsList,
+          logs: res.data.logs,
+          showLoading: false
+        });
+      },
+      fail: res => {
+        console.log(res);
+      }
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  //分享
+  onShareAppMessage: function(res) {
+    return {
+      title: app.globalData.applet,
+      path: 'pages/start/start'
+    };
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  //退款原因
+  bindText(e) {
+    this.setData({
+      text: e.detail.value
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  //退款提交按钮
+  bindButton() {
+    if (this.data.text) {
+      this.setData({
+        showLoading: true
+      });
+      wx.request({
+        method: 'POST',
+        url: `${app.globalData.api}Orders/refund`,
+        header: { 'content-type': 'application/x-www-form-urlencoded' },
+        data: {
+          userId: userId,
+          orderId: orderId,
+          refundRemark: this.data.text
+        },
+        success: res => {
+          console.log({
+            userId: userId,
+            orderId: orderId,
+            refundRemark: this.data.text
+          });
+          this.setData({
+            showLoading: false
+          });
+          console.log(res);
+          if (res.data.status == 1) {
+            wx.showToast({
+              title: '退款中',
+              icon: 'success',
+              duration: 1500
+            });
+            setTimeout(res => {
+              wx.navigateBack({
+                delta: 1
+              });
+            }, 500);
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 1500
+            });
+          }
+        },
+        fail: res => {
+          this.setData({
+            showLoading: false
+          });
+          console.log(res);
+        }
+      });
+    } else {
+      wx.showToast({
+        title: '请输入退款原因',
+        icon: 'none',
+        duration: 1500
+      });
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
+  //点击跳转店铺
+  bindMall(e) {
+    console.log(e);
+    let shopid = e.currentTarget.dataset.shopid;
+    wx.navigateTo({
+      url: `../malldetails/malldetails?shopid=${shopid}`
+    });
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
+  //点击跳转商品
+  bindShops(e) {
+    console.log(e);
+    let goodsid = e.currentTarget.dataset.goodsid;
+    wx.navigateTo({
+      url: `../shopDetails/shopDetails?goodsid=${goodsid}`
+    });
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
-})
+});

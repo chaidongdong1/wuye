@@ -11,8 +11,8 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.1",
-	"appid": "wx116c9a07e3bba493",
+	"libVersion": "2.2.4",
+	"appid": "wxd97b5b2feceac4c2",
 	"projectname": "wuye",
 	"isGameTourist": false,
 	"condition": {

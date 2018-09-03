@@ -1,0 +1,122 @@
+/* pages/seckill/seckill.wxss */
+.mall-yh {
+  width: 100%;
+  height: auto;
+  margin: 20rpx 0 0 0;
+  background: #fff;
+  padding: 0 24rpx;
+  border-radius: 10rpx;
+}
+
+.youhui {
+  width: 100%;
+  height: auto;
+}
+
+.yh-one {
+  width: 702rpx;
+  height: 200rpx;
+  margin-top: 20rpx;
+  padding: 20rpx 24rpx;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.yh-one>view:first-child {
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 30rpx;
+}
+
+.yh-one>view:first-child>image {
+  width: 100%;
+  height: 100%;
+}
+
+.yh-one-right {
+  flex: 1;
+}
+
+.yh-one-right>view:first-child {
+  width: 100%;
+  height: 64rpx;
+  line-height: 32rpx;
+  font-size: 28rpx;
+  color: #333;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.yh-one-right>view:nth-child(2) {
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  color: #f00;
+}
+
+.yh-one-right>view:nth-child(2)>text {
+  color: #666;
+  padding-left: 30rpx;
+}
+
+.yh-one-jia {
+  width: 100%;
+  height: 42rpx;
+  line-height: 42rpx;
+  margin-top: 35rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.yh-one-jia>view:first-child {
+  font-size: 36rpx;
+  color: #df273f;
+}
+
+.yh-one-jia>view:first-child>text {
+  padding-left: 15rpx;
+  font-size: 24rpx;
+  color: #999;
+  text-decoration: line-through;
+}
+.yh-one-jia>view:last-child{
+	width: 135rpx;
+	height: 42rpx;
+	line-height: 42rpx;
+	text-align: center;
+	background: #df273f;
+	border-radius: 8rpx;
+	font-size: 24rpx;
+	color: #fff;
+	margin-left: 20rpx;
+}
+.index-qb{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  margin: 20rpx 0;
+}
+/*空页面*/
+.cart-kong{
+  width: 100%;
+}
+.cart-kong>image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 250rpx 225rpx 30rpx 225rpx;
+}
+.cart-kong>view:nth-child(2){
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+.cart-kong>view:last-child{
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 15rpx;
+  text-align: center;
+}

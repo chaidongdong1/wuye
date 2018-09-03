@@ -227,7 +227,7 @@
    height: 100rpx;
    line-height: 100rpx;
    padding: 20rpx;
-   margin: 30rpx 20rpx;
+   margin: 30rpx 20rpx 0 20rpx;
    border: 1px solid #ff9a44;
    border-radius: 10rpx;
    display: flex;
@@ -429,3 +429,14 @@
    color: #666;
    padding-right: 20rpx;
  }
+ .replist-button{
+  width: 96%;
+  margin: 15rpx auto 20rpx auto;
+  height: 74rpx;
+  line-height: 74rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background: #F34A51;
+  text-align: center;
+  border-radius: 10rpx;
+}

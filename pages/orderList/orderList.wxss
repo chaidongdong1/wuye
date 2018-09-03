@@ -127,6 +127,12 @@
   font-size: 30rpx;
   color: #df273f;
   margin-top: 25rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.order-shop-nr>view:last-child>text{
+  font-size: 24rpx;
+  color: #999;
 }
 .order-hj{
 	width: 100%;
@@ -150,6 +156,7 @@
 	width: 370rpx;
 	height: 100%;
 	display: flex;
+  justify-content: flex-end;
 }
 .order-hj-hui{
 	width: 160rpx;
@@ -194,4 +201,12 @@
   color: #666;
   margin-top: 15rpx;
   text-align: center;
+}
+.index-qb{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  margin: 20rpx 0;
 }

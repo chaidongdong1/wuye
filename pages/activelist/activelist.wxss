@@ -9,7 +9,7 @@
 }
 
 .active-nr {
-  padding: 30rpx 24rpx;
+  padding: 30rpx 24rpx 0 24rpx;
   display: flex;
   justify-content: space-between;
 }
@@ -77,4 +77,12 @@
   color: #666;
   margin-top: 15rpx;
   text-align: center;
+}
+.index-qb{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  margin: 20rpx 0;
 }

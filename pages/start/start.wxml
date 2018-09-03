@@ -1,0 +1,14 @@
+<!--pages/start/start.wxml-->
+<loading wx:if="{{showLoading}}">加载中</loading>
+<view class="start">
+	<!-- 背景图 -->
+	<view class="start-image">
+		<image src="../../images/start.jpg"></image>
+	</view>
+	<!-- 页面按钮 -->
+	<view class="start-anniu">
+		<view class="start-title">{{datas.mallName}}</view>
+		<view class="start-nr">{{datas.mallDesc}}</view>
+		<button class="start-button" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">开启新生活</button>
+	</view>
+</view>

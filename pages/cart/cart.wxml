@@ -1,171 +1,85 @@
 <!--pages/cart/cart.wxml-->
-<view class="cart">
+<loading wx:if="{{showLoading}}">加载中</loading>
+<view class="cart" wx:if="{{datas.length != 0}}">
   <!-- 第一个店铺 -->
-  <view class="cart-dian">
+  <view class="cart-dian" wx:for="{{datas}}" wx:for-item="i" wx:key="index" wx:for-index="k">
     <!-- 店铺头部 -->
     <view class="cart-d-top">
       <!-- 是否选择 -->
-      <view class="{{chao == true ? 'dian-top-xuan' : 'dian-top-xuan dian-image'}}" bindtap="bindChao">
-        <image wx:if="{{chao == true}}" src="../../images/cart-02.png"></image>
+      <view class="{{i[0].temps == true ? 'dian-top-xuan' : 'dian-top-xuan dian-image'}}" bindtap="bindChao" data-index="{{k}}">
+        <image wx:if="{{i[0].temps == true}}" src="../../images/cart-02.png"></image>
       </view>
-      <view class="dian-t-tu">
-        <image src="../../images/cart-03.png"></image>
-      </view>
-      <view class="dian-t-wz">某某超市店铺</view>
-      <view class="dian-t-jian">
-        <image src="../../images/index-05.png"></image>
+      <view class="carts-dianpu" bindtap="bindTiaoMall" data-shops="{{i[0].shopId}}">
+        <view class="dian-t-tu">
+          <image src="../../images/cart-03.png"></image>
+        </view>
+        <view class="dian-t-wz">{{i[0].shopName}}</view>
+        <view class="dian-t-jian">
+          <image src="../../images/index-05.png"></image>
+        </view>
       </view>
     </view>
     <!-- 商品 -->
     <view class="cart-shop">
       <!-- 第一件商品 -->
-      <view class="cart-s-one">
-      	<!-- 左侧 -->
-      	<view class="shop-left shop-xu">
-      		<!-- <image src="../../images/cart-02.png"></image> -->
-      	</view>
-      	<!-- 商品图 -->
-      	<view class="shop-tu">
-      		<image src="../../images/index-06.jpg"></image>
-      	</view>
-      	<!-- 右侧 -->
-      	<view class="shop-right">
-      		<view>吖商家孤岛惊魂申达股份会计师对新城V你师父打卡机老虎机等吖商家孤岛惊魂申达股份会计师对新城V你师父打卡机老虎机等</view>
-      		<view>规格：500ml<text>口味：原味</text></view>
-      		<!-- 价格和数量 -->
-      		<view class="shop-jia">
-      			<view>￥800.00</view>
-      			<view class="shop-number">
-      				<view>-</view>
-      				<view>1</view>
-      				<view>+</view>
-      			</view>
-      		</view>
-      	</view>
-      </view>
-      <!-- 第一件商品 -->
-      <view class="cart-s-one">
-      	<!-- 左侧 -->
-      	<view class="shop-left">
-      		<image src="../../images/cart-02.png"></image>
-      	</view>
-      	<!-- 商品图 -->
-      	<view class="shop-tu">
-      		<image src="../../images/index-06.jpg"></image>
-      	</view>
-      	<!-- 右侧 -->
-      	<view class="shop-right">
-      		<view>吖商家孤岛惊魂申达股份会计师对新城V你师父打卡机老虎机等</view>
-      		<view>规格：500ml<text>口味：原味</text></view>
-      		<!-- 价格和数量 -->
-      		<view class="shop-jia">
-      			<view>￥800.00</view>
-      			<view class="shop-number">
-      				<view>-</view>
-      				<view>1</view>
-      				<view>+</view>
-      			</view>
-      		</view>
-      	</view>
-      </view>
-    </view>
-  </view>
-  <!-- 第一个店铺 -->
-  <view class="cart-dian">
-    <!-- 店铺头部 -->
-    <view class="cart-d-top">
-      <!-- 是否选择 -->
-      <view class="{{chao == true ? 'dian-top-xuan' : 'dian-top-xuan dian-image'}}" bindtap="bindChao">
-        <image wx:if="{{chao == true}}" src="../../images/cart-02.png"></image>
-      </view>
-      <view class="dian-t-tu">
-        <image src="../../images/cart-03.png"></image>
-      </view>
-      <view class="dian-t-wz">某某超市店铺</view>
-      <view class="dian-t-jian">
-        <image src="../../images/index-05.png"></image>
-      </view>
-    </view>
-    <!-- 商品 -->
-    <view class="cart-shop">
-      <!-- 第一件商品 -->
-      <view class="cart-s-one">
-      	<!-- 左侧 -->
-      	<view class="shop-left shop-xu">
-      		<!-- <image src="../../images/cart-02.png"></image> -->
-      	</view>
-      	<!-- 商品图 -->
-      	<view class="shop-tu">
-      		<image src="../../images/index-06.jpg"></image>
-      	</view>
-      	<!-- 右侧 -->
-      	<view class="shop-right">
-      		<view>吖商家孤岛惊魂申达股份会计师对新城V你师父打卡机老虎机等</view>
-      		<view>规格：500ml<text>口味：原味</text></view>
-      		<!-- 价格和数量 -->
-      		<view class="shop-jia">
-      			<view>￥800.00</view>
-      			<view class="shop-number">
-      				<view>-</view>
-      				<view>1</view>
-      				<view>+</view>
-      			</view>
-      		</view>
-      	</view>
-      </view>
-      <!-- 第一件商品 -->
-      <view class="cart-s-one">
-      	<!-- 左侧 -->
-      	<view class="shop-left">
-      		<image src="../../images/cart-02.png"></image>
-      	</view>
-      	<!-- 商品图 -->
-      	<view class="shop-tu">
-      		<image src="../../images/index-06.jpg"></image>
-      	</view>
-      	<!-- 右侧 -->
-      	<view class="shop-right">
-      		<view>吖商家孤岛惊魂申达股份会计师对新城V你师父打卡机老虎机等</view>
-      		<view>规格：500ml<text>口味：原味</text></view>
-      		<!-- 价格和数量 -->
-      		<view class="shop-jia">
-      			<view>￥800.00</view>
-      			<view class="shop-number">
-      				<view>-</view>
-      				<view>1</view>
-      				<view>+</view>
-      			</view>
-      		</view>
-      	</view>
+      <view class="cart-s-one" wx:for="{{i}}" wx:key="index">
+        <!-- 左侧   shop-xu -->
+        <view class="{{item.temp == true ? 'shop-left' : 'shop-left shop-xu'}}" bindtap="bindGoodsxuan" data-index="{{index}}" data-shops="{{k}}">
+          <image wx:if="{{item.temp}}" src="../../images/cart-02.png"></image>
+        </view>
+        <!-- 商品图 -->
+        <view class="shop-tu" bindtap="bindShops" data-goodsid="{{item.goodsId}}">
+          <image src="{{baseUrl}}{{item.goodsImage}}"></image>
+        </view>
+        <!-- 右侧 -->
+        <view class="shop-right">
+          <view bindtap="bindShops" data-goodsid="{{item.goodsId}}">{{item.goodsName}}</view>
+          <view>{{item.shopGui}}
+            <text>{{item.guigeArray}}</text>
+          </view>
+          <!-- 价格和数量 -->
+          <view class="shop-jia">
+            <view>￥{{item.shopPrice}}</view>
+            <view class="shop-number">
+              <view bindtap="bindJian" data-shopindex="{{k}}" data-goodsindex="{{index}}">-</view>
+              <view>{{item.shopNumber}}</view>
+              <view bindtap="bindJia" data-shopindex="{{k}}" data-goodsindex="{{index}}">+</view>
+            </view>
+          </view>
+        </view>
       </view>
     </view>
   </view>
 </view>
 <!-- 底部信息 -->
-<view class="cart-bottom">
-	<!-- 全选 -->
-	<view class="cart-b-quan">
-		<!-- 未选中 -->
-		<view class=" cart-b-qx"></view>
-		<!-- 已选中 -->
-		<!-- <image src="../../images/cart-02.png"></image> -->
-		<text>全选</text>
-	</view>
-	<!-- 删除 -->
-	<view class="cart-b-shan">
-		<image src="../../images/cart-01.png"></image>
-		<text>删除</text>
-	</view>
-	<!-- 合计 -->
-	<view class="cart-b-heji">
-		<view>合计：<text>￥1600.00</text></view>
-		<view>不含运费</view>
-	</view>
-	<!-- 结算 -->
-	<view class="cart-b-jie">结算<text>(6)</text></view>
+<view class="cart-bottom" wx:if="{{datas.length != 0}}">
+  <!-- 全选 -->
+  <view class="cart-b-quan" bindtap="bindtapAll">
+    <!-- 未选中 -->
+    <view wx:if="{{all == false}}" class=" cart-b-qx"></view>
+    <!-- 已选中 -->
+    <image wx:if="{{all == true}}" src="../../images/cart-02.png"></image>
+    <text>全选</text>
+  </view>
+  <!-- 删除 -->
+  <view class="cart-b-shan" bindtap="bindDelete">
+    <image src="../../images/cart-01.png"></image>
+    <text>删除</text>
+  </view>
+  <!-- 合计 -->
+  <view class="cart-b-heji">
+    <view>合计：
+      <text>￥{{totalMoney}}</text>
+    </view>
+    <view>不含运费</view>
+  </view>
+  <!-- 结算 -->
+  <view class="cart-b-jie" bindtap="bindSumbit">结算
+    <text>({{datasList}})</text>
+  </view>
 </view>
 <!-- 空页面-->
-<view class="cart-kong">
+<view class="cart-kong" wx:if="{{!datas || datas.length == 0}}">
   <image src="../../images/cart-kong.png"></image>
   <view>暂无商品</view>
   <view>~ 购物车为空呦! ~</view>

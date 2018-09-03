@@ -1,66 +1,53 @@
 // pages/evaluatelist/evaluatelist.js
+const app = getApp();
+let userId, orderId;
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    datas: [], //商品列表
+    baseUrl: app.globalData.baseUrl
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  onLoad: function(options) {
+    console.log(options);
+    //获取userId和userInfo
+    userId = wx.getStorageSync('userId');
+    orderId = options.orderid;
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  onShow() {
+    wx.request({
+      method: 'POST',
+      url: `${app.globalData.api}Orders/getOrderInfo`,
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        userId: userId,
+        orderId: orderId
+      },
+      success: res => {
+        console.log(res);
+        this.setData({
+          datas: res.data.goodsList
+        });
+      },
+      fail: res => {
+        console.log(res);
+      }
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  //点击评价
+  bindPing(e) {
+    console.log(e);
+    let orderid = e.currentTarget.dataset.orderid;
+    let goodsid = e.currentTarget.dataset.goodsid;
+    wx.navigateTo({
+      url: `../submitevaluate/submitevaluate?orderid=${orderid}&goodsid=${goodsid}`
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  //分享
+  onShareAppMessage: function(res) {
+    return {
+      title: app.globalData.applet,
+      path: 'pages/start/start'
+    };
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })

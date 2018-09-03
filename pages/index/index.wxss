@@ -351,7 +351,7 @@
   width: 440rpx;
   height: 68rpx;
   line-height: 34rpx;
-  margin: 20rpx;
+  margin: 10rpx;
   position: relative;
 }
 
@@ -386,6 +386,7 @@
   padding: 0 20rpx;
   font-size: 24rpx;
   color: #999;
+  padding-bottom: 10rpx;
 }
 
 
@@ -423,12 +424,12 @@
   height: 36rpx;
   line-height: 36rpx;
   font-size: 24rpx;
-  color: #ff0000;
+  color: #fff;
   text-align: center;
   position: absolute;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, .5);
 }
 
 
@@ -634,4 +635,12 @@
 
 .news-one-right>view:last-child>text {
   color: #f34a51;
+}
+.index-qb{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  margin: 20rpx 0;
 }

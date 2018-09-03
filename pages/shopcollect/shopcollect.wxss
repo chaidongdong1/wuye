@@ -16,6 +16,8 @@
 }
 .top-l{
 	display: flex;
+  flex: 1;
+  margin-right: 30rpx;
 }
 .top-l>view>image{
 	width: 80rpx;
@@ -32,7 +34,7 @@
 	font-size: 28rpx;
 }
 .top-l view:last-child text:last-child{
-	color: #999;
+	color: #333;
 	font-size: 24rpx;
 }
 .top-r{
@@ -81,4 +83,12 @@
   color: #666;
   margin-top: 15rpx;
   text-align: center;
+}
+.index-qb{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  margin: 20rpx 0;
 }

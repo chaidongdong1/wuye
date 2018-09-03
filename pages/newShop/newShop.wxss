@@ -1,0 +1,103 @@
+/* pages/newShop/newShop.wxss */
+/*新品推荐*/
+page{
+	background: #fff;
+}
+
+.xin-nei {
+  width: 702rpx;
+  height: auto;
+  margin: 30rpx 24rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 10rpx;
+}
+
+.xin-n-one {
+  width: 320rpx;
+  height: auto;
+  border: 1px solid #cccccc;
+  padding: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.xin-n-one>image {
+  width: 320rpx;
+  height: 320rpx;
+}
+
+.xin-n-one>view:nth-child(2) {
+  width: 100%;
+  height: 68rpx;
+  line-height: 34rpx;
+  margin: 10rpx 0;
+  font-size: 28rpx;
+  color: #333;
+  overflow: hidden;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.xin-n-one>view:nth-child(3) {
+  font-size: 24rpx;
+  color: #656565;
+  margin-top: 10rpx;
+}
+
+.xin-n-one>view:last-child {
+  width: 100%;
+  height: 46rpx;
+  line-height: 46rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.xin-n-one>view:last-child>view:first-child {
+  width: 120rpx;
+  height: 46rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 24rpx;
+  color: #656565;
+  margin-right: 10rpx;
+}
+
+.xin-n-one>view:last-child>view:last-child {
+  font-size: 32rpx;
+  color: #f00;
+}
+/*空页面*/
+.cart-kong{
+  width: 100%;
+  height: 100vh;
+}
+.cart-kong>image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 300rpx 225rpx 30rpx 225rpx;
+}
+.cart-kong>view:nth-child(2){
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+}
+.cart-kong>view:last-child{
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 15rpx;
+  text-align: center;
+}
+.index-qb{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  margin: 20rpx 0;
+}

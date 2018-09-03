@@ -127,6 +127,11 @@
 }
 
 .shop-right>view:nth-child(2) {
+  width: 430rpx;
+  height: 46rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
   font-size: 24rpx;
   color: #999;
   line-height: 46rpx;
@@ -302,4 +307,8 @@
   color: #666;
   margin-top: 15rpx;
   text-align: center;
+}
+.carts-dianpu{
+  flex: 1;
+  display: flex;
 }

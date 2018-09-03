@@ -1,56 +1,53 @@
 <!--pages/shopDetails/shopDetails.wxml-->
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="shop">
   <!-- 商品轮播 -->
   <view class="index-banner">
     <swiper class="index-swiper" indicator-dots="true" indicator-active-color="#309EFD" autoplay="true" interval="5000" duration="1000" circular="true">
       <block wx:for="{{imgUrls}}" wx:key="{{index}}">
         <swiper-item>
-          <image src="{{item}}" class="index-banner-image" />
+          <image src="{{baseUrl}}{{item.goodsImg}}" class="index-banner-image" />
         </swiper-item>
       </block>
     </swiper>
-    <!-- 秒杀 -->
-    <!-- <view class="shop-miao">
-    	<view>￥12.99<text>￥15.99</text></view>
-    	<view>仅剩余232件</view>
-    </view> -->
   </view>
   <!-- 产品内容 -->
   <view class="shop-title">
-    <view>可口可乐 畅饮任何一款可口可乐产品所带来的简单快乐让那一刻变得与众不同畅饮任何一款可口可乐产品所带来的简单快乐让那一刻变得与众不同</view>
+    <view>{{datas.goodsName}}</view>
     <view class="shop-t-jiage">
-    	<!-- 正常商品 -->
+      <!-- 正常商品 -->
       <view class="shop-t-name">
-        <view>￥800.00</view>
+        <view>￥{{datas.shopPrice}}</view>
         <view class="shop-t-je">
-        	<view>蓝月亮</view>
-          <text>存货量：1566件</text>
+          <view>销量：{{datas.saleCount}}件</view>
+          <text>存货量：{{datas.goodsStock}}件</text>
         </view>
       </view>
-      <!-- 秒杀产品 -->
-      <!-- <view class="shop-t-ms">
-      	<view><text>限时秒杀</text>剩余时间 23:56:32:15</view>
-      	<view>累计已秒杀242件商品</view>
-      </view> -->
       <!-- 分享 -->
-      <view class="shop-t-fenxiang">
+      <button class="shop-t-fenxiang" open-type="share">
         <image src="../../images/shopdetails-01.png"></image>
         <view>分享</view>
-      </view>
+      </button>
     </view>
-    <view>
-    	<view>店铺名称：某某超市</view>
-    	<image src="../../images/index-05.png"></image>
+    <view class="shops-last" bindtap="bindtapMall" data-shopid="{{datas.shopId}}">
+      <view>店铺：进店逛逛</view>
+      <image src="../../images/index-05.png"></image>
     </view>
+  </view>
+  <view class="shop-canshu">
+    <view style="display: flex;justify-content: space-between;">店铺运费：<text style="color: #f00;">￥{{datas.deliveryMoney}}</text></view>
+  </view>
+  <view class="shop-canshu">
+    <view style="display: flex;justify-content: space-between;">赠送积分：<text style="color: #f00;">{{!datas.setIntegral ? '0' : datas.setIntegral}} 积分</text></view>
   </view>
   <!-- 选择参数 -->
   <view class="shop-canshu" bindtap="bindtapMasks">
     <view>选择商品参数、数量</view>
     <image src="../../images/index-05.png"></image>
   </view>
-  <navigator class="shop-canshu">
+  <navigator class="shop-canshu" url="../evaluate/evaluate?goodsid={{datas.goodsId}}">
     <view>评价
-      <text>(300)</text>
+      <text>({{datas.appraisesCnt}})</text>
     </view>
     <image src="../../images/index-05.png"></image>
   </navigator>
@@ -63,26 +60,23 @@
     </view>
     <!-- 详情内容 -->
     <view class="shops-detail">
-      <view wx:if="{{swiperIndexs == 0}}" style="font-size: 28rpx;color: #666;">可口可乐 畅饮任何一款可口可乐产品所带来的简单快乐让那一刻变得与众不同可口可乐 畅饮任何一款可口可乐产品所带来的简单快乐让那一刻变得与众不同可口可乐 畅饮任何一款可口可乐产品所带来的简单快乐让那一刻变得与众不同</view>
+      <view wx:if="{{swiperIndexs == 0}}">
+        <rich-text nodes="{{datas.goodsDesc}}"></rich-text>
+      </view>
       <view wx:if="{{swiperIndexs == 1}}">
-        <view class="shop-guige">商品名称：
-          <text>可口可乐</text>
-        </view>
-        <view class="shop-guige">商品编号：1520023200</view>
-        <view class="shop-guige">商品分类：饮品类</view>
-        <view class="shop-guige1">商品售后：
-          <text>商品售后商品售后商品售后商品售后</text>
+        <view class="shop-guige" wx:for="{{specifications}}" wx:key="index">{{item.attrName}}：
+          <text>{{item.attrContent}}</text>
         </view>
       </view>
     </view>
   </view>
   <!-- 底部栏 -->
   <view class="shop-bottom">
-    <view class="shop-b-kefu">
+    <view class="shop-b-kefu" bindtap="bindtapMall" data-shopid="{{datas.shopId}}">
       <image src="../../images/shopdetails-04.png"></image>
-      <view>客服</view>
+      <view>店铺</view>
     </view>
-    <view class="shop-b-kefu">
+    <view class="shop-b-kefu" bindtap="bindCats">
       <image src="../../images/shopdetails-03.png"></image>
       <view>购物车</view>
     </view>
@@ -93,31 +87,27 @@
 <!-- 弹窗 -->
 <view class="mask" style="opacity: {{mask.opacity}}; display: {{mask.display}};">
   <view class="masks" bindtap="bindtapClose"></view>
-  <view class="mask-shop"  style="transform: {{returnDeposit.translateY}}; opacity: {{returnDeposit.opacity}};">
+  <view class="mask-shop" style="transform: {{returnDeposit.translateY}}; opacity: {{returnDeposit.opacity}};">
     <view class="mask-tp">
-      <image src="../../images/mall-08.jpg"></image>
-      <view>￥800.00</view>
-      <view>存货量：1560件</view>
+      <image src="{{baseUrl}}{{datas.goodsThums}}"></image>
+      <view>￥{{priceAttrs[colorIndex].attrPrice}}</view>
+      <view>存货量：{{priceAttrs[colorIndex].attrStock}}件</view>
       <image bindtap="bindtapClose" src="../../images/shopdetails-05.png"></image>
     </view>
     <!-- 规格和口味 -->
     <view class="mask-guige">
       <!-- 规格 -->
       <view class="mask-guige1">
-        <view>规格</view>
+        <view>{{priceAttrName}}</view>
         <view class="mask-g-xuan">
-          <view class="mask-active">500ml</view>
-          <view>300ml</view>
-          <view>150ml</view>
+          <view class="{{colorIndex == index ? 'mask-active' : ''}}" wx:for="{{priceAttrs}}" wx:key="index" bindtap="bindColor" data-index="{{index}}">{{item.attrVal}}</view>
         </view>
       </view>
       <!-- 口味 -->
-      <view class="mask-guige1">
-        <view>口味</view>
+      <view class="mask-guige1" wx:for="{{attrs}}" wx:for-item="i" wx:key="i" wx:for-index="k">
+        <view>{{i.attrName}}</view>
         <view class="mask-g-xuan">
-          <view class="mask-active">原味</view>
-          <view>苹果味</view>
-          <view>樱桃味</view>
+          <view class="{{curChoosedAttr[k] == index ? 'mask-active' : ''}}" wx:for="{{i.opts}}" wx:key="index" bindtap="bindGui" data-index="{{index}}" data-indexs="{{k}}">{{item}}</view>
         </view>
       </view>
     </view>
@@ -132,7 +122,7 @@
     </view>
     <!-- 按钮 -->
     <view class="mask-anniu">
-      <view>加入购物车</view>
+      <view bindtap="bindtapCat">加入购物车</view>
       <view bindtap='buy_now'>立即购买</view>
     </view>
   </view>

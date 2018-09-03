@@ -143,3 +143,15 @@
   margin-top: 15rpx;
   text-align: center;
 }
+.replist-button{
+  width: 96%;
+  margin: 15rpx auto 0 auto;
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 28rpx;
+  color: #F34A51;
+  background: #fff;
+  border:1px solid #F34A51;
+  text-align: center;
+  border-radius: 10rpx;
+}

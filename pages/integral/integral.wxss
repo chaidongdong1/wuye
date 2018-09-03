@@ -15,7 +15,6 @@
 .inte-t-bj {
   width: 100%;
   height: 100%;
-
 }
 
 .inte-t-bj>image {
@@ -37,8 +36,8 @@
 }
 
 .inte-border {
-  width: 220rpx;
-  height: 220rpx;
+  width: 110px;
+  height: 110px;
   position: absolute;
   top: -5px;
   left: -5px;
@@ -136,40 +135,66 @@
   margin-left: 50rpx;
 }
 
-.list-one-right>view:first-child{
+.list-one-right>view:first-child {
   width: 100rpx;
   height: 100rpx;
   line-height: 100rpx;
   border-radius: 50%;
   border: 2rpx solid;
-  border-image: -webkit-linear-gradient(180deg, #ff9a44 0%, #f34a51 100%),
-                -webkit-linear-gradient(#06b5fe, #06b5fe);
+  border-image: -webkit-linear-gradient(180deg, #ff9a44 0%, #f34a51 100%), -webkit-linear-gradient(#06b5fe, #06b5fe);
   text-align: center;
   font-size: 30rpx;
   color: #fe6306;
 }
-.list-one-right>view:last-child{
-	font-size: 24rpx;
-	color: #999;
-	margin-top: 15rpx;
+
+.list-one-right>view:last-child {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 15rpx;
 }
+
+
 /*空页面*/
-.cart-kong{
+
+.cart-kong {
   width: 100%;
 }
-.cart-kong>image{
+
+.cart-kong>image {
   width: 300rpx;
   height: 300rpx;
   margin: 200rpx 225rpx 30rpx 225rpx;
 }
-.cart-kong>view:nth-child(2){
+
+.cart-kong>view:nth-child(2) {
   font-size: 32rpx;
   color: #333;
   text-align: center;
 }
-.cart-kong>view:last-child{
+
+.cart-kong>view:last-child {
   font-size: 26rpx;
   color: #666;
   margin-top: 15rpx;
   text-align: center;
+}
+
+.index-qb {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  margin: 20rpx 0;
+}
+
+.intert-jian {
+  border: 0 !important;
+  margin-top: 0 !important;
+  line-height: 80rpx !important;
+  font-size: 28rpx !important;
+  color: #f00 !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: flex-end !important;
 }

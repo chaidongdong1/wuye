@@ -1,5 +1,6 @@
 /* pages/shopDetails/shopDetails.wxss */
 
+
 /*轮播*/
 
 .index-banner {
@@ -17,39 +18,44 @@
   width: 100%;
   height: 750rpx;
 }
-.shop-miao{
-	width: 702rpx;
-	height: 88rpx;
-	line-height: 88rpx;
-	background: #f5e9e7;
-	padding: 0 24rpx;
-	display: flex;
-	justify-content: space-between;
-	position: absolute;
-	bottom: -15rpx;
-	left: 0;
+
+.shop-miao {
+  width: 702rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #f5e9e7;
+  padding: 0 24rpx;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -15rpx;
+  left: 0;
 }
-.shop-miao>view:first-child{
-	color: #df273f;
-	font-size: 36rpx;
+
+.shop-miao>view:first-child {
+  color: #df273f;
+  font-size: 36rpx;
 }
-.shop-miao>view:first-child>text{
-	font-size: 24rpx;
-	color: #999;
-	padding-left: 15rpx;
-	text-decoration: line-through;
+
+.shop-miao>view:first-child>text {
+  font-size: 24rpx;
+  color: #999;
+  padding-left: 15rpx;
+  text-decoration: line-through;
 }
-.shop-miao>view:last-child{
-	width: auto;
-	height: 46rpx;
-	line-height: 46rpx;
-	margin-top: 25rpx;
-	background: #fff;
-	border-radius: 10rpx;
-	color: #df273f;
-	font-size: 24rpx;
-	padding: 0 30rpx;
+
+.shop-miao>view:last-child {
+  width: auto;
+  height: 46rpx;
+  line-height: 46rpx;
+  margin-top: 25rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  color: #df273f;
+  font-size: 24rpx;
+  padding: 0 30rpx;
 }
+
 .shop-title {
   width: 96%;
   height: auto;
@@ -84,24 +90,29 @@
 .shop-t-name {
   flex: 1;
 }
-.shop-t-ms{
-	flex: 1;
-	height: 90rpx;
-	line-height: 45rpx;
-	margin-top: 10rpx;
+
+.shop-t-ms {
+  flex: 1;
+  height: 90rpx;
+  line-height: 45rpx;
+  margin-top: 10rpx;
 }
-.shop-t-ms>view:first-child{
-	font-size: 24rpx;
-	color: #333;
+
+.shop-t-ms>view:first-child {
+  font-size: 24rpx;
+  color: #333;
 }
-.shop-t-ms>view:first-child>text{
-	color: #df273f;
-	padding-right: 15rpx;
+
+.shop-t-ms>view:first-child>text {
+  color: #df273f;
+  padding-right: 15rpx;
 }
-.shop-t-ms>view:last-child{
-	font-size: 24rpx;
-	color: #999;
+
+.shop-t-ms>view:last-child {
+  font-size: 24rpx;
+  color: #999;
 }
+
 .shop-t-name>view:first-child {
   font-size: 46rpx;
   color: #f00;
@@ -109,24 +120,31 @@
 }
 
 .shop-t-je {
-	display:flex;
+  display: flex;
   font-size: 28rpx;
   color: #666;
   margin-right: 30rpx;
 }
-.shop-t-je>view{
-	width: 280rpx;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	margin-right: 20rpx;
+
+.shop-t-je>view {
+  width: 280rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 20rpx;
 }
 
 .shop-t-fenxiang {
   width: 80rpx;
   height: auto;
+  line-height: 45rpx;
   margin-top: 10rpx;
   text-align: center;
+  background: #fff;
+  padding: 0;
+}
+.shop-t-fenxiang::after{
+  border: 0
 }
 
 .shop-t-fenxiang>image {
@@ -140,18 +158,19 @@
   color: #f00;
 }
 
-.shop-title>view:last-child {
-	display:flex;
-	height: 42rpx;
-	line-height: 42rpx;
-	justify-content: space-between;
+.shops-last {
+  display: flex;
+  height: 42rpx;
+  line-height: 42rpx;
+  justify-content: space-between;
   font-size: 28rpx;
   color: #666;
 }
-.shop-title>view:last-child>image{
-	width: 15rpx;
-	height: 20rpx;
-	margin-top: 11rpx;  
+
+.shops-last>image {
+  width: 15rpx;
+  height: 20rpx;
+  margin-top: 11rpx;
 }
 
 .shop-canshu {
@@ -306,6 +325,7 @@
   background: #fa610e;
 }
 
+
 /*弹窗*/
 
 .mask {
@@ -375,7 +395,9 @@
 
 .mask-guige {
   width: 96%;
-  height: auto;
+  height: 350rpx;
+  overflow-x: hidden;
+  overflow-y: scroll;
   margin: 20rpx 0;
   padding: 20rpx 2%;
   background: #fff;

@@ -1,3 +1,4 @@
 {
-	"navigationBarTitleText": "店铺详情"
+	"navigationBarTitleText": "店铺详情",
+	"onReachBottomDistance":true
 }

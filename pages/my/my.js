@@ -1,66 +1,64 @@
 // pages/my/my.js
+const app = getApp();
+let userId;
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    userScore: 0, //我的积分
+    showLoading: true,
+    datasNumber: [], //数量接口
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  onLoad: function(options) {
+    userId = wx.getStorageSync('userId')
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  onShow() {
+    //获取积分信息
+    wx.request({
+      method: 'POST',
+      url: `${app.globalData.api}Users/getUserInfo`,
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        userId: userId
+      },
+      success: res => {
+        console.log(res);
+        wx.stopPullDownRefresh();
+        this.setData({
+          userScore: res.data.data.userScore,
+          datasNumber: res.data.data.orderNum,
+          showLoading: false
+        });
+      },
+      fail: res => {
+        this.setData({
+          showLoading: false
+        });
+        console.log(res);
+      }
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  //点击查看积分明细
+  bindIntegral() {
+    wx.navigateTo({
+      url: '../integral/integral'
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  //查看所有订单
+  bintapOrder() {
+    wx.navigateTo({
+      url: '../orderList/orderList'
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
+  //分享
+  onShareAppMessage: function(res) {
+    return {
+      title: app.globalData.applet,
+      path: 'pages/start/start'
+    };
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  //下拉刷新
+  onPullDownRefresh() {
+    this.onShow();
   }
-})
+});

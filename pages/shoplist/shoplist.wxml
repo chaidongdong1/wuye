@@ -1,106 +1,37 @@
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="shops">
   <!-- 超市 -->
-  <view class="shoplist">
+  <view class="shoplist" wx:for="{{datas}}" wx:for-item="i" wx:key="i">
     <view class="pad24">
-      <view class="shop-top">
+      <view class="shop-top" bindtap="bindtapMall" data-shopid="{{i.shopId}}">
         <view class="top-l">
           <view>
-            <image src="../../images/a_super.jpg"></image>
+            <image wx:if="{{i.shopImg}}" src="{{baseUrl}}{{i.shopImg}}"></image>
+            <image wx:if="{{!i.shopImg || i.shopImg == 'null'}}" src="../../images/a_super.jpg"></image>
           </view>
           <view>
-            <text>某某超市名称</text>
-            <text>共 135 件商品</text>
+            <text>{{i.shopName}}</text>
+            <text>共 {{i.goodsList.total}} 件商品</text>
           </view>
         </view>
         <view class="top-r">去逛逛></view>
       </view>
       <view class="shop-btm">
         <view class="shop-img">
-          <view>
-            <image src="../../images/a_lanyueliang.jpg"></image>
-            <view>$12.98</view>
-          </view>
-          <view>
-            <image src="../../images/a_lanyueliang.jpg"></image>
-            <view>$12.98</view>
-          </view>
-          <view>
-            <image src="../../images/a_lanyueliang.jpg"></image>
-            <view>$12.98</view>
+          <view wx:for="{{i.goodsList.root}}" wx:key="index" bindtap="bindtapShop" data-goodsid="{{item.goodsId}}">
+            <image src="{{baseUrl}}{{item.goodsImg}}"></image>
+            <view>￥{{item.shopPrice}}</view>
           </view>
         </view>
+        <!-- 已加载全部 -->
+        <view class="index-qb" wx:if="{{!i.goodsList.root || i.goodsList.root.length == 0 }}"> —— 暂无商品呦！ ——</view>
       </view>
     </view>
   </view>
-  <!-- 超市 -->
-  <view class="shoplist">
-    <view class="pad24">
-      <view class="shop-top">
-        <view class="top-l">
-          <view>
-            <image src="../../images/a_super.jpg"></image>
-          </view>
-          <view>
-            <text>某某超市名称</text>
-            <text>共 135 件商品</text>
-          </view>
-        </view>
-        <view class="top-r">去逛逛></view>
-      </view>
-      <view class="shop-btm">
-        <view class="shop-img">
-          <view>
-            <image src="../../images/a_lanyueliang.jpg"></image>
-            <view>$12.98</view>
-          </view>
-          <view>
-            <image src="../../images/a_lanyueliang.jpg"></image>
-            <view>$12.98</view>
-          </view>
-          <view>
-            <image src="../../images/a_lanyueliang.jpg"></image>
-            <view>$12.98</view>
-          </view>
-        </view>
-      </view>
-    </view>
-  </view>
-  <!-- 超市 -->
-  <view class="shoplist">
-    <view class="pad24">
-      <view class="shop-top">
-        <view class="top-l">
-          <view>
-            <image src="../../images/a_super.jpg"></image>
-          </view>
-          <view>
-            <text>某某超市名称</text>
-            <text>共 135 件商品</text>
-          </view>
-        </view>
-        <view class="top-r">去逛逛></view>
-      </view>
-      <view class="shop-btm">
-        <view class="shop-img">
-          <view>
-            <image src="../../images/a_lanyueliang.jpg"></image>
-            <view>$12.98</view>
-          </view>
-          <view>
-            <image src="../../images/a_lanyueliang.jpg"></image>
-            <view>$12.98</view>
-          </view>
-          <view>
-            <image src="../../images/a_lanyueliang.jpg"></image>
-            <view>$12.98</view>
-          </view>
-        </view>
-      </view>
-    </view>
-  </view>
+  <view class="index-qb" wx:if="{{currPage == totalPage && datas.length != 0}}"> —— 别扯了，到底了！ ——</view>
 </view>
 <!-- 空页面-->
-<view class="cart-kong" wx:if="{{shop}}">
+<view class="cart-kong" wx:if="{{!datas}}">
   <image src="../../images/ashoucang.png"></image>
   <view>暂无店铺</view>
   <view>~ 店铺列表为空呦! ~</view>

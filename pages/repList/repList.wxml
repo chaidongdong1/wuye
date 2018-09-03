@@ -1,47 +1,33 @@
 <!--pages/repList/repList.wxml-->
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="repList">
   <!-- 正在报修 -->
   <view class="list-xiu">
     <!-- 第一条报修 -->
-    <view class="xiu">
+    <view class="xiu" wx:for="{{being}}" wx:key="index">
       <view class="xiu-top">
         <view>正在报修</view>
         <view>
-          <text></text>安排上门维修师傅</view>
+          <text></text>{{item.orderStatus}}</view>
       </view>
-      <view class="xiu-bottom">
+      <view class="xiu-bottom" bindtap="bindDetails" data-orderid="{{item.orderId}}">
         <view class="xiu-b-left">
-          <view>天然气</view>
-          <image src="../../images/index-bx.jpg"></image>
+          <view>{{item.fName}}</view>
+          <image wx:if="{{item.orderSrc1 && item.orderSrc1 != 'undefined'}}" src="{{baseUrl}}{{item.orderSrc1}}"></image>
+          <image wx:if="{{!item.orderSrc1 || item.orderSrc1 == 'undefined'}}" src="../../images/index-bx.jpg"></image>
         </view>
         <view class="xiu-right">
-          <view>天然气管道有点跑味，想让物业换一个新的天然气管天然气管道有点跑味，想让物业换一个新的天然气管</view>
-          <view>报修时间：2018-06-20 12:36:20</view>
-          <view>联系电话：13298343196</view>
+          <view>{{item.orderRemarks}}</view>
+          <view>报修时间：{{item.createTime}}</view>
+          <view wx:if="{{!item.userTel}}">本人电话：{{item.userPhone}}</view>
+          <view wx:if="{{item.userTel}}">师傅电话：{{item.userTel}}</view>
         </view>
       </view>
-    </view>
-    <view class="xiu">
-      <view class="xiu-top">
-        <view>正在报修</view>
-        <view>
-          <text></text>安排上门维修师傅</view>
-      </view>
-      <view class="xiu-bottom">
-        <view class="xiu-b-left">
-          <view>天然气</view>
-          <image src="../../images/index-bx.jpg"></image>
-        </view>
-        <view class="xiu-right">
-          <view>天然气管道有点跑味，想让物业换一个新的天然气管天然气管道有点跑味，想让物业换一个新的天然气管</view>
-          <view>报修时间：2018-06-20 12:36:20</view>
-          <view>联系电话：13298343196</view>
-        </view>
-      </view>
+      <view class="replist-button" wx:if="{{item.status == 10}}" bindtap="bindStocks" data-orderid="{{item.orderId}}">确认维修已完成</view>
     </view>
   </view>
   <!-- 维修完成 -->
-  <view class="list-wan">
+  <view class="list-wan" wx:if="{{stocks.length != 0}}">
     <view class="xiu">
       <view class="xiu-top">
         <view>我的报修</view>
@@ -49,34 +35,23 @@
           <text></text>维修已完成</view>
       </view>
       <!-- 第一条 -->
-      <view class="xiu-bottom">
+      <view class="xiu-bottom" wx:for="{{stocks}}" wx:key="index" bindtap="bindDetails" data-orderid="{{item.orderId}}">
         <view class="xiu-b-left">
-          <view>天然气</view>
-          <image src="../../images/index-bx.jpg"></image>
+          <view>{{item.fName}}</view>
+          <image wx:if="{{item.orderSrc1 && item.orderSrc1 != 'undefined'}}" src="{{baseUrl}}{{item.orderSrc1}}"></image>
+          <image wx:if="{{!item.orderSrc1 || item.orderSrc1 == 'undefined'}}" src="../../images/index-bx.jpg"></image>
         </view>
         <view class="xiu-right">
-          <view>天然气管道有点跑味，想让物业换一个新的天然气管天然气管道有点跑味，想让物业换一个新的天然气管</view>
-          <view>报修时间：2018-06-20 12:36:20</view>
-          <view>联系电话：13298343196</view>
-        </view>
-      </view>
-      <!-- 第一条 -->
-      <view class="xiu-bottom">
-        <view class="xiu-b-left">
-          <view>天然气</view>
-          <image src="../../images/index-bx.jpg"></image>
-        </view>
-        <view class="xiu-right">
-          <view>天然气管道有点跑味，想让物业换一个新的天然气管天然气管道有点跑味，想让物业换一个新的天然气管</view>
-          <view>报修时间：2018-06-20 12:36:20</view>
-          <view>联系电话：13298343196</view>
+          <view>{{item.orderRemarks}}</view>
+          <view>报修时间：{{item.createTime}}</view>
+          <view>师傅电话：{{item.userTel}}</view>
         </view>
       </view>
     </view>
   </view>
 </view>
 <!-- 空页面-->
-<view class="cart-kong">
+<view class="cart-kong" wx:if="{{(!being || being.length == 0)&&(!stocks || stocks.length == 0)}}">
   <image src="../../images/apingjia.png"></image>
   <view>暂无记录</view>
   <view>~ 报修记录为空呦! ~</view>

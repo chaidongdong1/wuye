@@ -1,34 +1,55 @@
+<loading wx:if="{{showLoading}}">加载中</loading>
 <view class="submitevaluate">
-	<view class="sub-top marb10">
-		<view>
-			<image src="../../images/a_pjtp1.jpg"></image>
-		</view>
-		<view>
-			吖商家孤岛惊魂申达股份会计师对方环能科技新城V你师父打卡机老
-		</view>
-	</view>
-	<!-- 商品打分 -->
-	<view class="spdf pad24 marb10">
-		<text>商品打分</text>
-		<view class="dfxx">
-			<image  wx:for="{{dflist}}" wx:key="id" src="{{item}}" data-index="{{index}}" bindtap="xxdj"></image>
-		</view>
-	</view>
-	<!-- 商品评价 -->
-	<view class="sppj marb10 pad24">
-		<view>商品评价（选填）</view>
-		<view>
-			<textarea placeholder="请输入你的评价，谢谢合作" ></textarea>
-		</view>
-	</view>
-	<!-- 添加图片 -->
-	<view class="tian">
-		<view class="tian-add">
-			<image src="../../images/a_pjtp1.jpg"></image>
-			<image src="../../images/a_pjtp1.jpg"></image>
-			<image src="../../images/a_photo.png"></image>
-		</view>
-	</view>
-	<!-- 提交按钮 -->
-	<view class="tijiao">提交</view>
+  <view class="sub-top marb10">
+    <view>
+      <image src="{{baseUrl}}{{datas.goodsThums}}"></image>
+    </view>
+    <view>{{datas.goodsName}}</view>
+  </view>
+  <!-- 商品打分 -->
+  <view class="spdf pad24 marb10">
+    <text>商品打分</text>
+    <view class="dfxx">
+      <image wx:for="{{listShop}}" wx:key="index" src="{{item}}" data-index="{{index}}" bindtap="bindtapDafen"></image>
+    </view>
+    <text class="subtext" wx:if="{{listShopIndex == 4}}">好评</text>
+    <text class="subtext" wx:if="{{listShopIndex == 3 || listShopIndex == 2}}">中评</text>
+    <text class="subtext" wx:if="{{listShopIndex == 1 || listShopIndex == 0}}">差评</text>
+  </view>
+  <!-- 快递打分 -->
+  <view class="spdf pad24 marb10">
+    <text>快递打分</text>
+    <view class="dfxx">
+      <image wx:for="{{listExpress}}" wx:key="index" src="{{item}}" data-index="{{index}}" bindtap="bindtapKuai"></image>
+    </view>
+    <text class="subtext" wx:if="{{listExpressIndex == 4}}">好评</text>
+    <text class="subtext" wx:if="{{listExpressIndex == 3 || listExpressIndex == 2}}">中评</text>
+    <text class="subtext" wx:if="{{listExpressIndex == 1 || listExpressIndex == 0}}">差评</text>
+  </view>
+  <!-- 服务打分 -->
+  <view class="spdf pad24 marb10">
+    <text>服务打分</text>
+    <view class="dfxx">
+      <image wx:for="{{listServe}}" wx:key="index" src="{{item}}" data-index="{{index}}" bindtap="bindSever"></image>
+    </view>
+    <text class="subtext" wx:if="{{listServeIndex == 4}}">好评</text>
+    <text class="subtext" wx:if="{{listServeIndex == 3 || listServeIndex == 2}}">中评</text>
+    <text class="subtext" wx:if="{{listServeIndex == 1 || listServeIndex == 0}}">差评</text>
+  </view>
+  <!-- 商品评价 -->
+  <view class="sppj marb10 pad24">
+    <view>商品评价（选填）</view>
+    <view>
+      <textarea bindinput="bindText" placeholder="请输入你的评价，谢谢合作"></textarea>
+    </view>
+  </view>
+  <!-- 添加图片 -->
+  <view class="tian">
+    <view class="tian-add">
+      <image wx:for="{{temp}}" wx:key="index" wx:if="{{temp.length != 0}}" bindtap="bindPhoto" data-index='{{index}}' src="{{item}}"></image>
+      <image bindtap="bindPhoto" data-index="{{-1}}" wx:if="{{temp.length < 3}}" src="../../images/a_photo.png"></image>
+    </view>
+  </view>
+  <!-- 提交按钮 -->
+  <view class="tijiao" bindtap="bindSubmit">提交评价</view>
 </view>
